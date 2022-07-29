@@ -106,6 +106,9 @@ input {
 }
 
 .new-transaction-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: var(--main-text-color);
   color: var(--white);
   margin-left: -20px;
@@ -126,13 +129,30 @@ input {
   margin-bottom: 8px;
 }
 
-.form-wrapper {
+.new-transaction-section h2 {
+  flex-grow: 1;
+  margin-bottom: 0;
+  margin-top: 0.7rem;
+}
+
+.new-transaction-section form {
+  flex-grow: 2;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 28px;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.new-transaction-section form div select {
+  height: 60%;
+  padding: 7px ;
+}
+
+.new-transaction-section input {
+  height: 33%;
 }
 
 .new-transaction-section button {
+  height: 33%;
   padding: 9px 12px;
   border-radius: 6px;
   border: solid 1px #ffffff;

@@ -31,7 +31,6 @@ export default function TransactionForm({ categories }) {
     <section className="new-transaction-section">
       <h2>New Transaction</h2>
       <form onSubmit={handleSubmit}>
-        <div className="form-wrapper">
           <div>
             <label htmlFor="category">Category</label>
             <select
@@ -67,10 +66,11 @@ export default function TransactionForm({ categories }) {
               step="0.01"
             />
           </div>
-        </div>
+        
 
-        <button>Add Transaction</button>
+        <button>Add Transaction</button> 
       </form>
+      
     </section>
   );
 }
