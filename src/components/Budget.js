@@ -11,12 +11,13 @@ export default function Budget({ budget }) {
   const handleEdit = (e) => {
     e.preventDefault();
     dispatch(editBudget({ category: budget.category, amount: amount }));
+    setAmount(0);
   };
 
   const calculateTotalExpenses = () => {
     return transactions[budget.category]
       .map((transaction) => transaction.amount)
-      .reduce((amount1, amount2) => amount1 + amount2, 0);
+      .reduce((acc, currentValue) => acc + currentValue, 0);
   };
 
   const getFundsRemainingClassName = (amount) => {
@@ -41,7 +42,7 @@ export default function Budget({ budget }) {
             value={amount}
             onChange={(e) => setAmount(e.currentTarget.value)}
             type="number"
-            step="0.01"
+            step="10"
           />
           <button className="update-button">Update</button>
         </form>

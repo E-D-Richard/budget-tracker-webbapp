@@ -6,14 +6,12 @@ import './index.css';
 import App from './app/App.js';
 
 
-const container = document.getElementById('app');
-const root = createRoot(container); // createRoot(container!) if you use TypeScript
+const container = document.getElementById('root');
+const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
     </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
-
