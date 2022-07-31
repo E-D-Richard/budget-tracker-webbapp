@@ -8,9 +8,15 @@ export default function Budget({ budget }) {
   const [amount, setAmount] = useState(budget.amount);
   const transactions = useSelector(selectTransactions);
 
+  const updateTotalAmount = (n) => {
+    const oldAmount = parseFloat(budget.amount);
+    const currentAmount = parseFloat(n)
+    return oldAmount + currentAmount;
+  }
+
   const handleEdit = (e) => {
     e.preventDefault();
-    dispatch(editBudget({ category: budget.category, amount: amount }));
+    dispatch(editBudget({ category: budget.category, amount: updateTotalAmount(amount) }));
     setAmount(0);
   };
 
@@ -23,9 +29,13 @@ export default function Budget({ budget }) {
   const getFundsRemainingClassName = (amount) => {
     if (parseFloat(amount) === 0) {
       return null;
+    } else if ( parseFloat(amount) > 0) {
+      return 'positive'
+    } else if (parseFloat(amount) < 0) {
+      return 'negative'
     }
 
-    return parseFloat(amount) > 0 ? 'positive' : 'negative';
+
   };
 
   const remainingFunds = Number.parseFloat(budget.amount - calculateTotalExpenses()).toFixed(2);

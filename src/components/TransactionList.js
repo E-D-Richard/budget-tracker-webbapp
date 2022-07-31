@@ -3,7 +3,7 @@ import Transaction from './Transaction';
 
 export default function TransactionList({ transactions }) {
   return (
-    <section className="new-transactions-section">
+    <section className="transaction-list">
       <h2>Transactions</h2>
       <ul className="new-transaction-list">
         {transactions.map((t) => (

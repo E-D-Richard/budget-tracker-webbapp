@@ -23,7 +23,7 @@ const budgetsSlice = createSlice({
     editBudget: (state, action) => {
       state.forEach((budget) => {
         if (budget.category === action.payload.category) {
-          budget.amount = action.payload.amount;
+          budget.amount = action.payload.amount
         }
       })
     },

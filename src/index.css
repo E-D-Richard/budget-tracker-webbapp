@@ -9,6 +9,14 @@
   --white: #ffffff;
 }
 
+html {
+	box-sizing: border-box;
+  }
+  *, *:before, *:after {
+	box-sizing: inherit;
+  }
+
+
 body {
   font-family: 'Oxygen', sans-serif;
   color: var(--main-text-color);
@@ -42,6 +50,23 @@ h4 {
   margin: 0;
 }
 
+input {
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: solid 1px #141c3a;
+  font-size: 14px;
+  width: 80px;
+}
+
+select {
+  padding-left: 5px;
+  border-radius: 6px;
+  border: solid 1px #141c3a;
+  background-color: #ffffff;
+  text-transform: capitalize;
+}
+
+
 .category-label {
   color: var(--gray);
   font-size: 15px;
@@ -62,13 +87,7 @@ h4 {
   text-transform: capitalize;
 }
 
-input {
-  padding: 7px 12px;
-  border-radius: 6px;
-  border: solid 1px #141c3a;
-  font-size: 14px;
-  width: 80px;
-}
+
 
 .update-button {
   padding: 6px 12px;
@@ -105,6 +124,8 @@ input {
   color: var(--red);
 }
 
+
+
 .new-transaction-section {
   display: flex;
   justify-content: space-between;
@@ -119,7 +140,6 @@ input {
   position: fixed;
   bottom: 0;
   width: 100%;
-  box-sizing: border-box;
 }
 
 .new-transaction-section label {
@@ -142,17 +162,19 @@ input {
   align-items: flex-end;
 }
 
-.new-transaction-section form div select {
-  height: 60%;
-  padding: 7px ;
+
+
+
+.new-transaction-section input, .new-transaction-section select {
+  min-height: 35px;
 }
 
-.new-transaction-section input {
-  height: 33%;
+.new-transaction-section input.amount-alert {
+  border: 5px solid red;
 }
 
 .new-transaction-section button {
-  height: 33%;
+  min-height: 33%;
   padding: 9px 12px;
   border-radius: 6px;
   border: solid 1px #ffffff;
@@ -169,17 +191,29 @@ input {
   color: #141c3a;
 }
 
-select {
-  padding: 7px 16px 8px 12px;
-  border-radius: 6px;
-  border: solid 1px #141c3a;
-  background-color: #ffffff;
-  text-transform: capitalize;
-}
 
 .new-transaction-list {
   list-style: none;
   padding: 0;
+}
+
+.transaction-list {
+  padding-bottom: 165px;
+}
+
+.transaction-list button {
+  margin-left: auto;
+  background: white;
+  border: solid 1px #141c3a;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
 }
 
 .new-transaction {
@@ -199,26 +233,10 @@ select {
   font-weight: normal;
 }
 
-.new-transaction button {
-  margin-left: auto;
-  background: white;
-  border: solid 1px #141c3a;
-  border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-weight: bold;
-}
 
 .new-transaction button:hover,
 .new-transaction button:focus {
   color: white;
-  background-color: #141c3a;
+  background-color: red;
 }
 
-.new-transactions-section {
-  padding-bottom: 350px;
-}

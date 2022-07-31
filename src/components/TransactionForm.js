@@ -11,9 +11,15 @@ export default function TransactionForm({ categories }) {
   const [category, setCategory] = useState(CATEGORIES[0]);
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState(0);
+  const [amountAlert, setAmountAlert] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    //prevent 0 value transaction
+    if(parseFloat(amount) === 0 || !amount) {
+      setAmountAlert(true);
+      return;
+    };
     dispatch(
       addTransaction({
         category: category,
@@ -61,9 +67,13 @@ export default function TransactionForm({ categories }) {
             <input
               id="amount"
               value={amount}
-              onChange={(e) => setAmount(e.currentTarget.value)}
+              onChange={(e) => {
+                setAmount(e.currentTarget.value)
+                setAmountAlert(false)
+              }}
               type="number"
               step="0.01"
+              className={amountAlert && "amount-alert"}
             />
           </div>
         
