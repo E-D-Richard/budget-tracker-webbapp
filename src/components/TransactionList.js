@@ -3,9 +3,9 @@ import Transaction from './Transaction';
 
 export default function TransactionList({ transactions }) {
   return (
-    <section className="transaction-list">
+    <section className="transaction-record-section">
       <h2>Transactions</h2>
-      <ul className="new-transaction-list">
+      <ul className="transaction-list">
         {transactions.map((t) => (
           <Transaction transaction={t} key={t.id} />
         ))}

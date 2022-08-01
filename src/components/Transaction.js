@@ -10,7 +10,7 @@ export default function Transaction({ transaction }) {
   };
 
   return (
-    <li className="new-transaction">
+    <li className="transaction-record">
       <span>
         {transaction.amount} – {transaction.category}{' '}
         <span className="description">( {transaction.description} )</span>
