@@ -6,7 +6,7 @@ import Budget from '../../components/Budget';
 const Transactions = () => {
   const budgets = useSelector(selectBudgets);
   return (
-    <ul className='comments-container'>
+    <ul className='all-budgets-container'>
       { budgets.map(budget => <Budget budget={budget} key={budget.category}/>) }
     </ul>
   );
