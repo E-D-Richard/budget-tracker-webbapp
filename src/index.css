@@ -105,7 +105,6 @@ select {
 
 .budget-form > * {
   flex: 1 1 100%;
-
   max-width: 100px;
 }
 
@@ -134,7 +133,7 @@ select {
   color: var(--red);
 }
 
-/* add transaction section */
+/* ---------------------------------------- new transaction section ----------------------- */
 
 .new-transaction-section {
   display: flex;
@@ -151,26 +150,27 @@ select {
   width: 100%;
 }
 
+.new-transaction-section h2 {
+  margin-bottom: 0;
+}
+
+.new-transaction-section form {
+  flex: 1 1 100%;
+  display: grid;
+  gap: 16px 18px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: minmax(0px, auto);
+  align-items: stretch;
+  max-width: 40%;
+  padding-right: 2%;
+}
+
 .new-transaction-section label {
   display: block;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 8px;
 }
-
-.new-transaction-section h2 {
-  margin-bottom: 0;
-}
-
-.new-transaction-section form {
-  display: grid;
-  gap: 8%;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: minmax(0, auto);
-  max-width: 40%;
-  padding-right: 2%;
-}
-
 
 
 
@@ -187,14 +187,12 @@ select {
 .new-transaction-section button {
   grid-column: 1/4;
   justify-self: end;
-  min-height: 33%;
   width: 100%;
   padding: 9px 12px;
-  margin-top: 0.5rem;
   border-radius: 6px;
   border: solid 1px #ffffff;
   background-color: #141c3a;
-  font-size: 18px;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #ffffff;
   cursor: pointer;
@@ -237,7 +235,7 @@ select {
   font-weight: normal;
 }
 
-.transaction-list button {
+.transaction-list .submit-btn {
   margin-left: auto;
   background: white;
   border: solid 1px #141c3a;
@@ -269,27 +267,77 @@ select {
     flex-direction: column;
   }
  
-
+  /* new trans sect */
   .new-transaction-section {
     flex-direction: column;
     align-items: center;
+    padding: 6.5% 14%;
   }
 
   .new-transaction-section h2 {
     display: none;
   }
 
-  .new-transaction-section form {
-    max-width: 100%;
-    padding-right: 0;
-  }
-  .new-transaction-section button {
-    margin-top: 20px;
+  #hide-btn  {
+    align-self: stretch;
   }
 
-  .transaction-record-section {
-    margin-bottom: 180px;
+  #hide-btn button {
+    background-color: #141c3a;
+    color: var(--white);
+    font-size: 3rem;
   }
+
+  #hide-btn .dropdown-btn {
+    padding: 0;
+    border: none;
+    margin-bottom: 6.5vh;
+  }
+
+  #hide-btn .default-btn {
+    padding: 2rem 0;
+  }
+
+
+  .new-transaction-section form {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 85%;
+    padding-right: 0;
+    
+  }
+
+  #new-transaction-select {
+    grid-column: 1/3;
+
+  }
+
+  #new-transaction-amount {
+    grid-column: 3/6;
+   
+  }
+
+  #new-transaction-desc {
+    grid-column: 1/6;
+    grid-row: 2/3;
+  }
+
+
+ 
+ 
+  .new-transaction-section #submit-btn {
+    grid-column: 1/6;
+    grid-row: 3/4;
+    font-size: 2.4rem;
+    padding: 18px 12px;
+    margin-top: 7%;
+  }
+
+
+
+  .transaction-record-section {
+    margin-bottom: 275px;
+  }
+
 }
 
 
