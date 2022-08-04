@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { editBudget } from '../features/budgets/budgetsSlice';
-import { selectTransactions } from '../features/transactions/transactionsSlice';
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { editBudget } from "../features/budgets/budgetsSlice";
+import { selectTransactions } from "../features/transactions/transactionsSlice";
 
 export default function Budget({ budget }) {
   const dispatch = useDispatch();
@@ -10,13 +10,18 @@ export default function Budget({ budget }) {
 
   const updateTotalAmount = (n) => {
     const oldAmount = parseFloat(budget.amount);
-    const currentAmount = parseFloat(n)
+    const currentAmount = parseFloat(n);
     return oldAmount + currentAmount;
-  }
+  };
 
   const handleEdit = (e) => {
     e.preventDefault();
-    dispatch(editBudget({ category: budget.category, amount: updateTotalAmount(amount) }));
+    dispatch(
+      editBudget({
+        category: budget.category,
+        amount: updateTotalAmount(amount),
+      })
+    );
     setAmount(0);
   };
 
@@ -29,37 +34,38 @@ export default function Budget({ budget }) {
   const getFundsRemainingClassName = (amount) => {
     if (parseFloat(amount) === 0) {
       return null;
-    } else if ( parseFloat(amount) > 0) {
-      return 'positive'
+    } else if (parseFloat(amount) > 0) {
+      return "positive";
     } else if (parseFloat(amount) < 0) {
-      return 'negative'
+      return "negative";
     }
-
-
   };
 
-  const remainingFunds = Number.parseFloat(budget.amount - calculateTotalExpenses()).toFixed(2);
+  const remainingFunds = Number.parseFloat(
+    budget.amount - calculateTotalExpenses()
+  ).toFixed(2);
   const fundsRemainingClassName = getFundsRemainingClassName(remainingFunds);
 
   return (
     <li className="budget-container">
-      <div className="category-label">Category</div>{' '}
-      <div className="category-wrapper">
+      <div className="data-wrapper">
+        <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
-        <form onSubmit={handleEdit} className="budget-form">
-          <input
-            className="amount-input"
-            value={amount}
-            onChange={(e) => setAmount(e.currentTarget.value)}
-            type="number"
-            step="10"
-          />
-          <button className="update-button">Update</button>
-        </form>
+        <h4 className={`remaining-funds ${fundsRemainingClassName}`}>
+          Funds Remaining: {remainingFunds}
+        </h4>
       </div>
-      <h4 className={`remaining-funds ${fundsRemainingClassName}`}>
-        Funds Remaining: {remainingFunds}
-      </h4>
+
+      <form onSubmit={handleEdit} className="budget-form">
+        <input
+          className="amount-input"
+          value={amount}
+          onChange={(e) => setAmount(e.currentTarget.value)}
+          type="number"
+          step="10"
+        />
+        <button className="update-button">Update</button>
+      </form>
     </li>
   );
 }

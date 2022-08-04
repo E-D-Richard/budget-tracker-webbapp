@@ -27,11 +27,14 @@ const budgetsSlice = createSlice({
         }
       })
     },
+    addCategory: (state, action) => {
+      state.push(action.payload);
+    }
 
   }
 });
 
 
 export const selectBudgets = (state) => state.budgets;
-export const { editBudget } = budgetsSlice.actions;
+export const { editBudget, addCategory } = budgetsSlice.actions;
 export default budgetsSlice.reducer;
