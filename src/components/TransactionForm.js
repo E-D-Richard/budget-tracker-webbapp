@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  addTransaction,
-  CATEGORIES,
-} from "../features/transactions/transactionsSlice";
+import {addTransaction} from "../features/transactions/transactionsSlice";
 import { v4 as uuidv4 } from "uuid";
+import { useSelector } from "react-redux";
+import { selectTransactions } from "../features/transactions/transactionsSlice";
 
-export default function TransactionForm({ categories }) {
+export default function TransactionForm() {
   const dispatch = useDispatch();
-  const [category, setCategory] = useState(CATEGORIES[0]);
+  const categories = Object.keys(useSelector(selectTransactions));
+  const [category, setCategory] = useState(categories[0]);
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
-  const [amountAlert, setAmountAlert] = useState(false);
+  const [amountInputAlert, setAmountInputAlert] = useState(false);
   const [isDesktop, setDesktop] = useState(window.innerWidth > 750);
-  const [hide, setHide] = useState(!isDesktop ? true : false);
+  const [hidden, setHidden] = useState(!isDesktop ? true : false);
 
   const updateScreenWidth = () => {
     setDesktop(window.innerWidth > 750);
     if(window.innerWidth > 750){
-      setHide(false);
+      setHidden(false);
     } else {
-      setHide(true);
+      setHidden(true);
     }
   };
 
@@ -30,10 +30,10 @@ export default function TransactionForm({ categories }) {
   });
 
   const handleHideForm = () => {
-    if (!isDesktop && !hide){
-      setHide(true);
+    if (!isDesktop && !hidden){
+      setHidden(true);
     } else {
-      setHide(false)
+      setHidden(false)
     }
   };
 
@@ -41,7 +41,7 @@ export default function TransactionForm({ categories }) {
     e.preventDefault();
     //prevent 0 value transaction
     if (parseFloat(amount) === 0 || !amount) {
-      setAmountAlert(true);
+      setAmountInputAlert(true);
       return;
     }
     dispatch(
@@ -52,24 +52,25 @@ export default function TransactionForm({ categories }) {
         id: uuidv4(),
       })
     );
-    setCategory(CATEGORIES[0]);
+    setCategory(categories[0]);
     setDescription("");
     setAmount(0);
   };
   return (
     <div className="new-transaction-container">
-      <div id={isDesktop ? "mock-desktop-margin": `${!hide ? "mock-expanded-margin": "mock-collapsed-margin"}`}></div>
+      <div id={isDesktop ? "mock-desktop-margin": `${!hidden ? "mock-expanded-margin": "mock-collapsed-margin"}`}></div>
       <section >
         <h2>New Transaction</h2>
-        <div id="hide-btn">
+        <div id="hidden-btn">
           <button
             onClick={handleHideForm}
-            className={!hide ? "dropdown-btn" : "default-btn"}
+            className={!hidden ? "dropdown-btn" : "default-btn"}
           >
-            {hide ? "New Transaction" : "v"}
+            {hidden ? "New Transaction" : "v"}
           </button>
         </div>
-        {!hide && (
+        {/* only displays form by default on screen > 750px*/}
+        {!hidden && (
           <form onSubmit={handleSubmit}>
             <div id="new-transaction-select">
               <label htmlFor="category">Category</label>
@@ -78,7 +79,7 @@ export default function TransactionForm({ categories }) {
                 value={category}
                 onChange={(e) => setCategory(e.currentTarget.value)}
               >
-                {CATEGORIES.map((c) => (
+                {categories.map((c) => (
                   <option key={c} value={c}>
                     {c}
                   </option>
@@ -103,11 +104,11 @@ export default function TransactionForm({ categories }) {
                 value={amount}
                 onChange={(e) => {
                   setAmount(e.currentTarget.value);
-                  setAmountAlert(false);
+                  setAmountInputAlert(false);
                 }}
                 type="number"
                 step="0.01"
-                className={amountAlert ? "amount-alert" : ""}
+                className={amountInputAlert ? "amount-alert" : ""}
               />
             </div>
             <button id="submit-btn">Add Transaction</button>
