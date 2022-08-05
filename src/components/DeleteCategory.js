@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 export const DeleteCategory = ({ categories }) => {
   const dispatch = useDispatch();
-  const [category, setCategory] = useState(categories);
+  const [category, setCategory] = useState('');
 
   const handleDelete = (e) => {
     e.preventDefault();
