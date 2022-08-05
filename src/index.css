@@ -63,8 +63,6 @@ input {
 select {
   padding-left: 5px;
   border-radius: 6px;
-  width: 0;
-  height: 0;
 }
 
 /* -------------------------------------------- budgets section ------------------------------------- */

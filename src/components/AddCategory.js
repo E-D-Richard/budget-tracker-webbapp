@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addCategory } from "../features/budgets/budgetsSlice";
 import { addTransactionCategory } from "../features/transactions/transactionsSlice";
 
-const AddCategory = () => {
+export const AddCategory = () => {
   const dispatch = useDispatch();
   const [newCategory, setNewCategory] = useState('');
 
@@ -25,18 +25,18 @@ const AddCategory = () => {
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
       <h3>Add Category</h3>
-      <label htmlFor="new-name">name</label>
+      <label htmlFor="new-cat">name</label>
       <input
-        id="new-name"
+        id="new-cat"
         type="text"
-        onChange={(e) => setNewCategory(e.currentTarget.value)}
         value={newCategory}
+        onChange={(e) => setNewCategory(e.currentTarget.value)}
+        
       />
-      <button>Submit</button>
+      <button>Add</button>
     </form>
   );
 };
 
-export default AddCategory;
