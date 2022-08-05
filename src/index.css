@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap");
 
 :root {
   --main-text-color: #141c3a;
@@ -9,18 +9,18 @@
   --white: #ffffff;
 }
 
-
 html {
   font-size: 62.5%;
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
-*, *:before, *:after {
-	box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
-
 
 body {
-  font-family: 'Oxygen', sans-serif;
+  font-family: "Oxygen", sans-serif;
   color: var(--main-text-color);
   padding: 24px 20px 0px 20px;
   margin: 0;
@@ -48,7 +48,7 @@ h3 {
 
 h4 {
   font-size: clamp(16px, 3.5vw, 2.4rem);
-  
+
   font-weight: bold;
   margin: 0;
 }
@@ -84,7 +84,6 @@ select {
   border-bottom: solid 1px var(--main-text-color);
 }
 
-
 .category-label {
   color: var(--gray);
   font-size: 15px;
@@ -95,10 +94,9 @@ select {
   text-transform: capitalize;
 }
 
-
 .budget-container .data-wrapper {
   flex: 0 2 100%;
-  
+
   display: flex;
   flex-direction: column;
   row-gap: 15px;
@@ -113,7 +111,6 @@ select {
 .budget-form > * {
   max-width: 100px;
 }
-
 
 .budget-form .update-button {
   padding: 6px 12px;
@@ -139,7 +136,6 @@ select {
   color: var(--red);
 }
 
-
 /* --------------------------add category */
 
 .all-budgets-container form {
@@ -150,8 +146,7 @@ select {
   text-align: center;
 }
 
-
-@media screen and (max-width: 340px){
+@media screen and (max-width: 340px) {
   .budget-container h3 {
     font-size: 1.5rem;
   }
@@ -210,7 +205,6 @@ select {
   max-width: 40%;
 }
 
-
 .new-transaction-container label {
   display: block;
   font-size: 15px;
@@ -218,7 +212,9 @@ select {
   margin-bottom: 8px;
 }
 
-#new-transaction-amount input, #new-transaction-desc input,  #new-transaction-select select {
+#new-transaction-amount input,
+#new-transaction-desc input,
+#new-transaction-select select {
   min-height: 35px;
   width: 100%;
 }
@@ -236,7 +232,8 @@ select {
   padding: 15px;
 }
 
-.dropdown-btn, .default-btn {
+.dropdown-btn,
+.default-btn {
   display: none;
 }
 
@@ -252,8 +249,9 @@ select {
 
 /* ---------------------------------------------------------new transaction media queries */
 
-@media screen and (max-width: 750px){
-  .dropdown-btn, .default-btn {
+@media screen and (max-width: 750px) {
+  .dropdown-btn,
+  .default-btn {
     display: inline-block;
   }
   .new-transaction-container h2 {
@@ -262,7 +260,7 @@ select {
   .new-transaction-container section {
     flex-direction: column;
   }
-  #hide-btn  {
+  #hide-btn {
     min-width: 80vw;
   }
 
@@ -271,10 +269,12 @@ select {
     color: var(--white);
   }
 
-  #hide-btn .dropdown-btn {
+  .new-transaction-container .dropdown-btn {
     border: none;
-    padding: 10px 0 55px 0;
-    margin: 0px;
+  }
+
+  .new-transaction-container .dropdown-btn .icon {
+    font-size: 5rem;
   }
 
   #hide-btn .default-btn {
@@ -303,14 +303,17 @@ select {
   .new-transaction-container #submit-btn {
     grid-column: 1/7;
     grid-row: 3/4;
-    font-size: clamp(2rem, 2vw ,3rem);
+    font-size: clamp(2rem, 2vw, 3rem);
     padding: 18px 12px;
     margin-top: 30px;
   }
+
+  .new-transaction-container button:hover,
+  .new-transaction-container button:focus {
+    background-color: var(--main-text-color);
+    color: var(--white);
+  }
 }
-
-
-
 
 /* -------------------------------------------- transaction records ---------------------*/
 
@@ -323,7 +326,6 @@ select {
   font-weight: bold;
 }
 
-
 .transaction-list {
   list-style: none;
   padding: 0;
@@ -333,7 +335,6 @@ select {
   display: flex;
   padding: 5px 0;
 }
-
 
 .description {
   font-style: italic;
@@ -348,7 +349,7 @@ select {
   border-radius: 5%;
   height: 20px;
   width: 20px;
-  padding: 10px 8px 8px  8px;
+  padding: 10px 8px 8px 8px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -364,7 +365,7 @@ select {
 
 /* ------------------------------------------------------ general media query */
 
-@media screen and (max-width: 750px){
+@media screen and (max-width: 750px) {
   h1 {
     text-align: center;
   }
@@ -373,5 +374,3 @@ select {
     flex-direction: column;
   }
 }
-
-

@@ -4,6 +4,7 @@ import {addTransaction} from "../features/transactions/transactionsSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import { selectTransactions } from "../features/transactions/transactionsSlice";
+import { FaAngleDown } from "react-icons/fa";
 
 export default function TransactionForm() {
   const dispatch = useDispatch();
@@ -66,7 +67,7 @@ export default function TransactionForm() {
             onClick={handleHideForm}
             className={!hidden ? "dropdown-btn" : "default-btn"}
           >
-            {hidden ? "New Transaction" : "v"}
+            {hidden ? "New Transaction" : <FaAngleDown className="icon" /> }
           </button>
         </div>
         {/* only displays form by default on screen > 750px*/}
