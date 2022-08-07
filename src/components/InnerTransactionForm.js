@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import { selectTransactions } from "../features/transactions/transactionsSlice";
 
-export default function InnerTransactionForm() {
+const InnerTransactionForm = () => {
   const dispatch = useDispatch();
   const categories = Object.keys(useSelector(selectTransactions));
   const [category, setCategory] = useState(categories[0]);
@@ -36,7 +36,7 @@ export default function InnerTransactionForm() {
 
   return (
     <form onSubmit={handleSubmit} className="new-trans-form">
-      <div id="new-transaction-select">
+      <div className="new-trans-select">
         <label htmlFor="category">Category</label>
         <select
           id="category"
@@ -51,7 +51,7 @@ export default function InnerTransactionForm() {
         </select>
       </div>
 
-      <div id="new-transaction-desc">
+      <div className="new-trans-desc">
         <label htmlFor="description">Description</label>
         <input
           id="description"
@@ -61,7 +61,7 @@ export default function InnerTransactionForm() {
         />
       </div>
 
-      <div id="new-transaction-amount">
+      <div className="new-trans-amount">
         <label htmlFor="amount">Amount</label>
         <input
           id="amount"
@@ -75,7 +75,9 @@ export default function InnerTransactionForm() {
           className={amountInputAlert ? "amount-alert" : ""}
         />
       </div>
-      <button id="submit-btn">Add Transaction</button>
+      <button className="submit-btn">Add Transaction</button>
     </form>
   );
 }
+
+export default InnerTransactionForm;

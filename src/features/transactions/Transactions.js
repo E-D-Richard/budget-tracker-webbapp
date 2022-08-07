@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectFlattenedTransactions } from './transactionsSlice';
-import TransactionForm from '../../components/TransactionForm';
+import NewTransaction from '../../components/NewTransaction';
 import TransactionList from '../../components/TransactionList';
 
 const Transactions = () => {
@@ -9,7 +9,7 @@ const Transactions = () => {
   return (
     <div className="comments-container">
       <TransactionList transactions={transactions} />
-      <TransactionForm />
+      <NewTransaction />
     </div>
   );
 };
