@@ -1,8 +1,8 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { deleteTransaction } from '../features/transactions/transactionsSlice';
+import { deleteTransaction } from '../../features/transRecord/transRecordSlice';
 
-export default function Transaction({ transaction }) {
+const Transaction = ({ transaction }) => {
   const dispatch = useDispatch();
 
   const handleDelete = (e) => {
@@ -21,3 +21,5 @@ export default function Transaction({ transaction }) {
     </li>
   );
 }
+
+export default Transaction;

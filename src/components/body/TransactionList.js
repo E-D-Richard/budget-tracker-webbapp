@@ -1,7 +1,7 @@
 import React from 'react';
 import Transaction from './Transaction';
 
-export default function TransactionList({ transactions }) {
+const TransactionList = ({ transactions }) => {
   return (
     <section className="transaction-record-section">
       <h2>Transactions</h2>
@@ -13,3 +13,5 @@ export default function TransactionList({ transactions }) {
     </section>
   );
 }
+
+export default TransactionList;

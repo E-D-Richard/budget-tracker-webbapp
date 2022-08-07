@@ -3,7 +3,7 @@ import {createSlice} from '@reduxjs/toolkit';
 export const initialCategories = ['housing', 'food', 'transportation', 'utilities', 'clothing', 'healthcare', 'personal', 'education', 'entertainment'];
 
 const initialState = Object.fromEntries(initialCategories.map(category => [category, []]))
-const transactionsSlice = createSlice({
+const transRecordSlice = createSlice({
   name: 'transactions',
   initialState: initialState,
   reducers: {
@@ -25,5 +25,5 @@ const transactionsSlice = createSlice({
 export const selectTransactions = (state) => state.transactions;
 export const selectFlattenedTransactions = (state) => Object.values(state.transactions).reduce((accArr, b) => [...accArr, ...b], []);
 
-export const {addTransaction, deleteTransaction, addTransactionCategory} = transactionsSlice.actions; 
-export default transactionsSlice.reducer;
+export const {addTransaction, deleteTransaction, addTransactionCategory} = transRecordSlice.actions; 
+export default transRecordSlice.reducer;

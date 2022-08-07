@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addCategory } from "../features/budgets/budgetsSlice";
-import { addTransactionCategory } from "../features/transactions/transactionsSlice";
+import { addCategory } from "../../features/budgets/budgetsSlice";
+import { addTransactionCategory } from "../../features/transRecord/transRecordSlice";
 
 export const AddCategory = () => {
   const dispatch = useDispatch();

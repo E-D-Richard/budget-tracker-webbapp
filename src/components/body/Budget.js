@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editBudget } from "../features/budgets/budgetsSlice";
-import { selectTransactions } from "../features/transactions/transactionsSlice";
+import { editBudget } from "../../features/budgets/budgetsSlice";
+import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 
-export const Budget = ({ budget }) => {
+const Budget = ({ budget }) => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState(budget.amount);
   const transactions = useSelector(selectTransactions);
@@ -69,3 +69,5 @@ export const Budget = ({ budget }) => {
     </li>
   );
 }
+
+export default Budget;

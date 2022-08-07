@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
-import InnerTransactionForm from "./InnerTransactionForm";
+import NewTransForm from "./NewTransForm";
 
-const NewTransaction = () => {
+const Dropdown = () => {
   let isDesktop = window.innerWidth >= 850;
   const [expanded, setExpanded] = useState(isDesktop ? true : false);
   const iconStyles = { fontSize: "5rem" };
@@ -34,13 +34,13 @@ const NewTransaction = () => {
               <FaAngleDown className="icon" style={iconStyles} />
             )}
           </button>
-          {expanded ? <InnerTransactionForm /> :<h3>New Transaction</h3>}
+          {expanded ? <NewTransForm /> :<h3>New Transaction</h3>}
         </div>
       ) : (
-        <InnerTransactionForm />
+        <NewTransForm />
       )}
     </section>
   );
 }
 
-export default NewTransaction;
+export default Dropdown;

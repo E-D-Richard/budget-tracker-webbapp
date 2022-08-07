@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTransaction } from "../features/transactions/transactionsSlice";
+import { addTransaction } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
-import { selectTransactions } from "../features/transactions/transactionsSlice";
+import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 
-const InnerTransactionForm = () => {
+const NewTransForm = () => {
   const dispatch = useDispatch();
   const categories = Object.keys(useSelector(selectTransactions));
   const [category, setCategory] = useState(categories[0]);
@@ -80,4 +80,4 @@ const InnerTransactionForm = () => {
   );
 }
 
-export default InnerTransactionForm;
+export default NewTransForm;
