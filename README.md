@@ -11,4 +11,5 @@
 
 #### potential features to add
 
-avoid losing form data in collapsed state (include gif).
+- avoid losing form data in collapsed state (include gif)
+- hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element 

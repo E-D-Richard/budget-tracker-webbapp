@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 
-const initialState = {deviceType: '', isExpanded: 'false',}
+const initialState = {deviceType: 'unknown', dropdownStatus: 'unknown',}
 const newTransactionSlice = createSlice({
   name: 'newTransactions',
   initialState: initialState,
@@ -9,17 +9,16 @@ const newTransactionSlice = createSlice({
     updateDevice: (state, action) => {
       state.deviceType = action.payload;
     },
-    updateExpanded: (state, action) => {
-      state.isExpanded = action.payload;
+    updateDropdownStatus: (state, action) => {
+      state.dropdownStatus = action.payload;
     },
 
   }
 });
 
 
+export const selectDeviceType = (state) => state.newTransaction.deviceType;
+export const selectDropdownStatus = (state) => state.newTransaction.dropdownStatus;
 
-export const selectDeviceType = (state) => state.newTransactions.deviceType;
-export const selectExpandedState = (state) => state.newTransactionSlice.isExpanded;
-
-export const {addTransaction, deleteTransaction, addTransactionCategory} = newTransactionSlice.actions; 
+export const {updateDevice, updateDropdownStatus} = newTransactionSlice.actions; 
 export default newTransactionSlice.reducer;

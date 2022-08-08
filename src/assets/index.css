@@ -155,6 +155,16 @@ select {
   font-weight: bold;
 }
 
+.transaction-record-section.mobile-collapsed {
+  margin-bottom: 180px;
+}
+.transaction-record-section.mobile-expanded {
+  margin-bottom: 450px;
+}
+.transaction-record-section.desktop-desktopMode {
+  margin-bottom: 250px;
+}
+
 .transaction-list {
   list-style: none;
   padding: 0;

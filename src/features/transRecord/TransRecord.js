@@ -6,10 +6,7 @@ import TransactionList from '../../components/body/TransactionList';
 const TransRecord = () => {
   const transactions = useSelector(selectFlattenedTransactions);
   return (
-    <div className="comments-container">
       <TransactionList transactions={transactions} />
-      
-    </div>
   );
 };
 
