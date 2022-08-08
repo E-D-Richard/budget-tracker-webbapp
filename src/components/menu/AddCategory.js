@@ -3,9 +3,9 @@ import { useDispatch } from "react-redux";
 import { addCategory } from "../../features/budgets/budgetsSlice";
 import { addTransactionCategory } from "../../features/transRecord/transRecordSlice";
 
-export const AddCategory = () => {
+const AddCategory = () => {
   const dispatch = useDispatch();
-  const [newCategory, setNewCategory] = useState('');
+  const [newCategory, setNewCategory] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,15 +17,15 @@ export const AddCategory = () => {
     );
     dispatch(
       addTransactionCategory({
-        name: newCategory,
+        category: newCategory,
         transactionArr: [],
       })
     );
-    setNewCategory('');
+    setNewCategory("");
   };
 
   return (
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <h3>Add Category</h3>
       <label htmlFor="new-cat">name</label>
       <input
@@ -33,10 +33,10 @@ export const AddCategory = () => {
         type="text"
         value={newCategory}
         onChange={(e) => setNewCategory(e.currentTarget.value)}
-        
       />
       <button>Add</button>
     </form>
   );
 };
 
+export default AddCategory;

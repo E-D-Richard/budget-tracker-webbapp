@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const CATEGORIES = [
+const CATEGORIES = [
   "housing",
   "food",
   "transportation",
@@ -29,6 +29,11 @@ const budgetsSlice = createSlice({
     },
     addCategory: (state, action) => {
       state.push(action.payload);
+    },
+    deleteCategory: (state, action) => {
+      const index = state.findIndex(b => b.category === action.payload.category);
+      state.splice(index, 1)
+
     }
 
   }
@@ -36,5 +41,5 @@ const budgetsSlice = createSlice({
 
 
 export const selectBudgets = (state) => state.budgets;
-export const { editBudget, addCategory } = budgetsSlice.actions;
+export const { editBudget, addCategory, deleteCategory } = budgetsSlice.actions;
 export default budgetsSlice.reducer;

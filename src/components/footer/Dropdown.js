@@ -23,7 +23,7 @@ const Dropdown = () => {
     } else {
       setExpanded(false);
       dispatch(updateDevice('mobile'));
-      dispatch(updateDropdownStatus('collapsed'))
+      // dispatch(updateDropdownStatus('collapsed'))
     }
   };
   //gets screen width upon loading and sends deviceType and dropdownStatus to store

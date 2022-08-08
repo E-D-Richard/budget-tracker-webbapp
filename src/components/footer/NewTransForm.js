@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { addTransaction } from "../../features/transRecord/transRecordSlice";
+import { addTransaction, selectCategories } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
-import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 
 const NewTransForm = () => {
   const dispatch = useDispatch();
-  const categories = Object.keys(useSelector(selectTransactions));
+  const categories = useSelector(selectCategories)
   const [category, setCategory] = useState(categories[0]);
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
   const [amountInputAlert, setAmountInputAlert] = useState(false);
   
+  /* clears old category value after deletion of category 
+  to avoid a scenario where old category value is still selected.*/
+  useEffect(() => {
+    setCategory(categories[0])
+  }, [categories]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +25,7 @@ const NewTransForm = () => {
       setAmountInputAlert(true);
       return;
     }
+
     dispatch(
       addTransaction({
         category: category,

@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-//import { useDispatch } from "react-redux";
+import { selectCategories } from "../../features/transRecord/transRecordSlice";
+import { useSelector, useDispatch} from "react-redux";
+import { deleteCategory } from "../../features/budgets/budgetsSlice";
+import { deleteTransactionCategory } from "../../features/transRecord/transRecordSlice";
 
-export const DeleteCategory = ({ categories }) => {
-  //const dispatch = useDispatch();
+const DeleteCategory = () => {
+  const dispatch = useDispatch();
+  const categories = useSelector(selectCategories)
   const [category, setCategory] = useState('');
 
   const handleDelete = (e) => {
     e.preventDefault();
-    // dispatch(deleteCategory({}));
-    // dispatch(deleteBudget({})); 
+    dispatch(deleteCategory({category: category}));
+    dispatch(deleteTransactionCategory({category: category}));
   };
 
   return (
@@ -35,3 +39,5 @@ export const DeleteCategory = ({ categories }) => {
     </form>
   );
 };
+
+export default DeleteCategory;
