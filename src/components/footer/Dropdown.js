@@ -27,9 +27,10 @@ const Dropdown = () => {
     }
   };
   //gets screen width upon loading and sends deviceType and dropdownStatus to store
-  useEffect(() => {
+  if(deviceType === "unknown"){
     updateScreenWidth();
-  },[]);
+  }
+
 
   useEffect(() => {
     window.addEventListener("resize", updateScreenWidth);

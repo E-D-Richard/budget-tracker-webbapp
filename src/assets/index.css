@@ -156,13 +156,13 @@ select {
 }
 
 .transaction-record-section.mobile-collapsed {
-  margin-bottom: 180px;
+  padding-bottom: 180px;
 }
 .transaction-record-section.mobile-expanded {
-  margin-bottom: 450px;
+  padding-bottom: 450px;
 }
 .transaction-record-section.desktop-desktopMode {
-  margin-bottom: 250px;
+  padding-bottom: 250px;
 }
 
 .transaction-list {
