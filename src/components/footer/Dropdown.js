@@ -14,7 +14,7 @@ const Dropdown = () => {
 
   
 
-  const updateScreenWidth = () => {
+  const updateBrowserStatus = () => {
     isDesktop = window.innerWidth >= 850;
     if (isDesktop) {
       setExpanded(true);
@@ -28,13 +28,13 @@ const Dropdown = () => {
   };
   //gets screen width upon loading and sends deviceType and dropdownStatus to store
   if(deviceType === "unknown"){
-    updateScreenWidth();
+    updateBrowserStatus();
   }
 
 
   useEffect(() => {
-    window.addEventListener("resize", updateScreenWidth);
-    return () => window.removeEventListener("resize", updateScreenWidth);
+    window.addEventListener("resize", updateBrowserStatus);
+    return () => window.removeEventListener("resize", updateBrowserStatus);
   });
 
 
