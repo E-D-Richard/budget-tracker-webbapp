@@ -32,10 +32,10 @@ const Dropdown = () => {
   }
 
 
-  useEffect(() => {
-    window.addEventListener("resize", updateBrowserStatus);
-    return () => window.removeEventListener("resize", updateBrowserStatus);
-  });
+  // useEffect(() => {
+  //   window.addEventListener("resize", updateBrowserStatus);
+  //   return () => window.removeEventListener("resize", updateBrowserStatus);
+  // });
 
 
   const handleClick = () => {
