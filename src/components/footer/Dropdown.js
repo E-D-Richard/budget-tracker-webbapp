@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import NewTransForm from "./NewTransForm";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,9 +21,12 @@ const Dropdown = () => {
       dispatch(updateDevice('desktop'));
       dispatch(updateDropdownStatus('desktopMode'));
     } else {
-      setExpanded(false);
+      //collapse by default on device type change 
+      if(deviceType === 'desktop'){
+        setExpanded(false);
+        dispatch(updateDropdownStatus('collapsed'))
+      }
       dispatch(updateDevice('mobile'));
-      // dispatch(updateDropdownStatus('collapsed'))
     }
   };
   //gets screen width upon loading and sends deviceType and dropdownStatus to store
@@ -32,10 +35,10 @@ const Dropdown = () => {
   }
 
 
-  // useEffect(() => {
-  //   window.addEventListener("resize", updateBrowserStatus);
-  //   return () => window.removeEventListener("resize", updateBrowserStatus);
-  // });
+  useEffect(() => {
+    window.addEventListener("resize", updateBrowserStatus);
+    return () => window.removeEventListener("resize", updateBrowserStatus);
+  });
 
 
   const handleClick = () => {
