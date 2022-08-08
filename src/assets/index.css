@@ -156,13 +156,13 @@ select {
 }
 
 .transaction-record-section.mobile-collapsed {
-  margin-bottom: calc(100px + 10.5vw);
+  margin-bottom: calc(110px + 10.5vw);
 }
 .transaction-record-section.mobile-expanded {
-  margin-bottom: max(calc(335px + 10.5vh), calc(365px + 10.5vw));
+  margin-bottom: max(calc(345px + 10.5vh), calc(365px + 10.5vw));
 }
 .transaction-record-section.desktop-desktopMode {
-  margin-bottom: calc(160px + 8vw);
+  margin-bottom: calc(170px + 8vw);
 }
 
 .transaction-list {
@@ -217,7 +217,7 @@ section.new-trans-container {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 2.5% 2.5% 2.5% 2%;
+  padding: 2.5% 2.5% calc(2.5% + 10px) 2%;
 }
 
 .new-trans-container h2 {

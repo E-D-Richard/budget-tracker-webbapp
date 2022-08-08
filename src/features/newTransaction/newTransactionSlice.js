@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 
-const initialState = {deviceType: 'unknown', dropdownStatus: 'unknown',}
+const initialState = {deviceType: 'unknown', dropdownStatus: 'collapsed',}
 const newTransactionSlice = createSlice({
   name: 'newTransactions',
   initialState: initialState,
