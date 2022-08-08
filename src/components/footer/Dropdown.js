@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { FaAngleDown, FaAngleUp } from "react-icons/fa";
 import NewTransForm from "./NewTransForm";
 import { useDispatch, useSelector } from "react-redux";
