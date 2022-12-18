@@ -17,7 +17,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 - add total remaining output data (of remaining total of all categories combined)
 - avoid losing form data in collapsed state (include gif in documentation)
 - auto generate pie charts based on js and the CSS "conic-gradient" property.
-- hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element 
+- hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element
 
 ## Details and Specs
 
