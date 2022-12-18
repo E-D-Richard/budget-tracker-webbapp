@@ -15,11 +15,11 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 ### potential features to add
 
 - add total remaining output data (of remaining total of all categories combined)
-- avoid losing form data in collapsed state (include gif)
+- avoid losing form data in collapsed state (include gif in documentation)
+- auto generate pie charts based on js and the CSS "conic-gradient" property.
 - hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element 
 
-
-# Details and Specs
+## Details and Specs
 
 ### Concepts Applied
 
@@ -34,8 +34,8 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 - Using CSS Grid and Flexbox and media queries for layout, positioning, and responsiveness
 - Deploying a website with netlify
 
-
 ### Languages, Frameworks, Tools and Libraries
+
 - HTML
 - CSS
 - JavaScript
