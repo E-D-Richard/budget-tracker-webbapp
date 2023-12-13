@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { selectCategories } from "../../features/transRecord/transRecordSlice";
+import { selectCategories } from "../transRecord/transRecordSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCategory } from "../../features/budgets/budgetsSlice";
-import { deleteTransactionCategory } from "../../features/transRecord/transRecordSlice";
+import { deleteCategory } from "../budgets/budgetsSlice";
+import { deleteTransactionCategory } from "../transRecord/transRecordSlice";
 
 const DeleteCategory = () => {
   const dispatch = useDispatch();

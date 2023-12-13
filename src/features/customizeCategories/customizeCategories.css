@@ -23,6 +23,7 @@
 
 #delete-category select option {
     font-size: 26px;
+    text-transform: capitalize;
   }
 
 #customize-categories button {
