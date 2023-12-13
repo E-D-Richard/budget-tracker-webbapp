@@ -1,0 +1,44 @@
+#customize-categories #add-category,
+#customize-categories #delete-category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 50px;
+  margin-bottom: 24px;
+  list-style: none;
+  padding: 16px 0px 24px 0px;
+  border-bottom: solid 1px var(--main-text-color);
+}
+
+#customize-categories form > * {
+  max-width: 100px;
+}
+
+#delete-category select {
+  padding: 7px 0;
+  border-radius: 6px;
+  border: solid 1.5px #141c3a;
+  font-size: 18px;
+}
+
+#delete-category select option {
+    font-size: 26px;
+  }
+
+#customize-categories button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: solid 1px #141c3a;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--white);
+  cursor: pointer;
+}
+
+#add-category button:hover,
+#add-category button:focus,
+#delete-category select:hover,
+#delete-category select:focus {
+  background-color: #141c3a;
+  color: #ffffff;
+}
