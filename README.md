@@ -8,7 +8,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### features added
 
-- stylize menu
+- add a menu with options to add or remove a category
 
 ### potential features to add
 

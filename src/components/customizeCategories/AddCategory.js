@@ -25,17 +25,19 @@ const AddCategory = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div id="add-category">
       <h3>Add Category</h3>
-      <label htmlFor="new-cat">name</label>
-      <input
-        id="new-cat"
-        type="text"
-        value={newCategory}
-        onChange={(e) => setNewCategory(e.currentTarget.value)}
-      />
-      <button>Add</button>
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor="new-cat">name</label>
+        <input
+          id="new-cat"
+          type="text"
+          value={newCategory}
+          onChange={(e) => setNewCategory(e.currentTarget.value)}
+        />
+        <button>Add</button>
+      </form>
+    </div>
   );
 };
 

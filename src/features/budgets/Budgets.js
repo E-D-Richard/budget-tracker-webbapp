@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectBudgets } from "./budgetsSlice";
 import Budget from "../../components/body/Budget";
-import AddCategory from "../../components/menu/AddCategory";
-import DeleteCategory from "../../components/menu/DeleteCategory";
+import CustomizeCategories from "../../components/customizeCategories/CustomizeCategories";
+
 
 
 const Budgets = () => {
@@ -16,8 +16,7 @@ const Budgets = () => {
           <Budget budget={budget} key={budget.category} />
         ))}
       </ul>
-      <AddCategory  />
-      <DeleteCategory />
+      <CustomizeCategories/>
     </section>
   );
 };
