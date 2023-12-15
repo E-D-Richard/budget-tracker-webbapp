@@ -21,13 +21,14 @@ const NewTransForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     //prevent 0 value transaction
-    if (parseFloat(amount) === 0 || !amount) {
+    if (parseFloat(amount) <= 0 || !amount) {
       setAmountInputAlert(true);
       return;
     }
 
     dispatch(
       addTransaction({
+        type: "expense",
         category: category,
         description: description,
         amount: parseFloat(amount),

@@ -6,7 +6,7 @@ import { selectDeviceType, selectDropdownStatus} from '../../features/newTransac
 const TransactionList = ({ transactions }) => {
   const deviceType = useSelector(selectDeviceType);
   const dropdownStatus = useSelector(selectDropdownStatus);
- 
+
   return (
     <section className={`transaction-record-section ${deviceType}-${dropdownStatus}`}>
       <h2>Transactions</h2>

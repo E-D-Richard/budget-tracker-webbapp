@@ -6,11 +6,17 @@
 
 A budgeting and expense tracking WebApp. The user is expected to record/input their transactions based on the categories set and customized by the user (such as food, transportation, etc.). The app then tracks the transactions and sums up the spending in each category to calculate the amount of money that remains to be spent.
 
+### ToDo
+
+- Transactions should also list when funds are added to a given category budget balance
+- Rename new transaction footer form to: New Expense
+
 ### features added
 
 - add a menu with options to add or remove a category
 
 ### potential features to add
+
 
 - add total remaining output data (of remaining total of all categories combined)
 - avoid losing form data in collapsed state (include gif in documentation)
@@ -44,4 +50,3 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 - Chrome DevTools, React DevTools, Redux DevTools
 - Netlify
 - React-Icons library
-

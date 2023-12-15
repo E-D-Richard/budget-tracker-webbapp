@@ -2,11 +2,26 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectFlattenedTransactions } from './transRecordSlice';
 import TransactionList from '../../components/body/TransactionList';
+import { selectBudgets } from '../budgets/budgetsSlice';
 
 const TransRecord = () => {
-  const transactions = useSelector(selectFlattenedTransactions);
+  const expenseTransactions = useSelector(selectFlattenedTransactions);
+  const budgets = useSelector(selectBudgets)
+  const budgetTransactions = []
+  for(const budget of budgets){
+    if(budget.history.length > 0){
+      budgetTransactions.push(...budget.history)
+    }
+  }
+  const allTransactions = [...expenseTransactions, ...budgetTransactions]
+  
+  console.log(allTransactions);
+
+
+  
+
   return (
-      <TransactionList transactions={transactions} />
+      <TransactionList transactions={allTransactions} />
   );
 };
 

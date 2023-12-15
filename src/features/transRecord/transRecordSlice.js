@@ -1,4 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit';
+// import { act } from 'react-dom/test-utils';
 
 const initialCategories = ['housing', 'food', 'transportation', 'utilities', 'clothing', 'healthcare', 'personal', 'education', 'entertainment'];
 
