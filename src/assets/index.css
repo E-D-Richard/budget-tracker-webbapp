@@ -146,7 +146,7 @@ select {
 
 /* -------------------------------------------- transaction records ---------------------*/
 
-.transaction-record-section {
+.transaction-list-section {
   padding: 12px 10.5px 11px 16px;
   border-radius: 6px;
   border: solid 1px #141c3a;
@@ -155,14 +155,18 @@ select {
   font-weight: bold;
 }
 
-.transaction-record-section.mobile-collapsed {
+.transaction-list-section.mobile-collapsed {
   margin-bottom: calc(110px + 10.5vw);
 }
-.transaction-record-section.mobile-expanded {
+.transaction-list-section.mobile-expanded {
   margin-bottom: max(calc(345px + 10.5vh), calc(365px + 10.5vw));
 }
-.transaction-record-section.desktop-desktopMode {
+.transaction-list-section.desktop-desktopMode {
   margin-bottom: calc(170px + 8vw);
+}
+
+.transaction-list-section h3 {
+  font-size: clamp(16px, 3.5vw, 2.4rem);
 }
 
 .transaction-list {

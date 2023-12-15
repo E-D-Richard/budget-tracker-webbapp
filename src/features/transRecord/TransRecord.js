@@ -13,15 +13,14 @@ const TransRecord = () => {
       budgetTransactions.push(...budget.history)
     }
   }
-  const allTransactions = [...expenseTransactions, ...budgetTransactions]
-  
-  console.log(allTransactions);
+
+  //console.log(allTransactions);
 
 
   
 
   return (
-      <TransactionList transactions={allTransactions} />
+      <TransactionList expenseTransactions={expenseTransactions} budgetTransactions={budgetTransactions} />
   );
 };
 

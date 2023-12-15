@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  editBudget,
-  addBudgetBalanceEntry,
-} from "../../features/budgets/budgetsSlice";
+import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
 
@@ -14,12 +11,6 @@ const Budget = ({ budget }) => {
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    // dispatch(
-    //   editBudget({
-    //     category: budget.category,
-    //     amount: amount,
-    //   })
-    // );
 
     dispatch(
       addBudgetBalanceEntry({
@@ -27,7 +18,7 @@ const Budget = ({ budget }) => {
         type: "budget",
         description: `added balance to ${budget.category} budget`,
         amount: Number(amount),
-        id: uuidv4()
+        id: uuidv4(),
       })
     );
     setAmount(0);

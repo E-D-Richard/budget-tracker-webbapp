@@ -21,17 +21,11 @@ const budgetsSlice = createSlice({
   name: "budgets",
   initialState: initialState,
   reducers: {
-    editBudget: (state, action) => {
-      // state.forEach((budget) => {
-      //   if (budget.category === action.payload.category) {
-      //     budget.amount += Number(action.payload.amount);
-      //   }
-      // });
-    },
     addBudgetBalanceEntry: (state, action) => {
       state.forEach((budget) => {
         if (budget.category === action.payload.category) {
           budget.amount += Number(action.payload.amount);
+          //update transList
           budget.history.push(action.payload);
         }
       });
@@ -39,9 +33,12 @@ const budgetsSlice = createSlice({
 
     deleteBudgetBalanceEntry: (state, action) => {
       state.forEach((budget) => {
-        if(budget.category === action.payload.category){
+        if (budget.category === action.payload.category) {
           budget.amount -= Number(action.payload.amount);
-          budget.history = budget.history.filter(entry => entry.id !== action.payload.id);
+          //remove entry from transList
+          budget.history = budget.history.filter(
+            (entry) => entry.id !== action.payload.id
+          );
         }
         console.log(budget.category, budget.amount, ...budget.history);
       });
@@ -60,7 +57,6 @@ const budgetsSlice = createSlice({
 
 export const selectBudgets = (state) => state.budgets;
 export const {
-  editBudget,
   addBudgetBalanceEntry,
   deleteBudgetBalanceEntry,
   addCategory,

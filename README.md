@@ -8,15 +8,16 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
-- Transactions should also list when funds are added to a given category budget balance
+- get rid of unnesseray zero's once typing begins in all input forms
+- beautify and stylize transactionList/records section
 - Rename new transaction footer form to: New Expense
 
 ### features added
 
-- add a menu with options to add or remove a category
+- update budgetSlice to also be an object key names for each category and arrays as the value. This should be more efficient for the increased amount of updates to TransList that budgetSlice now must make
+- add a menu/settings option where the add or remove category features will live
 
 ### potential features to add
-
 
 - add total remaining output data (of remaining total of all categories combined)
 - avoid losing form data in collapsed state (include gif in documentation)
