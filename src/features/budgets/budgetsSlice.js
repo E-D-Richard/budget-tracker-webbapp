@@ -40,7 +40,6 @@ const budgetsSlice = createSlice({
             (entry) => entry.id !== action.payload.id
           );
         }
-        console.log(budget.category, budget.amount, ...budget.history);
       });
     },
     addCategory: (state, action) => {
