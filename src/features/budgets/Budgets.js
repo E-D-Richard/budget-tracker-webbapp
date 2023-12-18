@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectBudgets } from "./budgetsSlice";
 import Budget from "../../components/body/Budget";
-import CustomizeCategories from "../customizeCategories/CustomizeCategories";
+
 
 
 
