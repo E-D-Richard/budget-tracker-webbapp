@@ -4,8 +4,6 @@ import { selectBudgets } from "./budgetsSlice";
 import Budget from "../../components/body/Budget";
 
 
-
-
 const Budgets = () => {
   const budgets = useSelector(selectBudgets);
  
