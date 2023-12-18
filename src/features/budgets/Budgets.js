@@ -16,7 +16,6 @@ const Budgets = () => {
           <Budget budget={budget} key={budget.category} />
         ))}
       </ul>
-      <CustomizeCategories/>
     </section>
   );
 };
