@@ -1,13 +1,16 @@
 import { AiFillSetting } from "react-icons/ai";
 import CustomizeCategories from "../../../features/customizeCategories/CustomizeCategories";
+import "./settings.css";
+import { useState } from "react";
 
 const Settings = () => {
+  const [menuIsOpen, setMenuIsOpen] = useState(true);
   return (
-    <div id="settings">
-      <button>
+    <div id="settings" className={menuIsOpen ? "open" : ""}>
+      <button id="settings-button" onClick={()=>setMenuIsOpen(!menuIsOpen)}>
         <AiFillSetting />
       </button>
-      <CustomizeCategories />
+      <CustomizeCategories menuIsOpen={menuIsOpen} />
     </div>
   );
 };

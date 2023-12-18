@@ -1,0 +1,34 @@
+#settings {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#settings.open {
+    background-color: brown;
+    border-radius: 0 0 0 10%;
+}
+
+/* make a smooth transition/animation when customize categories disappears */
+/* make setting icon rotate on click */
+
+button#settings-button {
+  float: right;
+  border: none;
+  height: 100%;
+  background-color: inherit;
+}
+button#settings-button svg {
+  color: rgba(20, 28, 58, 1);
+  font-size: 4rem;
+  transition: transform 65ms;
+}
+
+button#settings-button:hover svg {
+  color: rgba(20, 28, 58, 0.8);
+  transform: scale(1.1);
+}
+
+/* button#settings-button.clicked svg {
+    transform: scale(0.9);
+} */

@@ -1,9 +1,10 @@
-//import Settings from "../body/settings/Settings";
+import Settings from "./settings/Settings";
+
 
 const Header = () => {
   return (
     <header className="App-header">
-      {/* <Settings /> */}
+      <Settings />
       <h1>Budget Tracker</h1>
     </header>
   );
