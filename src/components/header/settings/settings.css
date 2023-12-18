@@ -5,8 +5,8 @@
 }
 
 #settings.open {
-    background-color: brown;
-    border-radius: 0 0 0 10%;
+  background-color: brown;
+  border-radius: 0 0 0 10%;
 }
 
 /* make a smooth transition/animation when customize categories disappears */
@@ -16,16 +16,21 @@ button#settings-button {
   float: right;
   border: none;
   height: 100%;
-  background-color: inherit;
+  background-color: #E3E6FF;
+  z-index: 1;
+  border: 2px solid rgba(20, 28, 58, 1);
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 10%;
 }
 button#settings-button svg {
-  color: rgba(20, 28, 58, 1);
+  color: rgba(20, 28, 58, 0.9);
   font-size: 4rem;
   transition: transform 65ms;
 }
 
 button#settings-button:hover svg {
-  color: rgba(20, 28, 58, 0.8);
+  color: rgba(20, 28, 58, 0.9);
   transform: scale(1.1);
 }
 
