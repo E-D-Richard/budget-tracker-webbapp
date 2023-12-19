@@ -11,6 +11,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 - in settings menu, make sure overflow is scrollable
 - in settings menu, make menu auto collapse onClick outside menu
 - in settings menu, make all custom options collapsed by default with capability to open on click
+- test settings menu for mobile compatibility
 - get rid of unnesseray zero's once typing begins in all input forms
 - beautify and stylize transactionList/records section
 - Rename new transaction footer form to: New Expense
