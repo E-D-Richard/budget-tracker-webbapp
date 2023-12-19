@@ -16,29 +16,27 @@ const DeleteCategory = () => {
   };
 
   return (
-    <div id="delete-category">
+    <form onSubmit={handleDelete} id="delete-category">
       <h3>Delete Category</h3>
-      <form onSubmit={handleDelete}>
-        <label htmlFor="delete-cat">Category</label>
-        <select
-          name=""
-          id="delete-cat"
-          value={category}
-          onChange={(e) => setCategory(e.currentTarget.value)}
-          required
-        >
-          <option value="" key="default">
-            select category
+      <label htmlFor="delete-cat">Category</label>
+      <select
+        name=""
+        id="delete-cat"
+        value={category}
+        onChange={(e) => setCategory(e.currentTarget.value)}
+        required
+      >
+        <option value="" key="default">
+          select category
+        </option>
+        {categories.map((cat) => (
+          <option value={cat} key={cat}>
+            {cat}
           </option>
-          {categories.map((cat) => (
-            <option value={cat} key={cat}>
-              {cat}
-            </option>
-          ))}
-        </select>
-        <button>Delete</button>
-      </form>
-    </div>
+        ))}
+      </select>
+      <button>Delete</button>
+    </form>
   );
 };
 

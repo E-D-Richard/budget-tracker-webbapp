@@ -3,12 +3,12 @@ import DeleteCategory from "./DeleteCategory";
 import "./customizeCategories.css";
 
 const CustomizeCategories = ({menuIsOpen}) => {
-  return menuIsOpen ? (
+  return  (
     <div id="customize-categories">
       <AddCategory />
       <DeleteCategory />
     </div>
-  ) : "";
+  );
 };
 
 export default CustomizeCategories;

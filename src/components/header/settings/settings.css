@@ -1,39 +1,74 @@
-#settings {
+:root {
+  --main-text-color: #141c3a;
+  --is-open-transition-time: 300ms;
+}
+
+/* -------------------------------------------------------- settings-button */
+#settings-container {
+  z-index: 2;
+
   position: fixed;
   top: 0;
   right: 0;
 }
 
-#settings.open {
-  background-color: brown;
-  border-radius: 0 0 0 10%;
-}
-
-/* make a smooth transition/animation when customize categories disappears */
-/* make setting icon rotate on click */
-
-button#settings-button {
-  float: right;
+#settings-container button#settings-button {
+  position: absolute;
+  top: 0;
+  right: 0;
   border: none;
-  height: 100%;
-  background-color: #E3E6FF;
+  background-color: #e3e6ff;
   z-index: 1;
   border: 2px solid rgba(20, 28, 58, 1);
   border-right: none;
   border-top: none;
   border-radius: 0 0 0 10%;
+  transition: transform 3s;
 }
-button#settings-button svg {
+
+#settings-container.open button#settings-button {
+  border: 0px solid rgba(20, 28, 58, 1);
+}
+
+#settings-container button#settings-button:hover {
+  cursor: pointer;
+}
+
+#settings-container button#settings-button svg {
   color: rgba(20, 28, 58, 0.9);
   font-size: 4rem;
-  transition: transform 65ms;
+  transition: transform var(--is-open-transition-time);
 }
 
-button#settings-button:hover svg {
-  color: rgba(20, 28, 58, 0.9);
-  transform: scale(1.1);
+#settings-container.open button#settings-button svg {
+  transform: rotate(540deg);
 }
 
-/* button#settings-button.clicked svg {
-    transform: scale(0.9);
-} */
+/* -------------------------------------------------------------- settings */
+
+/* move settings into footer form */
+/* make a smooth transition/animation when customize categories disappears */
+/* make setting icon rotate on click */
+
+#settings {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #e3e6ff;
+  border-radius: 0 0 0 10%;
+  border: 2px solid rgba(20, 28, 58, 1);
+  border-right: none;
+  border-top: none;
+  opacity: 0;
+  transform: scale(0);
+  transform: translate(100%, -100%);
+  transition: all var(--is-open-transition-time);
+}
+
+#settings.open {
+  /* right: 0%;
+  top: 0%; */
+  opacity: 1;
+  transform: scale(1);
+  transform: translate(0%, 0%);
+}

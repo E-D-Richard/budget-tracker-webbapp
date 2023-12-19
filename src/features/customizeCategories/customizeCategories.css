@@ -1,10 +1,13 @@
-#customize-categories {
-  padding: 7rem 1rem 2rem 2rem;
+#settings #customize-categories {
+  padding: 4rem 1.5rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 
-
 #customize-categories h3 {
+  font-size: 2rem;
   color: #000;
 }
 
@@ -12,20 +15,17 @@
 #customize-categories #delete-category {
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
-  column-gap: 50px;
-  margin-bottom: 24px;
-  list-style: none;
   padding: 16px 0px 24px 0px;
   border-bottom: solid 1px var(--main-text-color);
 }
 
 
 #customize-categories form {
+  width: 100%;
   display: flex;
   flex-direction: column;
-
 }
 
 #customize-categories form label {
@@ -33,7 +33,7 @@
 }
 
 #customize-categories form > * {
-  max-width: 100px;
+  width: 100%;
 }
 
 #add-category input,

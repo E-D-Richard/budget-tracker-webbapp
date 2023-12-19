@@ -9,6 +9,7 @@ const AddCategory = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(newCategory)
     dispatch(
       addCategory({
         category: newCategory,
@@ -25,19 +26,17 @@ const AddCategory = () => {
   };
 
   return (
-    <div id="add-category">
+    <form onSubmit={handleSubmit} id="add-category">
       <h3>Add Category</h3>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="new-cat">name</label>
-        <input
-          id="new-cat"
-          type="text"
-          value={newCategory}
-          onChange={(e) => setNewCategory(e.currentTarget.value)}
-        />
-        <button>Add</button>
-      </form>
-    </div>
+      <label htmlFor="new-cat">name</label>
+      <input
+        id="new-cat"
+        type="text"
+        value={newCategory}
+        onChange={(e) => setNewCategory(e.currentTarget.value)}
+      />
+      <button>Add</button>
+    </form>
   );
 };
 
