@@ -12,6 +12,27 @@ const Settings = () => {
       </button>
       <div id="settings" className={menuIsOpen ? "open" : ""}>
         <CustomizeCategories menuIsOpen={menuIsOpen} />
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
+        <p>random text</p>
       </div>
     </div>
   );
