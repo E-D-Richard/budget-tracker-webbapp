@@ -7,6 +7,13 @@
   --gray: rgba(20, 28, 58, 0.5);
   --shadow: 0 0 21px 0 rgba(20, 28, 58, 0.7);
   --white: #ffffff;
+  /* potential color palette:
+      #141C3A
+      #8184AA
+      #161E3C
+      #CFD2FB
+      #C4C7F0
+  */
 }
 
 html {
@@ -210,7 +217,6 @@ header {
   background-color: red;
 }
 
-
 /* ---------------------------------------- new transaction footer ----------------------- */
 
 .new-trans-container {
@@ -243,7 +249,6 @@ button.dropdown-btn {
   border: none;
   width: 100%;
 }
-
 
 /* ---------------- form settings */
 
@@ -300,7 +305,6 @@ form.new-trans-form .submit-btn {
 
 /* ---------------------------------------------------------new transaction desktop media queries */
 
-
 @media screen and (min-width: 850px) {
   section.new-trans-container h2 {
     display: inline-block;
@@ -350,7 +354,6 @@ form.new-trans-form .submit-btn {
     flex-direction: column;
   }
 }
-
 
 @media screen and (max-width: 340px) {
   .budget-container h3 {

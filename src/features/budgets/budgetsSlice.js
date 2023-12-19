@@ -42,10 +42,10 @@ const budgetsSlice = createSlice({
         }
       });
     },
-    addCategory: (state, action) => {
+    addBudgetCategory: (state, action) => {
       state.push(action.payload);
     },
-    deleteCategory: (state, action) => {
+    deleteBudgetCategory: (state, action) => {
       const index = state.findIndex(
         (b) => b.category === action.payload.category
       );
@@ -58,7 +58,7 @@ export const selectBudgets = (state) => state.budgets;
 export const {
   addBudgetBalanceEntry,
   deleteBudgetBalanceEntry,
-  addCategory,
-  deleteCategory,
+  addBudgetCategory,
+  deleteBudgetCategory,
 } = budgetsSlice.actions;
 export default budgetsSlice.reducer;

@@ -9,7 +9,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 ### ToDo
 
 - in settings menu, make sure overflow is scrollable
-- in settings menu, make add category button work (currently crashing the whole app)
+- in settings menu, make menu auto collapse onClick outside menu
 - in settings menu, make all custom options collapsed by default with capability to open on click
 - get rid of unnesseray zero's once typing begins in all input forms
 - beautify and stylize transactionList/records section

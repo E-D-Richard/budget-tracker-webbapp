@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { selectCategories } from "../transRecord/transRecordSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCategory } from "../budgets/budgetsSlice";
+import { deleteBudgetCategory } from "../budgets/budgetsSlice";
 import { deleteTransactionCategory } from "../transRecord/transRecordSlice";
 
 const DeleteCategory = () => {
@@ -11,7 +11,7 @@ const DeleteCategory = () => {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(deleteCategory({ category: category }));
+    dispatch(deleteBudgetCategory({ category: category }));
     dispatch(deleteTransactionCategory({ category: category }));
   };
 

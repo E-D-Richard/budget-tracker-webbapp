@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addCategory } from "../budgets/budgetsSlice";
+import { addBudgetCategory } from "../budgets/budgetsSlice";
 import { addTransactionCategory } from "../transRecord/transRecordSlice";
 
 const AddCategory = () => {
@@ -11,9 +11,10 @@ const AddCategory = () => {
     e.preventDefault();
     console.log(newCategory)
     dispatch(
-      addCategory({
+      addBudgetCategory({
         category: newCategory,
         amount: 0,
+        history: []
       })
     );
     dispatch(
