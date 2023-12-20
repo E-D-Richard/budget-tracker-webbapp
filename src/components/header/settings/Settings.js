@@ -26,27 +26,6 @@ const Settings = () => {
       </div>
       <div id="settings" className={menuIsOpen ? "open" : ""} style={{marginTop: `${buttonHeight-buttonBorderWidth}px`}}>
         <CustomizeCategories menuIsOpen={menuIsOpen} />
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
-        <p>random text</p>
       </div>
     </div>
   );
