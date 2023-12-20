@@ -15,7 +15,7 @@ const Settings = () => {
   return (
     <div id="settings-container" className={menuIsOpen ? "open" : ""}>
       <div
-        className="button-container"
+        className="button-frame"
         style={{ height: `${buttonHeight}px` }}
       ></div>
       <button

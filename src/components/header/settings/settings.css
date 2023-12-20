@@ -13,7 +13,7 @@
   height: 100vh;
 }
 
-#settings-container .button-container {
+#settings-container .button-frame {
   background-color: var(--light-blue);
   width: 100%;
   background-color: var(--light-blue);
@@ -77,10 +77,10 @@
 
 
 
-/* ------------------------------------------------------ settings open/close transition */
+/* ------------------------------------------------------ transitions for settings menu open/close  */
 
 #settings,
-#settings-container .button-container {
+#settings-container .button-frame {
   opacity: 0;
   transform: scale(0);
   transform: translate(100%, -100%);
@@ -89,7 +89,7 @@
 
 
 #settings.open,
-#settings-container.open .button-container {
+#settings-container.open .button-frame {
   /* right: 0%;
   top: 0%; */
   opacity: 1;
