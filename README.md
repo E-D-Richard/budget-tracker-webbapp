@@ -7,11 +7,11 @@
 A budgeting and expense tracking WebApp. The user is expected to record/input their transactions based on the categories set and customized by the user (such as food, transportation, etc.). The app then tracks the transactions and sums up the spending in each category to calculate the amount of money that remains to be spent.
 
 ### ToDo
- 
+
 - in settings menu, make menu auto collapse onClick outside menu
 - in settings menu, make all custom options collapsed by default with capability to open on click
 - test settings menu for mobile compatibility
-- organize files to comply with feature vs component correct definitions
+- organize files to comply with feature vs component correct official definitions
 - get rid of unnesseray zero's once typing begins in all input forms
 - beautify and stylize transactionList/records section
 - Rename new transaction footer form to: New Expense
