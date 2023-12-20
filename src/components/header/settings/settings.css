@@ -13,20 +13,20 @@
   height: 100vh;
 }
 
-
-#settings-container.open .button-container {
-  position: absolute;
-  top: 0;
-  right: 0;
+#settings-container .button-container {
+  background-color: var(--light-blue);
   width: 100%;
   background-color: var(--light-blue);
-  z-index: 3;
   border-left: 2px solid rgba(20, 28, 58, 1);
+  z-index: 3;
 }
 
+
+
 #settings-container button#settings-button {
-  position: relative;
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
   border: none;
   background-color: var(--light-blue);
   z-index: 1;
@@ -60,10 +60,6 @@
 
 /* -------------------------------------------------------------- settings */
 
-/* move settings into footer form */
-/* make a smooth transition/animation when customize categories disappears */
-/* make setting icon rotate on click */
-
 #settings {
   /* position: absolute;
   top: 0;
@@ -77,13 +73,23 @@
   border: 2px solid rgba(20, 28, 58, 1);
   border-right: none;
   border-top: none;
+}
+
+
+
+/* ------------------------------------------------------ settings open/close transition */
+
+#settings,
+#settings-container .button-container {
   opacity: 0;
   transform: scale(0);
   transform: translate(100%, -100%);
   transition: all var(--is-open-transition-time);
 }
 
-#settings.open {
+
+#settings.open,
+#settings-container.open .button-container {
   /* right: 0%;
   top: 0%; */
   opacity: 1;
@@ -91,7 +97,7 @@
   transform: translate(0%, 0%);
 }
 
-/* custom scroll bar styles */
+/* ---------------------------------------------------------- custom scroll bar styles */
 
 #settings::-webkit-scrollbar {
   width: 10px;
