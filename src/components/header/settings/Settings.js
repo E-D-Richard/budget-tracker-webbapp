@@ -1,5 +1,5 @@
 import { AiFillSetting } from "react-icons/ai";
-import CustomizeCategories from "../../../features/customizeCategories/CustomizeCategories";
+import CustomizeCategories from "./customizeCategories/CustomizeCategories";
 import "./settings.css";
 import { useEffect, useRef, useState } from "react";
 
