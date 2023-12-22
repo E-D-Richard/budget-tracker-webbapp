@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
-const initialState = { dropdownOffsetHeight: 0}
+const initialState = { dropdownOffsetHeight: 0 }
 const newTransactionSlice = createSlice({
   name: 'newTransactions',
   initialState: initialState,
