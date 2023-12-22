@@ -1,5 +1,7 @@
 import React from "react";
-import Dropdown from "../../components/footer/Dropdown";
+import Dropdown from "./Dropdown";
+import "./newTransaction.css";
+
 
 const NewTransaction = ({categories}) => {
   return (

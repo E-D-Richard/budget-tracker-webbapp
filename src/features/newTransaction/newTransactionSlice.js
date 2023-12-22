@@ -1,24 +1,20 @@
-import {createSlice} from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 
-const initialState = {deviceType: 'unknown', dropdownStatus: 'collapsed',}
+const initialState = { dropdownOffsetHeight: 0}
 const newTransactionSlice = createSlice({
   name: 'newTransactions',
   initialState: initialState,
   reducers: {
-    updateDevice: (state, action) => {
-      state.deviceType = action.payload;
-    },
-    updateDropdownStatus: (state, action) => {
-      state.dropdownStatus = action.payload;
-    },
-
+    updateNewTransactionOffsetHeight: (state, action) => {
+      state.dropdownOffsetHeight = action.payload;
+    }
   }
 });
 
 
-export const selectDeviceType = (state) => state.newTransaction.deviceType;
-export const selectDropdownStatus = (state) => state.newTransaction.dropdownStatus;
 
-export const {updateDevice, updateDropdownStatus} = newTransactionSlice.actions; 
+export const selectNewTransactionOffsetHeight = (state) => state.newTransaction.dropdownOffsetHeight;
+
+export const { updateNewTransactionOffsetHeight } = newTransactionSlice.actions;
 export default newTransactionSlice.reducer;

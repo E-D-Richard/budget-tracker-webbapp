@@ -1,18 +1,15 @@
 import React from "react";
 import Transaction from "./Transaction";
 import { useSelector } from "react-redux";
-import {
-  selectDeviceType,
-  selectDropdownStatus,
-} from "../../features/newTransaction/newTransactionSlice";
+import { selectNewTransactionOffsetHeight } from "../../features/newTransaction/newTransactionSlice";
 
 const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
-  const deviceType = useSelector(selectDeviceType);
-  const dropdownStatus = useSelector(selectDropdownStatus);
+  const newTransactionOffsetHeight = useSelector(selectNewTransactionOffsetHeight)
 
   return (
     <section
-      className={`transaction-list-section ${deviceType}-${dropdownStatus}`}
+      className={`transaction-list-section`}
+      style={{ "marginBottom": `calc(${newTransactionOffsetHeight}px + 2rem)` }}
     >
       <h2>Transactions</h2>
       <div>

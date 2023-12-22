@@ -10,8 +10,9 @@
   position: fixed;
   top: 0;
   right: 0;
-  height: 100vh;
 }
+
+
 
 #settings-container .button-frame {
   background-color: var(--light-blue);
