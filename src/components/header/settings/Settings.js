@@ -1,7 +1,7 @@
+import { useEffect, useRef, useState } from "react";
 import { AiFillSetting } from "react-icons/ai";
 import CustomizeCategories from "./customizeCategories/CustomizeCategories";
 import "./settings.css";
-import { useEffect, useRef, useState } from "react";
 
 const Settings = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);

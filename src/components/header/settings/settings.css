@@ -16,11 +16,9 @@
 #settings-container .button-frame {
   background-color: var(--light-blue);
   width: 100%;
-  background-color: var(--light-blue);
   border-left: 2px solid rgba(20, 28, 58, 1);
   z-index: 3;
 }
-
 
 
 #settings-container button#settings-button {
@@ -28,13 +26,9 @@
   right: 0;
   top: 0;
   border: none;
-  background-color: var(--light-blue);
   z-index: 1;
-  border: 2px solid rgba(20, 28, 58, 1);
-  border-right: none;
-  border-top: none;
-  border-radius: 0 0 0 10%;
   transition: transform 3s;
+  background-color: transparent;
 }
 
 
@@ -42,6 +36,7 @@
 #settings-container.open button#settings-button {
   border: 0px solid rgba(20, 28, 58, 1);
   padding: 1px 6px;
+  background-color: inherit;
 }
 
 #settings-container button#settings-button:hover {
@@ -74,7 +69,6 @@
   border-right: none;
   border-top: none;
 }
-
 
 
 /* ------------------------------------------------------ transitions for settings menu open/close  */
