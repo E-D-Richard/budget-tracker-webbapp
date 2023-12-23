@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
+import "./settingsMenu.css";
 import { AiFillSetting } from "react-icons/ai";
-import CustomizeCategories from "./customizeCategories/CustomizeCategories";
-import "./settings.css";
+import Settings from "./settings/Settings";
 
-const Settings = () => {
+const SettingsMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [buttonHeight, setButtonHeight] = useState(0);
   const buttonRef = useRef();
@@ -13,23 +13,23 @@ const Settings = () => {
   }, []);
 
   return (
-    <div id="settings-container" className={menuIsOpen ? "open" : ""}>
+    <div id="settings-menu-container" className={menuIsOpen ? "open" : ""}>
       <div
         className="button-frame"
         style={{ height: `${buttonHeight}px` }}
       ></div>
       <button
-        id="settings-button"
+        id="settings-menu-button"
         onClick={() => setMenuIsOpen(!menuIsOpen)}
         ref={buttonRef}
       >
         <AiFillSetting />
       </button>
-      <div id="settings" className={menuIsOpen ? "open" : ""}>
-        <CustomizeCategories menuIsOpen={menuIsOpen} />
+      <div id="settings-menu" className={menuIsOpen ? "open" : ""}>
+        <Settings/>
       </div>
     </div>
   );
 };
 
-export default Settings;
+export default SettingsMenu;

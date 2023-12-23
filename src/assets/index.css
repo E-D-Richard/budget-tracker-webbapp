@@ -33,6 +33,7 @@ body {
   margin: 0;
 }
 
+
 h1 {
   font-size: clamp(3.2rem, 12vw, 5.4rem);
   font-weight: bold;
@@ -71,13 +72,25 @@ select {
   border-radius: 6px;
 }
 
+
+
 /* -------------------------------------------- header section ------------------------------------- */
 
 header {
   margin-bottom: 4rem;
 }
 
+/* -------------------------------------------- main-body section ------------------------------------- */
+
+
+/* main {
+
+  margin-bottom is being set dynamically (based on NewTransaction offsetHeight) inside the function component 
+} */
+
 /* -------------------------------------------- budgets section ------------------------------------- */
+
+
 
 .all-budgets-container ul {
   padding: 0;
@@ -159,22 +172,11 @@ header {
 
 .transaction-list-section {
   padding: 12px 10.5px 11px 16px;
-  /* margin-bottom is being set dynamically (based on NewTransaction offsetHeight) inside the function component  */
   border-radius: 6px;
   border: solid 1px #141c3a;
   background-color: #ffffff;
   font-size: 16px;
   font-weight: bold;
-}
-
-.transaction-list-section.mobile-collapsed {
-  margin-bottom: calc(110px + 10.5vw);
-}
-.transaction-list-section.mobile-expanded {
-  margin-bottom: max(calc(345px + 10.5vh), calc(365px + 10.5vw));
-}
-.transaction-list-section.desktop-desktopMode {
-  margin-bottom: calc(170px + 8vw);
 }
 
 .transaction-list-section h3 {

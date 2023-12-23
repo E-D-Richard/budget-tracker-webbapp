@@ -11,12 +11,16 @@ const NewTransaction = () => {
   const componentRef = useRef();
 
   useEffect(() => {
-    dispatch(updateNewTransactionOffsetHeight(componentRef.current.offsetHeight));
+    const offsetHeight = componentRef.current.offsetHeight;
+    dispatch(updateNewTransactionOffsetHeight(offsetHeight));
   }, [isExpanded]);
 
 
   return (
-    <section className={`new-trans-container`} ref={componentRef}>
+    <section 
+      className={`new-trans-container`}
+      ref={componentRef} 
+    >
       {/* <h2>New Transaction</h2> */}
 
       <div className="dropdown-container">

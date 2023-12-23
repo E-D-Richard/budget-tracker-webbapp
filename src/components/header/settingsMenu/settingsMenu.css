@@ -1,0 +1,192 @@
+:root {
+  --main-text-color: #141c3a;
+  --light-blue: #e3e6ff;
+  --is-open-transition-time: 300ms;
+}
+
+/* -------------------------------------------------------- settings-button */
+#settings-menu-container {
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+
+
+#settings-menu-container .button-frame {
+  background-color: var(--light-blue);
+  width: 100%;
+  border-left: 2px solid rgba(20, 28, 58, 1);
+  z-index: 3;
+}
+
+
+#settings-menu-container button#settings-menu-button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: none;
+  z-index: 1;
+  transition: transform 3s;
+  background-color: transparent;
+}
+
+
+
+#settings-menu-container.open button#settings-menu-button {
+  border: 0px solid rgba(20, 28, 58, 1);
+  padding: 1px 6px;
+  background-color: inherit;
+}
+
+#settings-menu-container button#settings-menu-button:hover {
+  cursor: pointer;
+}
+
+#settings-menu-container button#settings-menu-button svg {
+  color: rgba(20, 28, 58, 0.9);
+  font-size: 4rem;
+  transition: transform var(--is-open-transition-time);
+}
+
+#settings-menu-container.open button#settings-menu-button svg {
+  transform: rotate(540deg);
+}
+
+/* -------------------------------------------------------------- settings */
+
+#settings-menu {
+  /* position: absolute;
+  top: 0;
+  right: 0; */
+  padding: 0rem 1.5rem 2rem 1.5rem;
+  z-index: 4;
+  height: 30vh;
+  overflow-y: scroll;
+  background-color: var(--light-blue);
+  border-radius: 0 0 0 10%;
+  border: 2px solid rgba(20, 28, 58, 1);
+  border-right: none;
+  border-top: none;
+}
+
+
+/* ------------------------------------------------------ transitions for settings menu open/close  */
+
+#settings-menu,
+#settings-menu-container .button-frame {
+  opacity: 0;
+  transform: scale(0);
+  transform: translate(100%, -100%);
+  transition: all var(--is-open-transition-time);
+}
+
+
+#settings-menu.open,
+#settings-menu-container.open .button-frame {
+  /* right: 0%;
+  top: 0%; */
+  opacity: 1;
+  transform: scale(1);
+  transform: translate(0%, 0%);
+}
+
+/* ---------------------------------------------------------- custom scroll bar styles */
+
+#settings-menu::-webkit-scrollbar {
+  width: 10px;
+  background-color: var(--light-blue);
+}
+
+#settings-menu::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  /* everything below mocks margin behavior */
+  box-shadow: inset 0 0 18px 18px rgb(140, 139, 139);
+  border: solid 4px transparent;
+  border-left: solid 0 transparent;
+  background-clip: padding-box;
+  -webkit-border-radius: 20px;
+}
+
+#settings-menu::-webkit-scrollbar-thumb:hover {
+  box-shadow: inset 0 0 14px 14px rgb(111, 111, 111);
+  border: solid 2px transparent;
+  border-left: solid 0 transparent;
+}
+
+
+/* ---------------------------------------------------------- setting menu options/items */
+
+
+/* #settings-menu #settings-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+#settings-container h3 {
+  font-size: 2rem;
+  color: #000;
+}
+
+#settings-container #add-category,
+#settings-container #delete-category {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 0px 24px 0px;
+  border-bottom: solid 1px var(--main-text-color);
+}
+
+
+#settings-container form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#settings-container form label {
+  margin-bottom: 4px;
+}
+
+#settings-container form > * {
+  width: 100%;
+}
+
+#add-category input,
+#delete-category select {
+  margin-bottom: 8px;
+}
+
+#delete-category select {
+  padding: 7px 0;
+  border-radius: 6px;
+  border: solid 1.5px #141c3a;
+  font-size: 18px;
+}
+
+#delete-category select option {
+    font-size: 26px;
+    text-transform: capitalize;
+  }
+
+#settings-container button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: solid 1px #141c3a;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--white);
+  cursor: pointer;
+}
+
+#add-category button:hover,
+#add-category button:focus,
+#delete-category select:hover,
+#delete-category select:focus {
+  background-color: #141c3a;
+  color: #ffffff;
+} */
