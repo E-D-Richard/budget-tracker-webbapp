@@ -13,7 +13,7 @@ const NewTransaction = () => {
   useEffect(() => {
     const offsetHeight = componentRef.current.offsetHeight;
     dispatch(updateNewTransactionOffsetHeight(offsetHeight));
-  }, [isExpanded]);
+  }, [isExpanded, dispatch]);
 
 
   return (
