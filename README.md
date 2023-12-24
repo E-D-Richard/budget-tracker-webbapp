@@ -17,14 +17,14 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 - beautify and stylize transactionList/records section
 - Rename new transaction footer form to: New Expense
 
-### features added
+### Features
 
 - A Settings menu where all customization options live. Customization options currently are:
-    - Add new category
+    - Add new categories
         - Prevents the addition of duplicate categories
     - Delete existing categories
 
-### potential features to add
+### Potential Features to Add
 
 - add total remaining output data (of remaining total of all categories combined)
 - avoid losing form data in collapsed state (include gif in documentation)
