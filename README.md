@@ -19,8 +19,10 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### features added
 
-- update budgetSlice to also be an object key names for each category and arrays as the value. This should be more efficient for the increased amount of updates to TransList that budgetSlice now must make
-- add a menu/settings option where the add or remove category features will live
+- A Settings menu where all customization options live. Customization options currently are:
+    - Add a new category
+        - Prevents the addition of duplicate categories
+    - Delete an existing category
 
 ### potential features to add
 
