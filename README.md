@@ -36,14 +36,12 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 ### Concepts Applied
 
 - Wireframing
-- Function Components
+- REact Function Components
 - React Hooks
-- Manage State with Redux-Toolkit and React-Redux
-- Passing data between components using the redux store (via the useDispatch and useSelector hooks)
+- Manage App State with Redux-Toolkit and React-Redux
 - Importing NPM packages and libraries
 - Version control with git and GitHub
 - Responsive Layouts (Users can use the application on both desktop/mobile)
-- Using CSS Grid and Flexbox and media queries for layout, positioning, and responsiveness
 - Deploying a website with netlify
 
 ### Languages, Frameworks, Tools and Libraries
