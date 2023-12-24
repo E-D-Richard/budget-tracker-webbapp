@@ -1,0 +1,64 @@
+:root {
+    --main-text-color: #141c3a;
+    --light-blue: #e3e6ff;
+    --is-open-transition-time: 300ms;
+  }
+
+#settings-menu #settings-container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#settings-container h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  /* color: #fff;
+  background-color: var(--main-text-color); */
+}
+
+.setting {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0px 24px 0px;
+  border-bottom: solid 1px var(--main-text-color);
+}
+
+
+#settings-container form > * {
+  width: 100%;
+}
+
+#add-category input,
+#delete-category select {
+  margin-bottom: 8px;
+  height: 4rem;
+}
+
+#delete-category select {
+  padding: 7px 0;
+  border-radius: 6px;
+  border: solid 1.5px #141c3a;
+  font-size: 18px;
+}
+
+#delete-category select option {
+    font-size: 2rem;
+    text-transform: capitalize;
+  }
+
+.setting button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: solid 1px #141c3a;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--white);
+  cursor: pointer;
+}
+
+.setting button:hover,
+.setting button:focus {
+  background-color: #141c3a;
+  color: #ffffff;
+}

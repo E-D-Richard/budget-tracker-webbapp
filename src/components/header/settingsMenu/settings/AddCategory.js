@@ -27,13 +27,14 @@ const AddCategory = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} id="add-category">
+    <form onSubmit={handleSubmit} id="add-category" className="setting">
       <h3>Add Category</h3>
-      <label htmlFor="new-cat">name</label>
+      {/* <label htmlFor="new-cat">name</label> */}
       <input
         id="new-cat"
         type="text"
         value={newCategory}
+        placeholder="category name"
         onChange={(e) => setNewCategory(e.currentTarget.value)}
       />
       <button>Add</button>

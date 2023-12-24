@@ -14,9 +14,9 @@ const DeleteCategory = () => {
   };
 
   return (
-    <form onSubmit={handleDelete} id="delete-category">
+    <form onSubmit={handleDelete} id="delete-category" className="setting">
       <h3>Delete Category</h3>
-      <label htmlFor="delete-cat">Category</label>
+      {/* <label htmlFor="delete-cat">Category</label> */}
       <select
         name=""
         id="delete-cat"

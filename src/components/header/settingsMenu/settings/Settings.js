@@ -1,3 +1,4 @@
+import "./settings.css";
 import DeleteCategory from "./DeleteCategory";
 import AddCategory from './AddCategory';
 
