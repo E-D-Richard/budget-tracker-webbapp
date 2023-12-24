@@ -45,7 +45,7 @@ const budgetsSlice = createSlice({
     },
     addBudgetCategory: (state, action) => {
       state.push(action.payload);
-      return state.sort((a, b) =>  a.category.localeCompare(b.category));
+      return state.sort((a, b) => a.category.localeCompare(b.category));
     },
     deleteBudgetCategory: (state, action) => {
       const index = state.findIndex(

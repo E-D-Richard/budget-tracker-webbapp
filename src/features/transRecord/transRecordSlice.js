@@ -17,7 +17,8 @@ const transRecordSlice = createSlice({
       state[action.payload.category].splice(getIndex, 1);
     },
     addTransactionCategory: (state, action) => {
-      state[action.payload.category] = action.payload.transactionArr;
+      const {category, transactionArr} = action.payload;
+      state[category] = transactionArr;
     },
     deleteTransactionCategory: (state, action) => {
       delete state[action.payload.category];

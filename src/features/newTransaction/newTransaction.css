@@ -57,6 +57,10 @@
     margin-bottom: 8px;
   }
   
+  form.new-trans-form select {
+    text-transform: capitalize;
+  }
+
   .new-trans-amount input,
   .new-trans-desc input,
   .new-trans-select select {
