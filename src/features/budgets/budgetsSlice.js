@@ -10,7 +10,8 @@ const CATEGORIES = [
   "personal",
   "education",
   "entertainment",
-];
+].sort();
+
 const initialState = CATEGORIES.map((category) => ({
   category: category,
   amount: 0,
