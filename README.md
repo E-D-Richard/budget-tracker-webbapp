@@ -36,7 +36,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 ### Concepts Applied
 
 - Wireframing
-- REact Function Components
+- React Function Components
 - React Hooks
 - Manage State with Redux-Toolkit and React-Redux
 - Importing NPM packages and libraries
