@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 // import { act } from 'react-dom/test-utils';
 
-const initialCategories = ['housing', 'food', 'transportation', 'utilities', 'clothing', 'healthcare', 'personal', 'education', 'entertainment'];
+const initialCategories = ['housing', 'food', 'transportation', 'utilities', 'clothing', 'healthcare', 'personal', 'education', 'entertainment'].sort();
 
 const initialState = Object.fromEntries(initialCategories.map(category => [category, []]))
 const transRecordSlice = createSlice({
@@ -26,7 +26,7 @@ const transRecordSlice = createSlice({
 });
 
 
-export const selectCategories = (state) => Object.keys(state.transactions);
+export const selectCategories = (state) => Object.keys(state.transactions).sort();
 export const selectTransactions = (state) => state.transactions;
 export const selectFlattenedTransactions = (state) => Object.values(state.transactions).reduce((accArr, b) => [...accArr, ...b], []);
 
