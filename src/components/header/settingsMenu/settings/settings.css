@@ -65,7 +65,7 @@
 }
 
 .setting button.submit:hover,
-.setting button.submit:focus {
+.setting button.submit:active {
   background-color: #141c3a;
   color: #ffffff;
 }
@@ -73,7 +73,7 @@
 
 .setting button.submit.prevent,
 .setting button.submit.prevent:hover,
-.setting button.submit.prevent:focus {
+.setting button.submit.prevent:active {
   cursor: auto;
   opacity: 0.3;
   background: var(--white);
