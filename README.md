@@ -8,9 +8,9 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
+- in settings menu, stylize all setting options capabilities to open/collapse on click
 - explore addCategory submit button behaivor on focus
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages
-- in settings menu, make all setting options collapsed by default with a capability to open them on click
 - update NewTrans to be hidden by default (simmilar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans 
 - test settings menu for mobile compatibility
 - organize files to comply with feature vs component correct official definitions
