@@ -6,7 +6,7 @@ const DeleteCategory = () => {
   const dispatch = useDispatch();
   const categories = useSelector(selectCategories);
   const [category, setCategory] = useState("");
-  console.log(categories)
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleDelete = (e) => {
     e.preventDefault();
@@ -15,27 +15,36 @@ const DeleteCategory = () => {
   };
 
   return (
-    <form onSubmit={handleDelete} id="delete-category" className="setting">
-      <h3>Delete Category</h3>
-      {/* <label htmlFor="delete-cat">Category</label> */}
-      <select
-        name=""
-        id="delete-cat"
-        value={category}
-        onChange={(e) => setCategory(e.currentTarget.value)}
-        required
+    <div id="delete-category-container" >
+      <button
+        className="setting-button"
+        onClick={() => setIsOpen(!isOpen)}
       >
-        <option value="" key="default">
-          select category
-        </option>
-        {categories.map((cat) => (
-          <option value={cat} key={cat}>
-            {cat}
-          </option>
-        ))}
-      </select>
-      <button>Delete</button>
-    </form>
+        Delete Category
+      </button>
+      {isOpen &&
+        <form onSubmit={handleDelete} id="delete-category" className="setting">
+          {/* <label htmlFor="delete-cat">Category</label> */}
+          <select
+            name="category"
+            value={category}
+            onChange={(e) => setCategory(e.currentTarget.value)}
+            required
+          >
+            <option value="" key="default">
+              select category
+            </option>
+            {categories.map((cat) => (
+              <option value={cat} key={cat}>
+                {cat}
+              </option>
+            ))}
+          </select>
+          <button className="submit">Delete</button>
+        </form>
+      }
+    </div>
+
   );
 };
 

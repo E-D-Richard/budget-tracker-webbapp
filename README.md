@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
+- explore addCategory submit button behaivor on focus
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages
 - in settings menu, make all setting options collapsed by default with a capability to open them on click
 - update NewTrans to be hidden by default (simmilar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans 
@@ -15,7 +16,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 - organize files to comply with feature vs component correct official definitions
 - get rid of unnesseray zero's once typing begins in all input forms
 - beautify and stylize transactionList/records section
-- Rename new transaction footer form to: New Expense
+- Rename new transaction footer form to: NewExpense
 
 ### Features
 

@@ -7,6 +7,7 @@ const AddCategory = () => {
   const dispatch = useDispatch();
   const [newCategory, setNewCategory] = useState("");
   const [isDuplicate, setIsDuplicate] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const categories = useSelector(selectCategories);
 
   const handleInputPopUpMessage = (domInputElement, newValue) => {
@@ -15,7 +16,7 @@ const AddCategory = () => {
     if (duplicateFound) {
       setIsDuplicate(true);
       domInputElement.setCustomValidity("duplicate");
-    } else if(trimmedDuplicateFound){
+    } else if (trimmedDuplicateFound) {
       setIsDuplicate(true);
       domInputElement.setCustomValidity("");
     } else {
@@ -55,19 +56,24 @@ const AddCategory = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} id="add-category" className="setting">
-      <h3>Add Category</h3>
-      {/* <label htmlFor="new-cat">name</label> */}
-      <input
-        id="new-cat"
-        required
-        type="text"
-        value={newCategory}
-        placeholder="category name"
-        onChange={(e) => handleValueChange(e)}
-      />
-      <button className={isDuplicate ? "prevent" : ""}>Add</button>
-    </form>
+    <div id="add-category-container">
+      <button onClick={() => setIsOpen(!isOpen)} className="setting-button">Add Category</button>
+      {isOpen &&
+        <form onSubmit={handleSubmit} id="add-category" className="setting">
+          {/* <label htmlFor="new-cat">name</label> */}
+          <input
+            id="new-cat"
+            required
+            type="text"
+            value={newCategory}
+            placeholder="category name"
+            onChange={(e) => handleValueChange(e)}
+          />
+          <button className={`submit ${isDuplicate ? "prevent" : ""}`}>Add</button>
+        </form>
+      }
+    </div>
+
   );
 };
 

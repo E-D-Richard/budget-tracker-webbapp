@@ -4,7 +4,7 @@ import { AiFillSetting } from "react-icons/ai";
 import Settings from "./settings/Settings";
 
 const SettingsMenu = () => {
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
+  const [menuIsOpen, setMenuIsOpen] = useState(true);
   const [buttonHeight, setButtonHeight] = useState(0);
   const buttonRef = useRef();
 

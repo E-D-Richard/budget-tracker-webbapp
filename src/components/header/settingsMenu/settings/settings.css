@@ -7,6 +7,9 @@
 #settings-menu #settings-container {
   display: flex;
   flex-direction: column;
+  min-width: 200px;
+  max-width: 25vw;
+  margin-top: 1.5rem;
 }
 
 
@@ -15,6 +18,10 @@
   margin-bottom: 1rem;
   /* color: #fff;
   background-color: var(--main-text-color); */
+}
+
+#settings-container .setting-button {
+  width: 100%;
 }
 
 .setting {
@@ -28,6 +35,7 @@
 #settings-container form > * {
   width: 100%;
 }
+
 
 #add-category input,
 #delete-category select {
@@ -46,7 +54,7 @@
     font-size: 2rem;
   }
 
-.setting button {
+.setting button.submit {
   padding: 6px 12px;
   border-radius: 6px;
   border: solid 1px #141c3a;
@@ -56,16 +64,16 @@
   cursor: pointer;
 }
 
-.setting button:hover,
-.setting button:focus {
+.setting button.submit:hover,
+.setting button.submit:focus {
   background-color: #141c3a;
   color: #ffffff;
 }
 
 
-.setting button.prevent,
-.setting button.prevent:hover,
-.setting button.prevent:focus {
+.setting button.submit.prevent,
+.setting button.submit.prevent:hover,
+.setting button.submit.prevent:focus {
   cursor: auto;
   opacity: 0.3;
   background: var(--white);
