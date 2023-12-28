@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBudgetCategory } from "../../../../features/budgets/budgetsSlice";
 import { addTransactionCategory, selectCategories } from "../../../../features/transRecord/transRecordSlice";
 import { AiFillLeftSquare } from "react-icons/ai";
+import { handleInputPopUpMessage } from "../../../../utilities/helperFunctions";
 
 const AddCategory = () => {
   const dispatch = useDispatch();
@@ -11,25 +12,10 @@ const AddCategory = () => {
   const [isOpen, setIsOpen] = useState(false);
   const categories = useSelector(selectCategories);
 
-  const handleInputPopUpMessage = (domInputElement, newValue) => {
-    const duplicateFound = categories.includes(newValue);
-    const trimmedDuplicateFound = categories.includes(newValue.trim())
-    if (duplicateFound) {
-      setIsDuplicate(true);
-      domInputElement.setCustomValidity("duplicate");
-    } else if (trimmedDuplicateFound) {
-      setIsDuplicate(true);
-      domInputElement.setCustomValidity("");
-    } else {
-      setIsDuplicate(false);
-      domInputElement.setCustomValidity("");
-    }
-    domInputElement.reportValidity();
-  }
 
   const handleValueChange = (e) => {
     const newValue = e.currentTarget.value;
-    handleInputPopUpMessage(e.currentTarget, newValue.toLowerCase());
+    setIsDuplicate(handleInputPopUpMessage(categories, e.currentTarget, newValue.toLowerCase()))
     setNewCategory(newValue);
   }
 
