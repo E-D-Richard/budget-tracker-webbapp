@@ -60,7 +60,7 @@
   /* position: absolute;
   top: 0;
   right: 0; */
-  padding: 0rem 1.5rem 2rem 1.5rem;
+  padding: 0rem 0rem 2rem 0.8rem;
   z-index: 4;
   height: 30vh;
   overflow-y: scroll;

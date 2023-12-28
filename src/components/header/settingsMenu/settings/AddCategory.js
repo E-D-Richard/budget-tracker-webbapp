@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBudgetCategory } from "../../../../features/budgets/budgetsSlice";
 import { addTransactionCategory, selectCategories } from "../../../../features/transRecord/transRecordSlice";
+import { AiFillLeftSquare } from "react-icons/ai";
 
 const AddCategory = () => {
   const dispatch = useDispatch();
@@ -57,7 +58,13 @@ const AddCategory = () => {
 
   return (
     <div id="add-category-container">
-      <button onClick={() => setIsOpen(!isOpen)} className="setting-button">Add Category</button>
+      <button 
+        onClick={() => setIsOpen(!isOpen)}
+        className="setting-button"
+      >
+        <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
+        Add Category
+      </button>
       {isOpen &&
         <form onSubmit={handleSubmit} id="add-category" className="setting">
           {/* <label htmlFor="new-cat">name</label> */}

@@ -7,7 +7,7 @@
 #settings-menu #settings-container {
   display: flex;
   flex-direction: column;
-  min-width: 200px;
+  min-width: 220px;
   max-width: 25vw;
   margin-top: 1.5rem;
 }
@@ -21,18 +21,36 @@
 }
 
 #settings-container .setting-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   width: 100%;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1rem 0;
+  border: none;
+  /* border: 2px solid var(--main-text-color);
+  border-radius: 8px 0 0 8px; */
+
+  background-color: inherit;
 }
 
-.setting {
+#settings-container .setting-button .icon {
+  border-radius: 5px;
+}
+
+#settings-container .setting-button .icon.down {
+  transform: rotate(-90deg);
+}
+
+form.setting {
   display: flex;
   flex-direction: column;
-  padding: 16px 0px 24px 0px;
-  border-bottom: solid 1px var(--main-text-color);
+  padding: 0 0 0 1.5rem;
 }
 
 
-#settings-container form > * {
+#settings-container form.setting > * {
   width: 100%;
 }
 
