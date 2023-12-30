@@ -7,7 +7,7 @@ const DeleteCategory = () => {
   const dispatch = useDispatch();
   const categories = useSelector(selectCategories);
   const [category, setCategory] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   const handleDelete = (e) => {
     e.preventDefault();

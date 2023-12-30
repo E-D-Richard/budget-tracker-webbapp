@@ -9,7 +9,7 @@ const AddCategory = () => {
   const dispatch = useDispatch();
   const [newCategory, setNewCategory] = useState("");
   const [isDuplicate, setIsDuplicate] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const categories = useSelector(selectCategories);
 
 
