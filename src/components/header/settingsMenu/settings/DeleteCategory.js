@@ -22,7 +22,7 @@ const DeleteCategory = () => {
         className="setting-button"
       >
         <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
-        Delete Category
+        <p className="button-text">Delete Category</p>
       </button>
       {isOpen &&
         <form onSubmit={handleDelete} id="delete-category" className="setting">

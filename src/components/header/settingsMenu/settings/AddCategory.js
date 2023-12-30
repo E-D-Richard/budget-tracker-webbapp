@@ -49,7 +49,7 @@ const AddCategory = () => {
         className="setting-button"
       >
         <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
-        Add Category
+        <p className="button-text">Add Category</p>
       </button>
       {isOpen &&
         <form onSubmit={handleSubmit} id="add-category" className="setting">

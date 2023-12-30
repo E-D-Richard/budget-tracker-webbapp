@@ -8,8 +8,10 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
+- create a smooth transiton for when setting category forms appear/dissappear
 - in settings menu, stylize all setting option buttons and option forms (including transitions)
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
+- refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (simmilar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans 
 - test settings menu for mobile compatibility
 - organize files to comply with feature vs component correct official definitions

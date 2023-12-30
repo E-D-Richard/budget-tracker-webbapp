@@ -28,31 +28,59 @@
   width: 100%;
   font-size: 2rem;
   font-weight: 600;
-  padding: 1rem 0;
+  padding: 1rem 0.4rem 1rem 0;
   border: none;
+  border-radius: 10px 0 0 10px;
   /* border: 2px solid var(--main-text-color);
   border-radius: 8px 0 0 8px; */
-
   background-color: inherit;
 }
 
-#settings-container .setting-button .icon {
-  border-radius: 5px;
+#settings-container .setting-button:hover {
+  cursor: pointer;
 }
 
-#settings-container .setting-button .icon.down {
+#settings-container .setting-button:focus {
+  outline: 3px solid var(--main-text-color);
+}
+
+.setting-button .button-text {
+ margin: 0; 
+}
+
+#add-category-container .button-text {
+  letter-spacing: 0.15rem;
+
+}
+
+.setting-button .icon {
+  margin-left: 0.45rem;
+}
+
+.setting-button .icon.left {
+  transition: transform 120ms;
+}
+
+.setting-button .icon.down {
   transform: rotate(-90deg);
 }
+
+
+
+
 
 form.setting {
   display: flex;
   flex-direction: column;
+  align-items: end;
   padding: 0 0 0 1.5rem;
+  margin: 1rem 0;
 }
 
 
+
 #settings-container form.setting > * {
-  width: 100%;
+  width: 90%;
 }
 
 
