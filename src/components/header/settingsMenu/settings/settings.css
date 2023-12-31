@@ -14,13 +14,6 @@
 }
 
 
-#settings-container h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  /* color: #fff;
-  background-color: var(--main-text-color); */
-}
-
 #settings-container .setting-button {
   display: flex;
   align-items: center;
