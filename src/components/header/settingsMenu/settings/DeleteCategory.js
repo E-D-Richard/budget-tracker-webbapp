@@ -16,7 +16,7 @@ const DeleteCategory = () => {
   };
 
   return (
-    <div id="delete-category-container" >
+    <div id="delete-category-container" className={`setting-container`}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="setting-button"
@@ -24,8 +24,7 @@ const DeleteCategory = () => {
         <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
         <p className="button-text">Delete Category</p>
       </button>
-      {isOpen &&
-        <form onSubmit={handleDelete} id="delete-category" className="setting">
+        <form onSubmit={handleDelete} id="delete-category" className={`setting ${isOpen ? "open" : ""}`}>
           {/* <label htmlFor="delete-cat">Category</label> */}
           <select
             name="category"
@@ -44,7 +43,6 @@ const DeleteCategory = () => {
           </select>
           <button className="submit">Delete</button>
         </form>
-      }
     </div>
 
   );

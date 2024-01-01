@@ -8,8 +8,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
-- learn about hsl and complete scrollbar color design
-- create a smooth transiton for when setting category forms appear/dissappear
+- create a smooth transiton for when setting category forms appear/dissappear (mock reddit museum side navbar smooth dropdown transition)
 - in settings menu, stylize all setting option buttons and option forms (including transitions)
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
 - refresh memory on redux code (explore thunks in reddit project)

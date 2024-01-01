@@ -12,8 +12,7 @@
   margin-top: 1.5rem;
 }
 
-
-#settings-container .setting-button {
+.setting-container .setting-button {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,11 +26,11 @@
   border-right: 7px solid inherit;
 }
 
-#settings-container .setting-button:hover {
+.setting-container .setting-button:hover {
   cursor: pointer;
 }
 
-#settings-container .setting-button:focus {
+.setting-container .setting-button:focus {
   background-color: hsl(223 89% 44% / 0.18);
   backdrop-filter: blur(17px);
   border-right: 7px solid var(--main-text-color);
@@ -59,17 +58,27 @@
 }
 
 
-
-
-
 form.setting {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   padding: 0 0 0 1.5rem;
   margin: 1rem 0;
+  /* transition section */
+  pointer-events: none;
+  height: 0;
+  overflow: none;
+  transform: translateY(-40px);
+  opacity: 0;
+  transition: all 325ms;
 }
 
+form.setting.open {
+  pointer-events: auto;
+  height: auto;
+  transform: translateY(0);
+  opacity: 1;
+}
 
 
 #settings-container form.setting > * {

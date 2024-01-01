@@ -43,28 +43,28 @@ const AddCategory = () => {
   };
 
   return (
-    <div id="add-category-container">
-      <button 
+    <div id="add-category-container" className={`setting-container`}>
+      <button
         onClick={() => setIsOpen(!isOpen)}
         className="setting-button"
       >
         <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
         <p className="button-text">Add Category</p>
       </button>
-      {isOpen &&
-        <form onSubmit={handleSubmit} id="add-category" className="setting">
-          {/* <label htmlFor="new-cat">name</label> */}
-          <input
-            id="new-cat"
-            required
-            type="text"
-            value={newCategory}
-            placeholder="category name"
-            onChange={(e) => handleValueChange(e)}
-          />
-          <button className={`submit ${isDuplicate ? "prevent" : ""}`}>Add</button>
-        </form>
-      }
+
+      <form onSubmit={handleSubmit} id="add-category" className={`setting ${isOpen ? "open" : ""}`}>
+        {/* <label htmlFor="new-cat">name</label> */}
+        <input
+          id="new-cat"
+          required
+          type="text"
+          value={newCategory}
+          placeholder="category name"
+          onChange={(e) => handleValueChange(e)}
+        />
+        <button className={`submit ${isDuplicate ? "prevent" : ""}`}>Add</button>
+      </form>
+
     </div>
 
   );
