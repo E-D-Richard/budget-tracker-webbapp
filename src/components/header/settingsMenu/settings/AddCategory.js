@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBudgetCategory } from "../../../../features/budgets/budgetsSlice";
 import { addTransactionCategory, selectCategories } from "../../../../features/transRecord/transRecordSlice";
@@ -11,7 +11,13 @@ const AddCategory = () => {
   const [isDuplicate, setIsDuplicate] = useState(false);
   const [isOpen, setIsOpen] = useState(true);
   const categories = useSelector(selectCategories);
+  const settingFormRef = useRef();
+  const [settingFormHeight, setSettingFormHeight] = useState(false);
 
+  useEffect(()=>{
+    setSettingFormHeight(settingFormRef.current.offsetHeight);
+    setIsOpen(false);
+  },[])
 
   const handleValueChange = (e) => {
     const newValue = e.currentTarget.value;
@@ -52,7 +58,13 @@ const AddCategory = () => {
         <p className="button-text">Add Category</p>
       </button>
 
-      <form onSubmit={handleSubmit} id="add-category" className={`setting ${isOpen ? "open" : ""}`}>
+      <form 
+        onSubmit={handleSubmit} 
+        id="add-category" 
+        className={`setting ${isOpen ? "open" : ""}`} 
+        ref={settingFormRef}
+        style={isOpen ? {height: `${settingFormHeight}px`} : {height: "0px"}}
+      >
         {/* <label htmlFor="new-cat">name</label> */}
         <input
           id="new-cat"

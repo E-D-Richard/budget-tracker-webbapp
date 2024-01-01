@@ -12,6 +12,10 @@
   margin-top: 1.5rem;
 }
 
+.setting-container {
+  position: relative;
+}
+
 .setting-container .setting-button {
   display: flex;
   align-items: center;
@@ -66,24 +70,23 @@ form.setting {
   margin: 1rem 0;
   /* transition section */
   pointer-events: none;
-  height: 0;
-  overflow: none;
-  transform: translateY(-40px);
+  /* height for open/closed state is set inside the corresponding setting function component */
   opacity: 0;
-  transition: all 325ms;
+  transform: translateY(-10px);
+  transition: all 400ms;
 }
 
 form.setting.open {
   pointer-events: auto;
-  height: auto;
-  transform: translateY(0);
   opacity: 1;
+  transform: translateY(0);
 }
 
 
 #settings-container form.setting > * {
   width: 90%;
   margin-right: 1.4rem;
+  min-height: 4rem;
 }
 
 

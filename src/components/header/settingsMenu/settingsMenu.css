@@ -60,6 +60,8 @@
 /* -------------------------------------------------------------- settings */
 
 #settings-menu {
+  /* display: flex;
+  flex-direction: column; */
   padding-bottom: 2rem;
   padding-left: 0.3rem;
   z-index: 4;
@@ -95,7 +97,7 @@
 
 
 #settings-menu {
-  height: 30vh;
+  height: 32vh;
   overflow-y: scroll;
   overflow-x: hidden;
   direction: rtl;
