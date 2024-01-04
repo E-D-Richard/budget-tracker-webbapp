@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./newTransaction.css";
-import { FaAngleDown, FaAngleUp } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 import NewTransForm from "../../components/footer/NewTransForm";
 import { updateNewTransactionOffsetHeight } from "./newTransactionSlice";
 import { useDispatch } from "react-redux";
@@ -12,13 +12,13 @@ const NewTransaction = () => {
 
   useEffect(() => {
     const offsetHeight = componentRef.current.offsetHeight;
-    if(isExpanded){
+    if (isExpanded) {
       dispatch(updateNewTransactionOffsetHeight(offsetHeight));
     } else {
       //when newTransForm is in a closed state, only 1/3 (the top third) of the for  is visible
-      dispatch(updateNewTransactionOffsetHeight(offsetHeight/3));
+      dispatch(updateNewTransactionOffsetHeight(offsetHeight / 3));
     }
-    
+
   }, [isExpanded, dispatch]);
 
 
@@ -30,12 +30,8 @@ const NewTransaction = () => {
       {/* <h2>New Transaction</h2> */}
 
 
-      <button onClick={() => setIsExpanded(!isExpanded)} className="dropdown-btn">
-        {!isExpanded ? (
-          <FaAngleUp className="icon" style={{ fontSize: "5rem" }} />
-        ) : (
-          <FaAngleDown className="icon" style={{ fontSize: "5rem" }} />
-        )}
+      <button onClick={() => setIsExpanded(!isExpanded)} className="dropdown-button">
+        <FaAngleUp className={`icon ${!isExpanded ? "up" : "down"}`} />
       </button>
       <NewTransForm isExpanded={isExpanded} />
 
