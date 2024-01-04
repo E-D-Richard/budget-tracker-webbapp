@@ -14,7 +14,7 @@ const Setting = ({ id, name, functionComponent }) => {
         <div id={id + "-container"} className={`setting-container`}>
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="setting-button"
+                className={`setting-button ${isOpen ? "open" : ""}`}
             >
                 <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
                 <p className="button-text">{name}</p>

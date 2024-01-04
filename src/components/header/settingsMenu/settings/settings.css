@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.setting-container .setting-button:focus {
+.setting-container .setting-button.open {
   background-color: hsl(223 89% 44% / 0.18);
   backdrop-filter: blur(17px);
   border-right: 7px solid var(--main-text-color);
