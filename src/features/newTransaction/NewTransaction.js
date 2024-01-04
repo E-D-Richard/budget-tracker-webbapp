@@ -12,7 +12,13 @@ const NewTransaction = () => {
 
   useEffect(() => {
     const offsetHeight = componentRef.current.offsetHeight;
-    dispatch(updateNewTransactionOffsetHeight(offsetHeight));
+    if(isExpanded){
+      dispatch(updateNewTransactionOffsetHeight(offsetHeight));
+    } else {
+      //when newTransForm is in a closed state, only 1/3 (the top third) of the for  is visible
+      dispatch(updateNewTransactionOffsetHeight(offsetHeight/3));
+    }
+    
   }, [isExpanded, dispatch]);
 
 
