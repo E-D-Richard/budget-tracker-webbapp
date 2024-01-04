@@ -1,6 +1,6 @@
 import "./settings.css";
-import DeleteCategory from "./DeleteCategory";
-import AddCategory from './AddCategory';
+import DeleteCategory from "../../../../features/settingOptions/DeleteCategory";
+import AddCategory from '../../../../features/settingOptions/AddCategory';
 import Setting from "./Setting";
 
 const Settings = () => {
