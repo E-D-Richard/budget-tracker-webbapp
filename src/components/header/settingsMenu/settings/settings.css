@@ -45,7 +45,8 @@
 }
 
 #add-category-container .button-text {
-  letter-spacing: 0.15rem;
+  letter-spacing: 0.18rem;
+  margin-right: -0.12rem;
 
 }
 
@@ -61,14 +62,8 @@
   transform: rotate(-90deg);
 }
 
-
-form.setting {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  padding: 0 0 0 1.5rem;
+.setting-container .form-container {
   /* transition section */
-  pointer-events: none;
   /* height for open/closed state is set inside the corresponding setting function component */
   margin: 0;
   opacity: 0;
@@ -76,12 +71,21 @@ form.setting {
   transition: all 400ms;
 }
 
-form.setting.open {
+
+.setting-container .form-container.open {
   margin: 1rem 0;
-  pointer-events: auto;
   opacity: 1;
   transform: translateY(0);
 }
+
+
+form.setting {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 0 0 0 1.5rem;
+}
+
 
 
 #settings-container form.setting > * {

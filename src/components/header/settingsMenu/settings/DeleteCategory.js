@@ -8,13 +8,6 @@ const DeleteCategory = () => {
   const categories = useSelector(selectCategories);
   const [category, setCategory] = useState("");
   const [isOpen, setIsOpen] = useState(true);
-  const settingFormRef = useRef();
-  const [settingFormHeight, setSettingFormHeight] = useState(false);
-
-  useEffect(()=>{
-    setSettingFormHeight(settingFormRef.current.offsetHeight);
-    setIsOpen(false);
-  },[])
 
 
   const handleDelete = (e) => {
@@ -24,41 +17,29 @@ const DeleteCategory = () => {
   };
 
   return (
-    <div id="delete-category-container" className={`setting-container`}>
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="setting-button"
+    <form
+      onSubmit={handleDelete}
+      id="delete-category"
+      className={`setting`}
+    >
+      {/* <label htmlFor="delete-cat">Category</label> */}
+      <select
+        name="category"
+        value={category}
+        onChange={(e) => setCategory(e.currentTarget.value)}
+        required
       >
-        <AiFillLeftSquare className={`icon left ${!isOpen ? "left" : "down"}`} />
-        <p className="button-text">Delete Category</p>
-      </button>
-        <form 
-          onSubmit={handleDelete}
-          id="delete-category"
-          className={`setting ${isOpen ? "open" : ""}`}
-          ref={settingFormRef}
-          style={isOpen ? {maxHeight: `${settingFormHeight}px`} : {maxHeight: "0px"}}
-        >
-          {/* <label htmlFor="delete-cat">Category</label> */}
-          <select
-            name="category"
-            value={category}
-            onChange={(e) => setCategory(e.currentTarget.value)}
-            required
-          >
-            <option value="" key="default">
-              select category
-            </option>
-            {categories.map((cat) => (
-              <option value={cat} key={cat}>
-                {cat}
-              </option>
-            ))}
-          </select>
-          <button className="submit">Delete</button>
-        </form>
-    </div>
-
+        <option value="" key="default">
+          select category
+        </option>
+        {categories.map((cat) => (
+          <option value={cat} key={cat}>
+            {cat}
+          </option>
+        ))}
+      </select>
+      <button className="submit">Delete</button>
+    </form>
   );
 };
 

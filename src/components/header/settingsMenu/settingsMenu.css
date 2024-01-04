@@ -10,9 +10,11 @@
   position: fixed;
   top: 0;
   right: 0;
+  pointer-events: none;
 }
 
 #settings-menu-container .open {
+  pointer-events: auto;
   background-color: #e3e6ff;
  }
 
@@ -26,6 +28,7 @@
 
 
 #settings-menu-container button#settings-menu-button {
+  pointer-events: auto;
   position: absolute;
   right: 0;
   top: 0;
