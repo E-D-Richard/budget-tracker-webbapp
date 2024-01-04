@@ -1,13 +1,13 @@
 import "./settings.css";
 import DeleteCategory from "./DeleteCategory";
 import AddCategory from './AddCategory';
-import SettingOption from "./SettingOption";
+import Setting from "./Setting";
 
 const Settings = () => {
     return (
         <div id="settings-container">
-            <SettingOption id={"add-category"} name={"Add Category"} functionComponent={<AddCategory />}/>
-            <SettingOption id={"delete-category"} name={"Delete Category"} functionComponent={<DeleteCategory/>}/>
+            <Setting id={"add-category"} name={"Add Category"} functionComponent={<AddCategory />}/>
+            <Setting id={"delete-category"} name={"Delete Category"} functionComponent={<DeleteCategory/>}/>
         </div>
     )
 }

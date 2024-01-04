@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { AiFillLeftSquare } from "react-icons/ai";
 
-const SettingOption = ({ id, name, functionComponent }) => {
+const Setting = ({ id, name, functionComponent }) => {
     const [isOpen, setIsOpen] = useState(true);
     const [settingContainerHeight, setSettingContainerHeight] = useState(false);
     const settingContainerRef = useRef();
@@ -33,4 +33,4 @@ const SettingOption = ({ id, name, functionComponent }) => {
     );
 }
 
-export default SettingOption;
+export default Setting;
