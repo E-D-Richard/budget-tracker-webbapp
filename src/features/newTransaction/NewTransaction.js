@@ -17,22 +17,22 @@ const NewTransaction = () => {
 
 
   return (
-    <section 
-      className={`new-trans-container`}
-      ref={componentRef} 
+    <section
+      className={`dropdown-container ${isExpanded ? "open" : ""}`}
+      ref={componentRef}
     >
       {/* <h2>New Transaction</h2> */}
 
-      <div className="dropdown-container">
-        <button onClick={()=>setIsExpanded(!isExpanded)} className="dropdown-btn">
-          {!isExpanded ? (
-            <FaAngleUp className="icon" style={{ fontSize: "5rem" }} />
-          ) : (
-            <FaAngleDown className="icon" style={{ fontSize: "5rem" }} />
-          )}
-        </button>
-        {isExpanded && <NewTransForm />}
-      </div>
+
+      <button onClick={() => setIsExpanded(!isExpanded)} className="dropdown-btn">
+        {!isExpanded ? (
+          <FaAngleUp className="icon" style={{ fontSize: "5rem" }} />
+        ) : (
+          <FaAngleDown className="icon" style={{ fontSize: "5rem" }} />
+        )}
+      </button>
+      <NewTransForm isExpanded={isExpanded} />
+
     </section>
   );
 };

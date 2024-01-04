@@ -4,7 +4,7 @@ import { addTransaction, selectCategories } from "../../features/transRecord/tra
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 
-const NewTransForm = () => {
+const NewTransForm = ({isExpanded}) => {
   const dispatch = useDispatch();
   const categories = useSelector(selectCategories)
   const [category, setCategory] = useState(categories[0]);
@@ -41,7 +41,7 @@ const NewTransForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="new-trans-form">
+    <form onSubmit={handleSubmit} className={`new-trans-form ${isExpanded ? "open" : ""}`}>
       <div className="new-trans-select">
         <label htmlFor="category">Category</label>
         <select
