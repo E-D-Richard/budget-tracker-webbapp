@@ -67,16 +67,17 @@ form.setting {
   flex-direction: column;
   align-items: flex-end;
   padding: 0 0 0 1.5rem;
-  margin: 1rem 0;
   /* transition section */
   pointer-events: none;
   /* height for open/closed state is set inside the corresponding setting function component */
+  margin: 0;
   opacity: 0;
   transform: translateY(-10px);
   transition: all 400ms;
 }
 
 form.setting.open {
+  margin: 1rem 0;
   pointer-events: auto;
   opacity: 1;
   transform: translateY(0);
