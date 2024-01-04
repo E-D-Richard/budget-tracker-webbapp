@@ -34,7 +34,7 @@
   cursor: pointer;
 }
 
-.setting-container .setting-button.open {
+.setting-container .setting-button:active {
   background-color: hsl(223 89% 44% / 0.18);
   border-right: 7px solid var(--main-text-color);
 }
