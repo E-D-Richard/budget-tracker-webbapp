@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
+- when adding a new category, auto scroll to new category
 - create a smooth a color effect for currently selected option setting (build out redux store to track state of current selection).
 - in settings menu, stylize all setting option buttons and option forms (including transitions)
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
