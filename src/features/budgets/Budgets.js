@@ -6,7 +6,6 @@ import Budget from "../../components/body/Budget";
 
 const Budgets = () => {
   const budgets = useSelector(selectBudgets);
-  console.log(budgets)
   return (
     <section className="all-budgets-container">
       <ul>

@@ -14,8 +14,6 @@ const TransRecord = () => {
     }
   }
 
-  //console.log(allTransactions);
-
   return (
     <TransactionList
       expenseTransactions={expenseTransactions}
