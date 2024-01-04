@@ -26,8 +26,8 @@
   padding: 1rem 1rem 1rem 0;
   border: none;
   border-radius: 10px 0 0 10px;
-  background-color: inherit;
-  border-right: 7px solid inherit;
+  background-color: var(--light-blue);
+  border-right: 7px solid var(--light-blue);
 }
 
 .setting-container .setting-button:hover {
@@ -36,7 +36,6 @@
 
 .setting-container .setting-button.open {
   background-color: hsl(223 89% 44% / 0.18);
-  backdrop-filter: blur(17px);
   border-right: 7px solid var(--main-text-color);
 }
 
