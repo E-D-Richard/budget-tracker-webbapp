@@ -68,10 +68,12 @@
   opacity: 0;
   transform: translateY(-10px);
   transition: all 400ms;
+  pointer-events: none;
 }
 
 
 .setting-container .form-container.open {
+  pointer-events: auto;
   margin: 1rem 0;
   opacity: 1;
   transform: translateY(0);
