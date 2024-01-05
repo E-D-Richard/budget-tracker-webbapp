@@ -17,3 +17,10 @@ export const handleInputPopUpMessage = (categories, domInputElement, newValue) =
       return false;
     }
   }
+
+
+  export const closeOnExternalClick = (event, elementRef, setIsOpenState) => {
+    if (elementRef.current && !elementRef.current.contains(event.target)) {
+      setIsOpenState(false);
+    }
+  }

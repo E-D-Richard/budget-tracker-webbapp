@@ -2,22 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import "./settingsMenu.css";
 import { AiFillSetting } from "react-icons/ai";
 import Settings from "./settings/Settings";
+import { closeOnExternalClick } from "../../../utilities/helperFunctions";
 
 const SettingsMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [buttonHeight, setButtonHeight] = useState(0);
   const menuRef = useRef();
 
-  const handleClickOutside = (event) => {
-    if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setMenuIsOpen(false);
-    }
-  };
+  
+  //close settingsMenu on external click outside of menu
+  useEffect(() => {;
+    const eventHandler = (e) => closeOnExternalClick(e, menuRef, setMenuIsOpen);
+    document.addEventListener('click', eventHandler);
 
-  useEffect(() => {
-    document.addEventListener('click', handleClickOutside, true);
     return () => {
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener('click', eventHandler);
     };
   }, []);
 
@@ -25,8 +24,7 @@ const SettingsMenu = () => {
     if (menuRef.current) {
       const settingsMenuButtonDomElement = menuRef.current.querySelector("#settings-menu-button");
       setButtonHeight(settingsMenuButtonDomElement.offsetHeight)
-    }
-    ;
+    };
   }, []);
 
 
