@@ -9,9 +9,9 @@ const SettingsMenu = () => {
   const [buttonHeight, setButtonHeight] = useState(0);
   const menuRef = useRef();
 
-  
-  //close settingsMenu on external click outside of menu
-  useEffect(() => {;
+
+  useEffect(() => {
+    //close settingsMenu on external click outside of menu
     const eventHandler = (e) => closeOnExternalClick(e, menuRef, setMenuIsOpen);
     document.addEventListener('click', eventHandler);
 
@@ -20,13 +20,14 @@ const SettingsMenu = () => {
     };
   }, []);
 
+
   useEffect(() => {
+    //get and set button offsetHeight to use for setting height of div.buttonFrame
     if (menuRef.current) {
       const settingsMenuButtonDomElement = menuRef.current.querySelector("#settings-menu-button");
       setButtonHeight(settingsMenuButtonDomElement.offsetHeight)
     };
   }, []);
-
 
 
   return (
