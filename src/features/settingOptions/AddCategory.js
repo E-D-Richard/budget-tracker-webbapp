@@ -10,9 +10,6 @@ const AddCategory = () => {
   const [isDuplicate, setIsDuplicate] = useState(false);
   const categories = useSelector(selectCategories);
 
-
-  //auto-scroll behaviour to a newly created budget category is set inside the useEffect hook in Budget.js
-
   const handleValueChange = (e) => {
     const newValue = e.currentTarget.value;
     setIsDuplicate(handleInputPopUpMessage(categories, e.currentTarget, newValue.toLowerCase()))
@@ -63,5 +60,8 @@ const AddCategory = () => {
       </form>
   );
 };
+
+//notes:
+// 1. Auto-scroll behaviour to a newly created budget category is set inside the useEffect hook in Budget.js
 
 export default AddCategory;
