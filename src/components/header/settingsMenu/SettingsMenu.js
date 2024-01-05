@@ -6,14 +6,33 @@ import Settings from "./settings/Settings";
 const SettingsMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [buttonHeight, setButtonHeight] = useState(0);
-  const buttonRef = useRef();
+  const menuRef = useRef();
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setMenuIsOpen(false);
+    }
+  };
 
   useEffect(() => {
-    setButtonHeight(buttonRef.current.offsetHeight);
+    document.addEventListener('click', handleClickOutside, true);
+    return () => {
+      document.removeEventListener('click', handleClickOutside, true);
+    };
   }, []);
 
+  useEffect(() => {
+    if (menuRef.current) {
+      const settingsMenuButtonDomElement = menuRef.current.querySelector("#settings-menu-button");
+      setButtonHeight(settingsMenuButtonDomElement.offsetHeight)
+    }
+    ;
+  }, []);
+
+
+
   return (
-    <div id="settings-menu-container" className={menuIsOpen ? "open" : ""}>
+    <div id="settings-menu-container" className={menuIsOpen ? "open" : ""} ref={menuRef}>
       <div
         className="button-frame"
         style={{ height: `${buttonHeight}px` }}
@@ -21,12 +40,11 @@ const SettingsMenu = () => {
       <button
         id="settings-menu-button"
         onClick={() => setMenuIsOpen(!menuIsOpen)}
-        ref={buttonRef}
       >
         <AiFillSetting />
       </button>
       <div id="settings-menu" className={menuIsOpen ? "open" : ""}>
-        <Settings/>
+        <Settings />
       </div>
     </div>
   );
