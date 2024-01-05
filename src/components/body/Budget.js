@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectTransactions } from "../../features/transRecord/transRecordSlice";
@@ -8,6 +8,15 @@ const Budget = ({ budget }) => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState(budget.amount);
   const transactions = useSelector(selectTransactions);
+  const budgetRef = useRef();
+  const budgetCategoryCreatedByUser = !budget.isDefaultCategory; 
+
+  //when a user creates a new category, this effect auto scrolls to that new budget category
+  useEffect(()=>{
+    if(budgetCategoryCreatedByUser && budgetRef.current ){
+      budgetRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  },[budgetCategoryCreatedByUser]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -46,7 +55,7 @@ const Budget = ({ budget }) => {
   const fundsRemainingClassName = getFundsRemainingClassName(remainingFunds);
 
   return (
-    <li className="budget-container">
+    <li className="budget-container" id={budget.category} ref={budgetRef}>
       <div className="data-wrapper">
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>

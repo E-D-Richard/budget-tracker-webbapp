@@ -25,6 +25,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 - A Settings menu where all customization options live. Customization options currently are:
     - Add new categories
+        - Auto scrolls to the newly created budget categories
         - Prevents the addition of duplicate categories
     - Delete existing categories
 

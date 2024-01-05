@@ -16,6 +16,7 @@ const initialState = CATEGORIES.map((category) => ({
   category: category,
   amount: 0,
   history: [],
+  isDefaultCategory: true,
 }));
 
 const budgetsSlice = createSlice({
