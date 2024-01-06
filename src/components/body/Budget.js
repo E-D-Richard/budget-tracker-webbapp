@@ -67,7 +67,7 @@ const Budget = ({ budget }) => {
       <form onSubmit={handleUpdate} className="budget-form">
         <input
           className="amount-input"
-          name="budget-sum"
+          name="amount-to-add"
           value={amount}
           onChange={(e) => setAmount(e.currentTarget.value)}
           type="number"
