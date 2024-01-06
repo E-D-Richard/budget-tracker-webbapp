@@ -1,7 +1,6 @@
 :root {
     --main-text-color: #141c3a;
     --light-blue: #e3e6ff;
-    --is-open-transition-time: 300ms;
   }
 
 #settings-menu #settings-container {
@@ -28,6 +27,7 @@
   border-radius: 10px 0 0 10px;
   background-color: var(--light-blue);
   border-right: 7px solid var(--light-blue);
+  transition: all 0.35s;
 }
 
 .setting-container .setting-button:hover {
