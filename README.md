@@ -7,7 +7,7 @@
 A budgeting and expense tracking WebApp. The user is expected to record/input their transactions based on the categories set and customized by the user (such as food, transportation, etc.). The app then tracks the transactions and sums up the spending in each category to calculate the amount of money that remains to be spent.
 
 ### ToDo
-- fix google issue reporting: A form field element has neither an id nor a name attribute. This might prevent the browser from correctly autofilling the form.
+
 - create a smooth a color effect for currently selected option setting (build out redux store to track state of current selection).
 - in settings menu, stylize all setting option buttons and option forms (including transitions)
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
