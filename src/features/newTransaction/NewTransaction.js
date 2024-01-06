@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 const NewTransaction = () => {
   const dispatch = useDispatch();
   const [isExpanded, setIsExpanded] = useState(false);
+  //to view explanation for tracking and mocking the button's hovered state, open newTransactions.css and read the note
+  const [buttonIsHovered, setButtonIsHovered] = useState(false);
   const componentRef = useRef();
 
   useEffect(() => {
@@ -30,7 +32,15 @@ const NewTransaction = () => {
       {/* <h2>New Transaction</h2> */}
 
 
-      <button onClick={() => setIsExpanded(!isExpanded)} className="dropdown-button" name="open-close-new-transaction-form">
+      <button
+        onClick={() => {
+          setIsExpanded(!isExpanded)
+          setButtonIsHovered(false)
+        }}
+        onMouseOver={()=>setButtonIsHovered(true)}
+        onMouseLeave={()=>setButtonIsHovered(false)}
+        className={`dropdown-button ${buttonIsHovered ? "mock-hover" : ""}`}
+        name="open-close-new-transaction-form">
         <FaAngleUp className={`icon ${!isExpanded ? "up" : "down"}`} />
       </button>
       <NewTransForm isExpanded={isExpanded} />

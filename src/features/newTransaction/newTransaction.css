@@ -1,3 +1,9 @@
+:root {
+  --main-text-color-hsl-codes: 227 49% 15%;
+  --light-blue-hsl-codes: 234 100% 95%;
+  --light-brown-hsl-codes: 40 21% 53%;
+}
+
 
 /* ---------------------------------------- new transaction footer ----------------------- */
 
@@ -30,18 +36,32 @@
   
 
 
-  button.dropdown-button {
+  .dropdown-button {
     color: var(--white);
     background-color: var(--main-text-color);
     border: none;
     padding: 2rem 4rem 1rem 4rem;
-    /* width: 100%; */
-    transition: transform 120ms;
+    transition: transform 320ms;
   }
 
-  button.dropdown-button:hover {
+  .dropdown-button.mock-hover {
+    /* 
+    The mock-hover className and state is set in NewTransaction.js inside the button tag.
+      mock-hover class is used instead of the built in css:hover selector.
+      The reason for this is:
+      css:hover state for form button was remaining true even after the form closed/collapsed and cursor no longer rested above the button.
+      This issua is caused due to the default behavior of css:hover
+      When hovering over an element that is shifted using transform(translate) 
+      (in this case: translateY which is used to slide the form down and out of view on form close),
+      as long as the cursor isn't moved, the css element will remain in a hovered state since the cursor still remians in the area 
+      where the element rested when the mouse entered that elments area.
+    */
     cursor: pointer;
-    transform: scale(1.1);
+    transform: scale(1.25);
+  }
+
+  .dropdown-button:active {
+    transform: scale(1);
   }
 
   .dropdown-button .icon {
@@ -53,6 +73,8 @@
   .dropdown-button .icon.down {
     transform: rotate(540deg);
   }
+
+
   
   /* ---------------- form settings */
 

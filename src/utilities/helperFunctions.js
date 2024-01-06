@@ -24,3 +24,8 @@ export const handleInputPopUpMessage = (categories, domInputElement, newValue) =
       setIsOpenState(false);
     }
   }
+
+  export const mockHoverBehaviorOnMouseOver
+   = (event, elementRef, setIsHovered) => {
+
+  }
