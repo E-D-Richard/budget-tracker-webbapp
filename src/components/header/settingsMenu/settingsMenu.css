@@ -1,7 +1,7 @@
 :root {
   --main-text-color: #141c3a;
   --light-blue: #e3e6ff;
-  --is-open-transition-time: 300ms;
+  --open-menu-transition-time: 300ms;
 }
 
 /* -------------------------------------------------------- settings-button */
@@ -15,7 +15,7 @@
 
 #settings-menu-container.open {
   pointer-events: auto;
-  background-color: #e3e6ff;
+  /* background-color: #e3e6ff; */
  }
 
 
@@ -34,7 +34,6 @@
   top: 0;
   border: none;
   z-index: 1;
-  transition: transform 3s;
   background-color: transparent;
 }
 
@@ -53,7 +52,7 @@
 #settings-menu-container button#settings-menu-button svg {
   color: rgba(20, 28, 58, 0.9);
   font-size: 4rem;
-  transition: transform var(--is-open-transition-time);
+  transition: transform var(--open-menu-transition-time);
 }
 
 #settings-menu-container.open button#settings-menu-button svg {
@@ -83,7 +82,7 @@
   opacity: 0;
   transform: scale(0);
   transform: translate(100%, -100%);
-  transition: all var(--is-open-transition-time);
+  transition: all var(--open-menu-transition-time);
 }
 
 
