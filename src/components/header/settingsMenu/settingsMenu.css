@@ -13,7 +13,7 @@
   pointer-events: none;
 }
 
-#settings-menu-container .open {
+#settings-menu-container.open {
   pointer-events: auto;
   background-color: #e3e6ff;
  }
