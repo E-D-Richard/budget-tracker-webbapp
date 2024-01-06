@@ -38,6 +38,7 @@ const SettingsMenu = () => {
       ></div>
       <button
         id="settings-menu-button"
+        name="settings-menu-button"
         onClick={() => setMenuIsOpen(!menuIsOpen)}
       >
         <AiFillSetting />

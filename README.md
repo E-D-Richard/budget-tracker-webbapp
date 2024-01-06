@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
+- enlarge newTransForm form btn on hover
 - create a smooth a color effect for currently selected option setting (build out redux store to track state of current selection).
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
 - refresh memory on redux code (explore thunks in reddit project)

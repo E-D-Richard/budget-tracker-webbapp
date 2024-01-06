@@ -30,7 +30,7 @@ const NewTransaction = () => {
       {/* <h2>New Transaction</h2> */}
 
 
-      <button onClick={() => setIsExpanded(!isExpanded)} className="dropdown-button">
+      <button onClick={() => setIsExpanded(!isExpanded)} className="dropdown-button" name="open-close-new-transaction-form">
         <FaAngleUp className={`icon ${!isExpanded ? "up" : "down"}`} />
       </button>
       <NewTransForm isExpanded={isExpanded} />
