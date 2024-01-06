@@ -8,12 +8,10 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 ### ToDo
 
-- enlarge newTransForm form btn on hover
-- create a smooth a color effect for currently selected option setting (build out redux store to track state of current selection).
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
 - refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (simmilar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans 
-- test settings menu for mobile compatibility
+- test settings menu and newTransForm for mobile compatibility
 - organize files to comply with feature vs component correct official definitions
 - get rid of unnesseray zero's once typing begins in all input forms
 - beautify and stylize transactionList/records section
