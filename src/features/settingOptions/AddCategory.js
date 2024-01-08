@@ -18,7 +18,7 @@ const AddCategory = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    //this conditional prevents adding a duplicate cateogry to categories
+    //this conditional prevents adding a duplicate category to categories
     if (categories.includes(newCategory.trim().toLowerCase())) {
       return;
     };

@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTransaction, selectCategories } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
+import { createPopUpOnZeroValueInput, valueIsZeroOrBlank } from "../../utilities/helperFunctions";
 
 const NewTransForm = ({isExpanded}) => {
   const dispatch = useDispatch();
@@ -10,7 +11,6 @@ const NewTransForm = ({isExpanded}) => {
   const [category, setCategory] = useState(categories[0]);
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
-  const [amountInputAlert, setAmountInputAlert] = useState(false);
   
   /* clears old category value after deletion of category 
   to avoid a scenario where old category value is still selected.*/
@@ -18,13 +18,24 @@ const NewTransForm = ({isExpanded}) => {
     setCategory(categories[0])
   }, [categories]);
 
+
+
+  const handleAmountValueChange = (e) => {
+    const newAmount = Number(e.currentTarget.value); 
+    setAmount(newAmount);
+    createPopUpOnZeroValueInput(e.currentTarget, newAmount);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    //prevent 0 value transaction
-    if (parseFloat(amount) <= 0 || !amount) {
-      setAmountInputAlert(true);
+    
+    if (valueIsZeroOrBlank(amount)) {
+      //prevent submission of zero/blank value
+      const amountDomInputElement = e.currentTarget.querySelector("input#amount");
+      createPopUpOnZeroValueInput(amountDomInputElement, amount);
       return;
-    }
+    } 
+
 
     dispatch(
       addTransaction({
@@ -72,13 +83,9 @@ const NewTransForm = ({isExpanded}) => {
         <input
           id="amount"
           value={amount}
-          onChange={(e) => {
-            setAmount(e.currentTarget.value);
-            setAmountInputAlert(false);
-          }}
+          onChange={handleAmountValueChange}
           type="number"
           step="0.01"
-          className={amountInputAlert ? "amount-alert" : ""}
         />
       </div>
       <button className="submit-btn">Add Transaction</button>
