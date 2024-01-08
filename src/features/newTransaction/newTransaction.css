@@ -134,6 +134,7 @@
     margin-top: 15px;
     cursor: pointer;
     transition: transform 120ms;
+    transition: opacity 120ms;
   }
 
   .new-trans-form .submit-btn:hover {
