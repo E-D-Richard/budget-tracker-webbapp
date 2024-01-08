@@ -11,6 +11,7 @@ const NewTransForm = ({isExpanded}) => {
   const [category, setCategory] = useState(categories[0]);
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState(0);
+  const [preventSubmit, setPreventSubmit] = useState(true);
   
   /* clears old category value after deletion of category 
   to avoid a scenario where old category value is still selected.*/
@@ -24,6 +25,11 @@ const NewTransForm = ({isExpanded}) => {
     const newAmount = Number(e.currentTarget.value); 
     setAmount(newAmount);
     createPopUpOnZeroValueInput(e.currentTarget, newAmount);
+    if(!valueIsZeroOrBlank(newAmount)){
+      setPreventSubmit(false);
+    } else {
+      setPreventSubmit(true);
+    }
   }
 
   const handleSubmit = (e) => {
@@ -34,7 +40,7 @@ const NewTransForm = ({isExpanded}) => {
       const amountDomInputElement = e.currentTarget.querySelector("input#amount");
       createPopUpOnZeroValueInput(amountDomInputElement, amount);
       return;
-    } 
+    }
 
 
     dispatch(
@@ -49,6 +55,7 @@ const NewTransForm = ({isExpanded}) => {
     setCategory(categories[0]);
     setDescription("");
     setAmount(0);
+    setPreventSubmit(true);
   };
 
   return (
@@ -88,7 +95,7 @@ const NewTransForm = ({isExpanded}) => {
           step="0.01"
         />
       </div>
-      <button className="submit-btn">Add Transaction</button>
+      <button className={`submit-btn ${preventSubmit ? "prevent" : "allow"}`}>Add Transaction</button>
     </form>
   );
 }
