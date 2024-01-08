@@ -8,8 +8,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
-- reset newTransForm input fields to default values on form close
-- style NewTransaction submit button to change on hover
+- to ease usability, remove zero's on value entry in NewTransForm input fields
 - fix settingsMenu button overlay-appearance issue
 - refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans

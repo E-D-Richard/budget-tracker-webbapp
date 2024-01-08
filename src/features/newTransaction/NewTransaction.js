@@ -33,9 +33,9 @@ const NewTransaction = () => {
 
 
       <button
-        onClick={() => {
-          setIsExpanded(!isExpanded)
-          setButtonIsHovered(false)
+        onClick={()=>{
+          setIsExpanded(!isExpanded);
+          setButtonIsHovered(false);
         }}
         onMouseOver={()=>setButtonIsHovered(true)}
         onMouseLeave={()=>setButtonIsHovered(false)}

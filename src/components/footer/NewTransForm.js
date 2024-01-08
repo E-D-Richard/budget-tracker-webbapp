@@ -13,11 +13,27 @@ const NewTransForm = ({isExpanded}) => {
   const [amount, setAmount] = useState(0);
   const [preventSubmit, setPreventSubmit] = useState(true);
   
+  const resetForm = () => {
+    setCategory(categories[0]);
+    setDescription("");
+    setAmount(0);
+    setPreventSubmit(true);
+  }
+
+  
   /* clears old category value after deletion of category 
   to avoid a scenario where old category value is still selected.*/
   useEffect(() => {
     setCategory(categories[0])
   }, [categories]);
+
+  useEffect(()=>{
+    //if was open, then reset form to default on close
+    if(!isExpanded){
+      resetForm();
+    }
+  });
+  
 
 
 
@@ -52,10 +68,7 @@ const NewTransForm = ({isExpanded}) => {
         id: uuidv4(),
       })
     );
-    setCategory(categories[0]);
-    setDescription("");
-    setAmount(0);
-    setPreventSubmit(true);
+    resetForm();
   };
 
   return (
