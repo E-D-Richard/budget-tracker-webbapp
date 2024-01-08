@@ -9,7 +9,7 @@
 
 
   
-  .dropdown-container {
+  .new-trans-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -30,11 +30,11 @@
     transition: all 0.5s;
   }
 
-  .dropdown-container.open {
+  .new-trans-container.open {
     transform: translateY(0%);
   }
   
-  .dropdown-button {
+  .new-trans-button {
     color: var(--white);
     background-color: var(--main-text-color);
     border: none;
@@ -42,7 +42,7 @@
     transition: transform 320ms;
   }
 
-  .dropdown-button.mock-hover {
+  .new-trans-button.mock-hover {
     /* 
     The mock-hover className and state is set in NewTransaction.js inside the button tag.
       mock-hover class is used instead of the built in css:hover selector.
@@ -58,17 +58,17 @@
     transform: scale(1.25);
   }
 
-  .dropdown-button:active {
+  .new-trans-button:active {
     transform: scale(1);
   }
 
-  .dropdown-button .icon {
+  .new-trans-button .icon {
     font-size: 5rem;
     transform: rotate(0deg);
     transition: transform 0.6s;
   }
 
-  .dropdown-button .icon.down {
+  .new-trans-button .icon.down {
     transform: rotate(540deg);
   }
 

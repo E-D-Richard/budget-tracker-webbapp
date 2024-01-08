@@ -26,7 +26,7 @@ const NewTransaction = () => {
 
   return (
     <section
-      className={`dropdown-container ${isExpanded ? "open" : ""}`}
+      className={`new-trans-container ${isExpanded ? "open" : ""}`}
       ref={componentRef}
     >
       {/* <h2>New Transaction</h2> */}
@@ -39,7 +39,7 @@ const NewTransaction = () => {
         }}
         onMouseOver={()=>setButtonIsHovered(true)}
         onMouseLeave={()=>setButtonIsHovered(false)}
-        className={`dropdown-button ${buttonIsHovered ? "mock-hover" : ""}`}
+        className={`new-trans-button ${buttonIsHovered ? "mock-hover" : ""}`}
         name="open-close-new-transaction-form">
         <FaAngleUp className={`icon ${!isExpanded ? "up" : "down"}`} />
       </button>
