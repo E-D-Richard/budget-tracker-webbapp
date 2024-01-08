@@ -10,7 +10,7 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
 - refresh memory on redux code (explore thunks in reddit project)
-- update NewTrans to be hidden by default (simmilar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans 
+- update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans
 - test settings menu and newTransForm for mobile compatibility
 - organize files to comply with feature vs component correct official definitions
 - get rid of unnesseray zero's once typing begins in all input forms
@@ -20,10 +20,10 @@ A budgeting and expense tracking WebApp. The user is expected to record/input th
 ### Features
 
 - A Settings menu where all customization options live. Customization options currently are:
-    - Add new categories
-        - Auto scrolls to the newly created budget categories
-        - Prevents the addition of duplicate categories
-    - Delete existing categories
+  - Add new categories
+    - Auto scrolls to the newly created budget categories
+    - Prevents the addition of duplicate categories
+  - Delete existing categories
 
 ### Potential Features to Add
 
