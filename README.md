@@ -4,10 +4,12 @@
 
 ## Overview
 
-A budgeting and expense tracking WebApp. The user is expected to record/input their transactions based on the categories set and customized by the user (such as food, transportation, etc.). The app then tracks the transactions and sums up the spending in each category to calculate the amount of money that remains to be spent.
+A budgeting and expense tracking WebApp where a user can set/allocate funds to a given budget category. Default budget categories are provided by the app and the user can customize these categories by adding or removing a category using the settings menu (accessed by clicking on the setting/gear icon). Every time the user has a new expense transaction to record, they can submit that expense transaction to the correct category and the app will update the remaining budget balance for that category accordingly.
 
 ### ToDo
 
+- test and research new branch behavior in git
+- fix settingsMenu button overlay-appearance issue
 - style NewTransaction button to appear frozen on invalid form entries and add custom input form popUp messages (also create a hover and active state)
 - refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add setttingsMenu and NewTrans
