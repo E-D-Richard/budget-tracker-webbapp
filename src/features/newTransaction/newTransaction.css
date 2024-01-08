@@ -133,12 +133,11 @@
     padding: 18px 12px;
     margin-top: 15px;
     cursor: pointer;
-    transition: transform 120ms;
-    transition: opacity 120ms;
+    transition: all 120ms;
   }
 
   .new-trans-form .submit-btn:hover {
-    transform: scale(1.025);
+    transform: scale(1.030);
   }
 
   .new-trans-form .submit-btn:active {
