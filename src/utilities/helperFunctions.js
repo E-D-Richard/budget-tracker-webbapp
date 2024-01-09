@@ -1,3 +1,19 @@
+
+//------------------------------------------------------- Form Helpers -----------N
+
+export const valueIsZeroOrBlank = (inputValue) => {
+  //if amount is not a number greater than or less than zero, return true (i.e. blank values also return true) 
+  return !(inputValue < 0 || inputValue > 0);
+}
+
+// export const replaceUnnecessaryZerosWithBlankString = (numValue) => {
+//   if(valueIsZeroOrBlank(numValue)){
+//     return ""
+//   }
+  
+//   return numValue
+// }
+
 export const handleInputPopUpMessage = (categories, domInputElement, newValue) => {
   //returns true if currentInput is a duplicate. Else, returns false. 
   //This boolean value is used to set an isDuplicate duplicate state inside the function component in use.
@@ -17,17 +33,6 @@ export const handleInputPopUpMessage = (categories, domInputElement, newValue) =
     return false;
   }
 }
-export const closeOnExternalClick = (event, elementRef, setIsOpenState) => {
-  if (elementRef.current && !elementRef.current.contains(event.target)) {
-    setIsOpenState(false);
-  }
-}
-
-
-export const valueIsZeroOrBlank = (inputValue) => {
-  //if amount is not a number greater than or less than zero, return true (i.e. blank values also return true) 
-  return !(inputValue < 0 || inputValue > 0);
-}
 
 
 export const createPopUpOnZeroValueInput = (domInputElement, inputValue) => {
@@ -38,5 +43,13 @@ export const createPopUpOnZeroValueInput = (domInputElement, inputValue) => {
     domInputElement.setCustomValidity("");
     domInputElement.reportValidity();
   }
+}
 
+
+//------------------------------------------------------- Other Helpers -----------N 
+
+export const closeOnExternalClick = (event, elementRef, setIsOpenState) => {
+  if (elementRef.current && !elementRef.current.contains(event.target)) {
+    setIsOpenState(false);
+  }
 }

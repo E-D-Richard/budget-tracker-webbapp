@@ -10,18 +10,18 @@ const NewTransForm = ({isExpanded}) => {
   const categories = useSelector(selectCategories)
   const [category, setCategory] = useState(categories[0]);
   const [description, setDescription] = useState("");
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
   
   const resetForm = () => {
     setCategory(categories[0]);
     setDescription("");
-    setAmount(0);
+    setAmount("");
     setPreventSubmit(true);
   }
 
   
-  /* clears old category value after deletion of category 
+  /* clears old category values after deletion of a category 
   to avoid a scenario where old category value is still selected.*/
   useEffect(() => {
     setCategory(categories[0])

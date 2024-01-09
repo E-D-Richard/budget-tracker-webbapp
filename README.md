@@ -13,7 +13,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 - fix settingsMenu button overlay-appearance issue
 - refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans
-- test settings menu and newTransForm for mobile compatibility
+g- test settings menu and newTransForm for mobile compatibility
 - organize files to comply with feature vs component correct official definitions
 - get rid of unnesseray zero's once typing begins in all input forms
 - beautify and stylize transactionList/records section
