@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
+- create replit with a custom number input field which removes zero's on number entry
 - to ease usability, remove zero's on value entry in NewTransForm input fields
 - fix settingsMenu button overlay-appearance issue
 - refresh memory on redux code (explore thunks in reddit project)
