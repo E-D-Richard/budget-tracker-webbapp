@@ -6,13 +6,13 @@ export const valueIsZeroOrBlank = (inputValue) => {
   return !(inputValue < 0 || inputValue > 0);
 }
 
-// export const replaceUnnecessaryZerosWithBlankString = (numValue) => {
-//   if(valueIsZeroOrBlank(numValue)){
-//     return ""
-//   }
+
+export const removeUnnecessaryZeros = (inputString) => {
   
-//   return numValue
-// }
+  return inputString.replace(/^0+(?:(?=\.)|(\d+))$/, (match, capturedDigits) => capturedDigits || "0");
+};
+
+
 
 export const handleInputPopUpMessage = (categories, domInputElement, newValue) => {
   //returns true if currentInput is a duplicate. Else, returns false. 

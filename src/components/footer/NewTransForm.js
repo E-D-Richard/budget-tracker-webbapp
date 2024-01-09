@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { addTransaction, selectCategories } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
-import { createPopUpOnZeroValueInput, valueIsZeroOrBlank } from "../../utilities/helperFunctions";
+import { createPopUpOnZeroValueInput, removeUnnecessaryZeros, replaceUnnecessaryZerosWithBlankString, valueIsZeroOrBlank } from "../../utilities/helperFunctions";
 
 const NewTransForm = ({isExpanded}) => {
   const dispatch = useDispatch();
@@ -38,8 +38,9 @@ const NewTransForm = ({isExpanded}) => {
 
 
   const handleAmountValueChange = (e) => {
-    const newAmount = Number(e.currentTarget.value); 
-    setAmount(newAmount);
+    const newAmount = Number(e.currentTarget.value);
+    const newAmountStr = e.currentTarget.value 
+    setAmount(removeUnnecessaryZeros(newAmountStr));
     createPopUpOnZeroValueInput(e.currentTarget, newAmount);
     if(!valueIsZeroOrBlank(newAmount)){
       setPreventSubmit(false);

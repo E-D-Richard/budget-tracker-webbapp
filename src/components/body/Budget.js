@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
+import { removeUnnecessaryZeros, replaceUnnecessaryZerosWithBlankString } from "../../utilities/helperFunctions";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
-  const [amount, setAmount] = useState(budget.amount);
+  const [amount, setAmount] = useState("");
   const transactions = useSelector(selectTransactions);
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory; 
@@ -18,8 +19,15 @@ const Budget = ({ budget }) => {
     }
   },[budgetCategoryCreatedByUser]);
 
-  const handleUpdate = (e) => {
+  const handleChange = (e) => {
+    //const newAmount = Number(e.currentTarget.value);
+    const newAmountStr = e.currentTarget.value;
+    setAmount(removeUnnecessaryZeros(newAmountStr));
+  }
+
+  const handleSubmit = (e) => {
     e.preventDefault();
+    
 
     dispatch(
       addBudgetBalanceEntry({
@@ -64,14 +72,14 @@ const Budget = ({ budget }) => {
         </h4>
       </div>
 
-      <form onSubmit={handleUpdate} className="budget-form">
+      <form onSubmit={handleSubmit} className="budget-form">
         <input
           className="amount-input"
           name="amount-to-add"
           value={amount}
-          onChange={(e) => setAmount(e.currentTarget.value)}
+          onChange={handleChange}
           type="number"
-          step="10"
+          step="0.01"
         />
         <button className="update-button">Update</button>
       </form>

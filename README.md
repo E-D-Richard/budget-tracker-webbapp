@@ -8,8 +8,9 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
-- create replit with a custom number input field which removes zero's on number entry
-- to ease usability, remove zero's on value entry in NewTransForm input fields
+- study how the removeUnnecessaryZeros helper function works and fix issue: when attempting to append a zero to the beggining of a whole number, typing placeholder jumps back to the end of the number. Desired behaivor would be to prevent the user from adding the zero while still keeping the typing placeholder at the begging of the string
+- make replit that handles zero's in forms
+- add a feature in settings where a user can change to their preferred currency symbol and set default to USD
 - fix settingsMenu button overlay-appearance issue
 - refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans
