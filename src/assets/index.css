@@ -33,7 +33,6 @@ body {
   margin: 0;
 }
 
-
 h1 {
   font-size: clamp(3.2rem, 12vw, 5.4rem);
   font-weight: bold;
@@ -72,7 +71,16 @@ select {
   border-radius: 6px;
 }
 
-
+/* Hide the default number input arrows */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/* For some browsers like Chrome, additional styling is needed */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 /* -------------------------------------------- header section ------------------------------------- */
 
@@ -82,91 +90,12 @@ header {
 
 /* -------------------------------------------- main-body section ------------------------------------- */
 
-
 /* main {
 
   margin-bottom is being set dynamically (based on NewTransaction offsetHeight) inside the function component 
 } */
 
-/* -------------------------------------------- budgets section ------------------------------------- */
 
-
-
-.all-budgets-container ul {
-  padding: 0;
-}
-
-.budget-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  column-gap: 50px;
-  margin-bottom: 24px;
-  list-style: none;
-  padding: 16px 0px 24px 0px;
-  border-bottom: solid 1px var(--main-text-color);
-}
-
-.category-label {
-  color: var(--gray);
-  font-size: 15px;
-  font-weight: bold;
-}
-
-.category-value {
-  text-transform: capitalize;
-}
-
-.budget-container .data-wrapper {
-  flex: 0 2 100%;
-  display: flex;
-  flex-direction: column;
-  row-gap: 15px;
-}
-
-.budget-form {
-  flex: 0 0 auto;
-  display: flex;
-  gap: 16px;
-}
-
-.budget-form > * {
-  max-width: 100px;
-}
-
-.budget-form .update-button {
-  padding: 6px 12px;
-  border-radius: 6px;
-  border: solid 1px #141c3a;
-  font-size: 18px;
-  font-weight: bold;
-  background: var(--white);
-  cursor: pointer;
-}
-
-.update-button:hover,
-.update-button:focus {
-  background-color: #141c3a;
-  color: #ffffff;
-}
-
-.remaining-funds.positive {
-  color: var(--blue);
-}
-
-.remaining-funds.negative {
-  color: var(--red);
-}
-
-/* --------------------------add category */
-
-.all-budgets-container form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 48px;
-  text-align: center;
-}
 
 /* -------------------------------------------- transaction records ---------------------*/
 

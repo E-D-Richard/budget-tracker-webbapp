@@ -1,4 +1,5 @@
 import React from "react";
+import "./budgets.css";
 import { useSelector } from "react-redux";
 import { selectBudgets } from "./budgetsSlice";
 import Budget from "../../components/body/Budget";

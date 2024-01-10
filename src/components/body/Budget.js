@@ -3,14 +3,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
-import { removeUnnecessaryZeros, replaceUnnecessaryZerosWithBlankString } from "../../utilities/helperFunctions";
+import { createPopUpOnZeroValueInput, reformatInputValueForCustomNumberInputElement } from "../../utilities/helperFunctions/formHelpers";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState("");
+  const [preventSubmit, setPreventSubmit] = useState(true)
   const transactions = useSelector(selectTransactions);
   const budgetRef = useRef();
-  const budgetCategoryCreatedByUser = !budget.isDefaultCategory; 
+  const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
+  const resetForm = () => {
+    setAmount("");
+    setPreventSubmit(true)
+  }
+
 
   //when a user creates a new category, this effect auto scrolls to that new budget category
   useEffect(()=>{
@@ -19,16 +25,20 @@ const Budget = ({ budget }) => {
     }
   },[budgetCategoryCreatedByUser]);
 
+
   const handleChange = (e) => {
-    //const newAmount = Number(e.currentTarget.value);
-    const newAmountStr = e.currentTarget.value;
-    setAmount(removeUnnecessaryZeros(newAmountStr));
+    const returnedData = reformatInputValueForCustomNumberInputElement(e);
+    setAmount(returnedData.reformattedValue);
+    setPreventSubmit(returnedData.valueIsZeroOrBlank);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-
+    if(preventSubmit){
+      const budgetDomInputElement = budgetRef.current.querySelector("#amount-input");
+      createPopUpOnZeroValueInput(budgetDomInputElement, amount)
+      return;
+    }
     dispatch(
       addBudgetBalanceEntry({
         category: budget.category,
@@ -38,7 +48,8 @@ const Budget = ({ budget }) => {
         id: uuidv4(),
       })
     );
-    setAmount(0);
+
+    resetForm();
   };
 
   const calculateTotalExpenses = () => {
@@ -75,13 +86,14 @@ const Budget = ({ budget }) => {
       <form onSubmit={handleSubmit} className="budget-form">
         <input
           className="amount-input"
+          id="amount-input"
           name="amount-to-add"
           value={amount}
           onChange={handleChange}
-          type="number"
           step="0.01"
+          type="text"
         />
-        <button className="update-button">Update</button>
+        <button className={`update-button ${preventSubmit ? "prevent" : "allow"}`}>Update</button>
       </form>
     </li>
   );
