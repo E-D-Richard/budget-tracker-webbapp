@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "./settingsMenu.css";
 import { AiFillSetting } from "react-icons/ai";
 import Settings from "./settings/Settings";
-import { closeOnExternalClick } from "../../../utilities/helperFunctions";
+import { closeOnExternalClick } from "../../../utilities/helperFunctions/otherHelpers";
 
 const SettingsMenu = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
