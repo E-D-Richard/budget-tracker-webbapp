@@ -18,7 +18,6 @@ const Budget = ({ budget }) => {
     setPreventSubmit(true)
   }
 
-
   //when a user creates a new category, this effect auto scrolls to that new budget category
   useEffect(()=>{
     if(budgetCategoryCreatedByUser && budgetRef.current ){
@@ -53,12 +52,15 @@ const Budget = ({ budget }) => {
     resetForm();
   };
 
+
+
+  // figure out how to cleanup
   const calculateTotalExpenses = () => {
     return transactions[budget.category]
       .map((transaction) => transaction.amount)
       .reduce((acc, currentValue) => acc + currentValue, 0);
   };
-
+  // figure out how to cleanup
   const getFundsRemainingClassName = (amount) => {
     if (Number(amount) > 0) {
       return "positive";
@@ -68,7 +70,7 @@ const Budget = ({ budget }) => {
       return "null"
     }
   };
-
+  // figure out how to cleanup
   const remainingFunds = Number.parseFloat(
     budget.amount - calculateTotalExpenses()
   ).toFixed(2);

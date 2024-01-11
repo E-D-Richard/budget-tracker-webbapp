@@ -93,11 +93,7 @@ header {
 /* main {
 
   margin-bottom is being set dynamically (based on NewTransaction offsetHeight) inside the function component 
-} */
-
-
-
-/* -------------------------------------------- transaction records ---------------------*/
+} *//* -------------------------------------------- transaction records ---------------------*/
 
 .transaction-list-section {
   padding: 12px 10.5px 11px 16px;
