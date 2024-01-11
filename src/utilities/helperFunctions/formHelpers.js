@@ -47,8 +47,8 @@ export const removeUnnecessaryZeros = (inputString) => {
   const myCustomRegex = /^0+(\d+)$|^0(\d+\.\d*)$/;
 
   const replacer = (match, capturedIntegers, capturedFloatingPoints) => {
-    console.log("capturedIntegers: ", capturedIntegers);
-    console.log("capturedFloatingPoints: ", capturedFloatingPoints);
+    // console.log("capturedIntegers: ", capturedIntegers);
+    // console.log("capturedFloatingPoints: ", capturedFloatingPoints);
     if (capturedIntegers) {
       return capturedIntegers;
     } else if (capturedFloatingPoints) {
