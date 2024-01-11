@@ -8,6 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import {
   createPopUpOnZeroValueSubmit,
+  isNumerical,
   reformatInputValueForCustomNumberInputElement,
 } from "../../utilities/helperFunctions/formHelpers";
 
@@ -40,6 +41,9 @@ const NewTransForm = ({ isExpanded }) => {
   });
 
   const handleAmountValueChange = (e) => {
+    if(!isNumerical(e.currentTarget.value)){
+      return;
+    }
     const returnedData = reformatInputValueForCustomNumberInputElement(e);
     setAmount(returnedData.reformattedValue);
     setPreventSubmit(returnedData.valueIsZeroOrBlank);
