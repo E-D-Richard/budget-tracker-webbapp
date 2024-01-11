@@ -8,11 +8,13 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
-- create a helper function that makes custom popup if user attempts to enter non numerical value
-- using a timer, make all submit buttons blink red or green depending on prenvet submit state
 - make replits to preserve all the form related helper functions that handles zero's in forms
-- add a clear all button to TransList
+- change budgets slice to be a top layer obj instead of an array. This allow for east access to budgets slice data which will make it east to cleanup Budget.js
+- create a helper function that makes custom popup if user attempts to enter non numerical value
+- using a timer, make all submit buttons blink red or green depending on preset submit state
+- add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
 - add a feature in settings where a user can change to their preferred currency symbol and set default to USD
+- add a clear all button to TransList
 - fix settingsMenu button overlay-appearance issue
 - refresh memory on redux code (explore thunks in reddit project)
 - update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans

@@ -29,6 +29,7 @@ const budgetsSlice = createSlice({
           budget.amount += Number(action.payload.amount);
           //update transList
           budget.history.push(action.payload);
+          
         }
       });
     },
@@ -55,6 +56,7 @@ const budgetsSlice = createSlice({
 });
 
 export const selectBudgets = (state) => state.budgets;
+// export const selectBudgetBalance = (state) => state.budgets.;
 export const {
   addBudgetBalanceEntry,
   deleteBudgetBalanceEntry,

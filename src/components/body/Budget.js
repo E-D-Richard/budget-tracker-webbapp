@@ -10,6 +10,7 @@ const Budget = ({ budget }) => {
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true)
   const transactions = useSelector(selectTransactions);
+  //const budgetCategoryBalance = useSelector(selectBudgetBalance);
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
   const resetForm = () => {
@@ -59,26 +60,26 @@ const Budget = ({ budget }) => {
   };
 
   const getFundsRemainingClassName = (amount) => {
-    if (parseFloat(amount) === 0) {
-      return null;
-    } else if (parseFloat(amount) > 0) {
+    if (Number(amount) > 0) {
       return "positive";
-    } else if (parseFloat(amount) < 0) {
+    } else if (Number(amount) < 0) {
       return "negative";
+    } else if(Number(amount) === 0){
+      return "null"
     }
   };
 
   const remainingFunds = Number.parseFloat(
     budget.amount - calculateTotalExpenses()
   ).toFixed(2);
-  const fundsRemainingClassName = getFundsRemainingClassName(remainingFunds);
+
 
   return (
     <li className="budget-container" id={budget.category} ref={budgetRef}>
       <div className="data-wrapper">
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
-        <h4 className={`remaining-funds ${fundsRemainingClassName}`}>
+        <h4 className={`remaining-funds ${getFundsRemainingClassName(remainingFunds)}`}>
           Funds Remaining: {remainingFunds}
         </h4>
       </div>
