@@ -2,40 +2,48 @@
 
 export const reformatInputValueForCustomNumberInputElement = (e) => {
   const newAmountStr = e.currentTarget.value;
-  let reformattedValue;
-  //const isNumericalRegex = /^(-?\d*\.?\d*)?$/;
-
-  let decimalCounter = 0;
-  const filterFunction = (char, index) => {
-    let keepChar = true;
-    if (char === "-" && index !== 0) {
-      //discard all minus symbols unless they appear at the beginning of the value
-      keepChar = false;
-    }
-    if (char === ".") {
-      //there should only be one decimal value. Any additional attempts to add decimal points should be filtered out
-      decimalCounter++;
-      if (decimalCounter > 1) {
-        return false;
-      }
-    }
-    return keepChar;
-  };
-
-  if (isNumerical(newAmountStr)) {
-    reformattedValue = newAmountStr;
-  } else {
-    // Remove non-numeric characters, except for decimal points and a minus symbols at the beginning
-    const cleanedValue = newAmountStr.replace(/[^-\d.]/g, "");
-    reformattedValue = cleanedValue.split("").filter(filterFunction).join("");
-
-    removePopUpOnNumericalValueInput(e.currentTarget, reformattedValue);
+  if(!isNumerical(newAmountStr)){
+    return
   }
 
   return {
-    valueIsZeroOrBlank: valueIsZeroOrBlank(reformattedValue),
-    reformattedValue: reformattedValue,
+    reformattedValue: newAmountStr,
+    valueIsZeroOrBlank: valueIsZeroOrBlank(newAmountStr)
   };
+  // let reformattedValue;
+  // //const isNumericalRegex = /^(-?\d*\.?\d*)?$/;
+
+  // let decimalCounter = 0;
+  // const filterFunction = (char, index) => {
+  //   let keepChar = true;
+  //   if (char === "-" && index !== 0) {
+  //     //discard all minus symbols unless they appear at the beginning of the value
+  //     keepChar = false;
+  //   }
+  //   if (char === ".") {
+  //     //there should only be one decimal value. Any additional attempts to add decimal points should be filtered out
+  //     decimalCounter++;
+  //     if (decimalCounter > 1) {
+  //       return false;
+  //     }
+  //   }
+  //   return keepChar;
+  // };
+
+  // if (isNumerical(newAmountStr)) {
+  //   reformattedValue = newAmountStr;
+  // } else {
+  //   // Remove non-numeric characters, except for decimal points and a minus symbols at the beginning
+  //   const cleanedValue = newAmountStr.replace(/[^-\d.]/g, "");
+  //   reformattedValue = cleanedValue.split("").filter(filterFunction).join("");
+
+  //   removePopUpOnNumericalValueInput(e.currentTarget, reformattedValue);
+  // }
+
+  // return {
+  //   valueIsZeroOrBlank: valueIsZeroOrBlank(reformattedValue),
+  //   reformattedValue: reformattedValue,
+  // };
 };
 
 export const removeUnnecessaryZeros = (inputString) => {
