@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
+- cleanup and simplify reformatInputValueForCustomNumberInputElement and test
 - create a helper function that makes custom popup if user attempts to enter non numerical value
 - make replits to preserve all the form related helper functions that handles zero's in forms
 - change budgets slice to be a top layer obj instead of an array. This allow for east access to budgets slice data which will make it east to cleanup Budget.js
