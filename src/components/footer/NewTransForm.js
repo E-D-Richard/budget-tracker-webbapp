@@ -7,7 +7,7 @@ import {
 import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import {
-  createPopUpOnZeroValueInput,
+  createPopUpOnZeroValueSubmit,
   reformatInputValueForCustomNumberInputElement,
 } from "../../utilities/helperFunctions/formHelpers";
 
@@ -52,7 +52,7 @@ const NewTransForm = ({ isExpanded }) => {
       //prevent submission of zero/blank value
       const amountDomInputElement =
         e.currentTarget.querySelector("input#amount");
-      createPopUpOnZeroValueInput(amountDomInputElement, amount);
+        createPopUpOnZeroValueSubmit(amountDomInputElement, amount);
       return;
     }
 

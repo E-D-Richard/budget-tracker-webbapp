@@ -1,14 +1,11 @@
-
 //--------------------------------------------------------------------------------- Formatting -----------
-
 
 export const reformatInputValueForCustomNumberInputElement = (e) => {
   const newAmountStr = e.currentTarget.value;
+  let reformattedValue;
+  //const isNumericalRegex = /^(-?\d*\.?\d*)?$/;
 
-  // Remove non-numeric characters, except for decimal points and a minus symbols at the beginning
-  const cleanedValue = newAmountStr.replace(/[^-\d.]/g, "");
   let decimalCounter = 0;
-
   const filterFunction = (char, index) => {
     let keepChar = true;
     if (char === "-" && index !== 0) {
@@ -24,18 +21,22 @@ export const reformatInputValueForCustomNumberInputElement = (e) => {
     }
     return keepChar;
   };
-  const reformattedValue = cleanedValue
-    .split("")
-    .filter(filterFunction)
-    .join("");
 
-  removePopUpOnNumericalValue(e.currentTarget, reformattedValue);
+  if (isNumerical(newAmountStr)) {
+    reformattedValue = newAmountStr;
+  } else {
+    // Remove non-numeric characters, except for decimal points and a minus symbols at the beginning
+    const cleanedValue = newAmountStr.replace(/[^-\d.]/g, "");
+    reformattedValue = cleanedValue.split("").filter(filterFunction).join("");
+
+    removePopUpOnNumericalValueInput(e.currentTarget, reformattedValue);
+  }
+
   return {
     valueIsZeroOrBlank: valueIsZeroOrBlank(reformattedValue),
     reformattedValue: reformattedValue,
   };
 };
-
 
 export const removeUnnecessaryZeros = (inputString) => {
   // Pattern to remove extra zeros preceding integers (non floating points):  /^0+(\d+)$/
@@ -59,9 +60,6 @@ export const removeUnnecessaryZeros = (inputString) => {
   };
   return inputString.replace(myCustomRegex, replacer);
 };
-
-
-
 
 //------------------------------------------------------------------------- PopUps -----------
 
@@ -89,7 +87,7 @@ export const handleAddCategoryInputPopUpMessage = (
   }
 };
 
-export const createPopUpOnZeroValueInput = (domInputElement, inputValue) => {
+export const createPopUpOnZeroValueSubmit = (domInputElement, inputValue) => {
   if (valueIsZeroOrBlank(inputValue)) {
     domInputElement.setCustomValidity("empty");
     domInputElement.reportValidity();
@@ -99,20 +97,34 @@ export const createPopUpOnZeroValueInput = (domInputElement, inputValue) => {
   }
 };
 
-const removePopUpOnNumericalValue = (domInputElement, inputValue) => {
+const removePopUpOnNumericalValueInput = (domInputElement, inputValue) => {
   if (!valueIsZeroOrBlank(inputValue)) {
     domInputElement.setCustomValidity("");
     domInputElement.reportValidity();
   }
 };
 
-
+export const createPopUpOnNonNumericalValueInput = (
+  domInputElement,
+  inputValue
+) => {
+  if (valueIsZeroOrBlank(inputValue)) {
+    domInputElement.setCustomValidity("empty");
+    domInputElement.reportValidity();
+  } else {
+    domInputElement.setCustomValidity("");
+    domInputElement.reportValidity();
+  }
+};
 
 //------------------------------------------------------------------------- helping the helpers -----------
 
-
 export const valueIsZeroOrBlank = (inputValue) => {
-    //if amount is not a number greater than or less than zero, return true (i.e. blank values also return true)
-    return !(Number(inputValue) < 0 || Number(inputValue) > 0);
-  };
-  
+  //if amount is not a number greater than or less than zero, return true (i.e. blank values also return true)
+  return !(Number(inputValue) < 0 || Number(inputValue) > 0);
+};
+
+export const isNumerical = (inputValue) => {
+  const isNumericalValueRegex = /^(-?\d*\.?\d*)?$/;
+  return isNumericalValueRegex.test(inputValue);
+};
