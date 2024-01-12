@@ -8,8 +8,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useSelector } from "react-redux";
 import {
   createPopUpOnZeroValueSubmit,
-  isNumerical,
-  reformatInputValueForCustomNumberInputElement,
+  handleInputChangeForCustomNumberInputField,
 } from "../../utilities/helperFunctions/formHelpers";
 
 const NewTransForm = ({ isExpanded }) => {
@@ -41,12 +40,7 @@ const NewTransForm = ({ isExpanded }) => {
   });
 
   const handleAmountValueChange = (e) => {
-    if(!isNumerical(e.currentTarget.value)){
-      return;
-    }
-    const returnedData = reformatInputValueForCustomNumberInputElement(e);
-    setAmount(returnedData.reformattedValue);
-    setPreventSubmit(returnedData.valueIsZeroOrBlank);
+    handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit);
   };
 
   const handleSubmit = (e) => {
@@ -54,9 +48,8 @@ const NewTransForm = ({ isExpanded }) => {
 
     if (preventSubmit) {
       //prevent submission of zero/blank value
-      const amountDomInputElement =
-        e.currentTarget.querySelector("input#amount");
-        createPopUpOnZeroValueSubmit(amountDomInputElement, amount);
+      const amountDomInputElement = e.currentTarget.querySelector("input#amount");
+      createPopUpOnZeroValueSubmit(amountDomInputElement);
       return;
     }
 
@@ -108,8 +101,7 @@ const NewTransForm = ({ isExpanded }) => {
           id="amount"
           value={amount}
           onChange={handleAmountValueChange}
-          type="number"
-          step="0.01"
+          type="text"
         />
       </div>
       <button className={`submit-btn ${preventSubmit ? "prevent" : "allow"}`}>

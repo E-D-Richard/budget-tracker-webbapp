@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
-import { createPopUpOnZeroValueSubmit, isNumerical, reformatInputValueForCustomNumberInputElement } from "../../utilities/helperFunctions/formHelpers";
+import { createPopUpOnZeroValueSubmit, handleInputChangeForCustomNumberInputField } from "../../utilities/helperFunctions/formHelpers";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
@@ -27,19 +27,14 @@ const Budget = ({ budget }) => {
 
 
   const handleChange = (e) => {
-    if(!isNumerical(e.currentTarget.value)){
-      return;
-    }
-    const returnedData = reformatInputValueForCustomNumberInputElement(e);
-    setAmount(returnedData.reformattedValue);
-    setPreventSubmit(returnedData.valueIsZeroOrBlank);
+    handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit);
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if(preventSubmit){
       const budgetDomInputElement = budgetRef.current.querySelector("#amount-input");
-      createPopUpOnZeroValueSubmit(budgetDomInputElement, amount)
+      createPopUpOnZeroValueSubmit(budgetDomInputElement)
       return;
     }
     dispatch(
