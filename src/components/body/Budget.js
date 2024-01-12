@@ -3,40 +3,46 @@ import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectTransactions } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
-import { createPopUpOnZeroValueSubmit, handleInputChangeForCustomNumberInputField } from "../../utilities/helperFunctions/formHelpers";
+import {
+  createPopUpOnZeroValueSubmit,
+  handleInputChangeForCustomNumberInputField,
+} from "../../utilities/helpers/helperFunctions/formHelpers";
+import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
   const [amount, setAmount] = useState("");
-  const [preventSubmit, setPreventSubmit] = useState(true)
+  const [preventSubmit, setPreventSubmit] = useState(true);
   const transactions = useSelector(selectTransactions);
   //const budgetCategoryBalance = useSelector(selectBudgetBalance);
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
   const resetForm = () => {
     setAmount("");
-    setPreventSubmit(true)
-  }
+    setPreventSubmit(true);
+  };
 
   //when a user creates a new category, this effect auto scrolls to that new budget category
-  useEffect(()=>{
-    if(budgetCategoryCreatedByUser && budgetRef.current ){
-      budgetRef.current.scrollIntoView({ behavior: 'smooth' });
+  useEffect(() => {
+    if (budgetCategoryCreatedByUser && budgetRef.current) {
+      budgetRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  },[budgetCategoryCreatedByUser]);
-
+  }, [budgetCategoryCreatedByUser]);
 
   const handleChange = (e) => {
     handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit);
-  }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(preventSubmit){
-      const budgetDomInputElement = budgetRef.current.querySelector("#amount-input");
-      createPopUpOnZeroValueSubmit(budgetDomInputElement)
+    const budgetDomInputElement =
+      budgetRef.current.querySelector("#amount-input");
+    console.log(preventSubmit);
+    if (preventSubmit) {
+      createPopUpOnZeroValueSubmit(budgetDomInputElement);
       return;
     }
+
     dispatch(
       addBudgetBalanceEntry({
         category: budget.category,
@@ -50,8 +56,6 @@ const Budget = ({ budget }) => {
     resetForm();
   };
 
-
-
   // figure out how to cleanup
   const calculateTotalExpenses = () => {
     return transactions[budget.category]
@@ -64,8 +68,8 @@ const Budget = ({ budget }) => {
       return "positive";
     } else if (Number(amount) < 0) {
       return "negative";
-    } else if(Number(amount) === 0){
-      return "null"
+    } else if (Number(amount) === 0) {
+      return "null";
     }
   };
   // figure out how to cleanup
@@ -73,13 +77,16 @@ const Budget = ({ budget }) => {
     budget.amount - calculateTotalExpenses()
   ).toFixed(2);
 
-
   return (
     <li className="budget-container" id={budget.category} ref={budgetRef}>
       <div className="data-wrapper">
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
-        <h4 className={`remaining-funds ${getFundsRemainingClassName(remainingFunds)}`}>
+        <h4
+          className={`remaining-funds ${getFundsRemainingClassName(
+            remainingFunds
+          )}`}
+        >
           Funds Remaining: {remainingFunds}
         </h4>
       </div>
@@ -93,8 +100,13 @@ const Budget = ({ budget }) => {
           onChange={handleChange}
           step="0.01"
           type="text"
+          autoComplete={developmentModeSettings.autocomplete}
         />
-        <button className={`update-button ${preventSubmit ? "prevent" : "allow"}`}>Update</button>
+        <button
+          className={`update-button ${preventSubmit ? "prevent" : "allow"}`}
+        >
+          Update
+        </button>
       </form>
     </li>
   );

@@ -9,7 +9,8 @@ import { useSelector } from "react-redux";
 import {
   createPopUpOnZeroValueSubmit,
   handleInputChangeForCustomNumberInputField,
-} from "../../utilities/helperFunctions/formHelpers";
+} from "../../utilities/helpers/helperFunctions/formHelpers";
+import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
 
 const NewTransForm = ({ isExpanded }) => {
   const dispatch = useDispatch();
@@ -45,10 +46,9 @@ const NewTransForm = ({ isExpanded }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    const amountDomInputElement = e.currentTarget.querySelector("input#amount");
     if (preventSubmit) {
       //prevent submission of zero/blank value
-      const amountDomInputElement = e.currentTarget.querySelector("input#amount");
       createPopUpOnZeroValueSubmit(amountDomInputElement);
       return;
     }
@@ -102,6 +102,7 @@ const NewTransForm = ({ isExpanded }) => {
           value={amount}
           onChange={handleAmountValueChange}
           type="text"
+          autoComplete={developmentModeSettings.autocomplete}
         />
       </div>
       <button className={`submit-btn ${preventSubmit ? "prevent" : "allow"}`}>

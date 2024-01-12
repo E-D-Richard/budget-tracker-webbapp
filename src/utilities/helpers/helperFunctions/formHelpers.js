@@ -1,16 +1,18 @@
 //--------------------------------------------------------------------------------- Formatting -----------
 
 export const handleInputChangeForCustomNumberInputField = (
-  e, setAmountState, setPreventSubmitState
+  e,
+  setAmountState,
+  setPreventSubmitState
 ) => {
   const newAmountStr = e.currentTarget.value;
+
   if (!isNumerical(newAmountStr)) {
-    createPopUpOnNonNumericalValueInput(e.currentTarget);
     return;
   }
 
   //assuming value is numerical, remove any prior popups that may have been triggered
-  removePopUp(e.currentTarget, newAmountStr);
+  removePopUp(e.currentTarget);
   setAmountState(newAmountStr);
   setPreventSubmitState(valueIsZeroOrBlank(newAmountStr));
 };
@@ -22,13 +24,8 @@ export const createPopUpOnZeroValueSubmit = (domInputElement) => {
   domInputElement.reportValidity();
 };
 
-const removePopUp = (domInputElement) => {
+export const removePopUp = (domInputElement) => {
   domInputElement.setCustomValidity("");
-  domInputElement.reportValidity();
-};
-
-export const createPopUpOnNonNumericalValueInput = (domInputElement) => {
-  domInputElement.setCustomValidity("input must be a number");
   domInputElement.reportValidity();
 };
 
@@ -69,6 +66,14 @@ export const isNumerical = (inputValue) => {
 };
 
 //------------------------------------------------------------------------- unused helpers -----------
+
+
+
+// export const createPopUpOnNonNumericalValueInput = (domInputElement) => {
+//   domInputElement.setCustomValidity("input must be a number");
+//   domInputElement.reportValidity();
+// };
+
 
 // export const removeUnnecessaryZeros = (inputString) => {
 //   // Pattern to remove extra zeros preceding integers (non floating points):  /^0+(\d+)$/
