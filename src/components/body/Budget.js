@@ -29,6 +29,7 @@ const Budget = ({ budget }) => {
     }
   }, [budgetCategoryCreatedByUser]);
 
+
   const handleChange = (e) => {
     handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit);
   };
@@ -37,7 +38,6 @@ const Budget = ({ budget }) => {
     e.preventDefault();
     const budgetDomInputElement =
       budgetRef.current.querySelector("#amount-input");
-    console.log(preventSubmit);
     if (preventSubmit) {
       createPopUpOnZeroValueSubmit(budgetDomInputElement);
       return;
@@ -52,7 +52,6 @@ const Budget = ({ budget }) => {
         id: uuidv4(),
       })
     );
-
     resetForm();
   };
 
@@ -103,7 +102,7 @@ const Budget = ({ budget }) => {
           autoComplete={developmentModeSettings.autocomplete}
         />
         <button
-          className={`update-button ${preventSubmit ? "prevent" : "allow"}`}
+          className={`submit-button ${preventSubmit ? "prevent" : "allow"}`}
         >
           Update
         </button>

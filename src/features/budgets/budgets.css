@@ -50,7 +50,7 @@
   max-width: 100px;
 }
 
-.budget-form .update-button {
+.budget-form .submit-button {
   padding: 6px 12px;
   border-radius: 6px;
   border: solid 1px #141c3a;
@@ -60,16 +60,17 @@
   cursor: pointer;
 }
 
-.update-button:hover,
-.update-button:focus {
+.budget-form .submit-button:hover,
+.budget-form .submit-button:focus {
   background-color: #141c3a;
   color: #ffffff;
 }
 
-.update-button.prevent {
+.budget-form .submit-button.prevent {
     opacity: 0.5;
     filter: blur(0.5px);
 }
+
 
 .remaining-funds.positive {
   color: var(--blue);
