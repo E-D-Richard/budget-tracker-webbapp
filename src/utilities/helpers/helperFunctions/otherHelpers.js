@@ -7,3 +7,7 @@ export const closeOnExternalClick = (event, elementRef, setIsOpenState) => {
     setIsOpenState(false);
   }
 };
+
+export const sortArrayOfObjectsInAlphabeticalOrderOfKeys = (ArrayOfObjects) => {
+  return ArrayOfObjects.sort((a, b) => a.category.localeCompare(b.category));
+}

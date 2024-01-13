@@ -9,8 +9,6 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 ### ToDo
 
 - make replits to preserve all the form related helper functions that handles zero's in forms
-- change budgets slice to be a top layer obj instead of an array. This allow for east access to budgets slice data which will make it east to cleanup Budget.js
-- using a timer, make all submit buttons blink red or green depending on preset submit state
 - add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
 - add a feature in settings where a user can change to their preferred currency symbol and set default to USD
 - add a clear all button to TransList
