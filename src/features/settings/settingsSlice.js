@@ -26,5 +26,6 @@ const settingsSlice = createSlice({
 
 
 export const selectSelectedCurrencyIndex = (state) => state.settings.selectedCurrency.currencyIndex;
+export const selectSelectedCurrencySymbol = (state) => state.settings.selectedCurrency.currencyData.symbol;
 export const {updateSelectedCurrency} = settingsSlice.actions;
 export default settingsSlice.reducer;

@@ -9,9 +9,11 @@ import {
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
 import Big from "big.js";
+import { selectSelectedCurrencySymbol } from "../../features/settings/settingsSlice";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
+  const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
   const transactions = useSelector(selectTransactions);
@@ -65,7 +67,7 @@ const Budget = ({ budget }) => {
         <h4
           className={`remaining-funds ${(Number(remainingFunds) > 0) ? "positive" : (Number(remainingFunds) < 0) ? "negative" : "null"}`}
         >
-          Funds Remaining: {remainingFunds}
+          Funds Remaining: {selectedCurrencySymbol + remainingFunds}
         </h4>
       </div>
 

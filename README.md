@@ -25,6 +25,8 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 ### Features
 
 - A Settings menu where all customization options live. Customization options currently are:
+  - Select Currency
+    - User Selects their preferred currency and the corresponding currency symbol is automatically displayed next to all numerical output
   - Add new categories
     - Auto scrolls to the newly created budget categories
     - Prevents the addition of duplicate categories

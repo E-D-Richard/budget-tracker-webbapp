@@ -56,7 +56,7 @@ const NewTransForm = ({ isExpanded }) => {
       addTransaction({
         type: "expense",
         category: category,
-        description: description,
+        description: description ? description : "expense",
         amount: Number(amount),
         id: uuidv4(),
       })

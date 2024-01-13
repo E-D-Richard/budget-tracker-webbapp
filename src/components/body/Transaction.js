@@ -1,10 +1,12 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { deleteTransaction } from "../../features/transRecord/transRecordSlice";
 import { deleteBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
+import { selectSelectedCurrencySymbol } from "../../features/settings/settingsSlice";
 
 const Transaction = ({ transaction }) => {
   const dispatch = useDispatch();
+  const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
 
   const handleDelete = (e) => {
     if (transaction.type === "expense") {
@@ -18,14 +20,15 @@ const Transaction = ({ transaction }) => {
 
   return (
     <li className="transaction-record">
-      {transaction.type === "expense" ? "-" : "+"}
-      <span>
-        {transaction.amount}&nbsp;&nbsp;{transaction.category}{" "}
-        <span className="description">
-          ( {transaction.type === "expense" ? "expense: " : ""}
-          {transaction.description} )
-        </span>
-      </span>
+      <div>
+        <p>
+          <span>{transaction.type === "expense" ? "-" : "+"}</span>
+          <span>
+            {` ${selectedCurrencySymbol}${transaction.amount.toFixed(2)}`}
+          </span>
+          <span className="trans-list-description">{` ${transaction.category}: ${transaction.description}`}</span>
+        </p>
+      </div>
       <button onClick={handleDelete} aria-label="Remove">
         X
       </button>
