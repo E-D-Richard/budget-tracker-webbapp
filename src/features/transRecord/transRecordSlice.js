@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { combineAllExpenseTransactionsIntoOneArray } from "../../utilities/helpers/helperFunctions/reduxHelpers";
-import { defaultCategories } from "../../utilities/helpers/helperArrays";
+import { defaultCategories } from "../../utilities/helpers/helperArrays/helperArrays";
 import Big from "big.js";
 
 const initialState = Object.fromEntries(

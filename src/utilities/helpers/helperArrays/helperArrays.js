@@ -1,3 +1,5 @@
+import { currencies } from "./currenciesArray";
+
 export const defaultCategories = [
   "housing",
   "food",
@@ -9,3 +11,4 @@ export const defaultCategories = [
   "education",
   "entertainment",
 ].sort();
+

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { defaultCategories } from "../../utilities/helpers/helperArrays";
+import { defaultCategories } from "../../utilities/helpers/helperArrays/helperArrays";
 import { sortArrayOfObjectsInAlphabeticalOrderOfKeys } from "../../utilities/helpers/helperFunctions/otherHelpers";
 import Big from "big.js";
 
