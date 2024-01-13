@@ -14,9 +14,9 @@ const Budget = ({ budget }) => {
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
   const transactions = useSelector(selectTransactions);
-  //const budgetCategoryBalance = useSelector(selectBudgetBalance);
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
+  const remainingFunds = (budget.amount - transactions[budget.category].total).toFixed(2);
   const resetForm = () => {
     setAmount("");
     setPreventSubmit(true);
@@ -55,27 +55,6 @@ const Budget = ({ budget }) => {
     resetForm();
   };
 
-  console.log(transactions)
-  // figure out how to cleanup
-  const calculateTotalExpenses = () => {
-    return transactions[budget.category].transactionList
-      .map((transaction) => transaction.amount)
-      .reduce((acc, currentValue) => acc + currentValue, 0);
-  };
-  // figure out how to cleanup
-  const getFundsRemainingClassName = (amount) => {
-    if (Number(amount) > 0) {
-      return "positive";
-    } else if (Number(amount) < 0) {
-      return "negative";
-    } else if (Number(amount) === 0) {
-      return "null";
-    }
-  };
-  // figure out how to cleanup
-  const remainingFunds = Number.parseFloat(
-    budget.amount - calculateTotalExpenses()
-  ).toFixed(2);
 
   return (
     <li className="budget-container" id={budget.category} ref={budgetRef}>
@@ -83,9 +62,7 @@ const Budget = ({ budget }) => {
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
         <h4
-          className={`remaining-funds ${getFundsRemainingClassName(
-            remainingFunds
-          )}`}
+          className={`remaining-funds ${(Number(amount) > 0) ? "positive" : (Number(amount) < 0) ? "negative" : "null"}`}
         >
           Funds Remaining: {remainingFunds}
         </h4>
