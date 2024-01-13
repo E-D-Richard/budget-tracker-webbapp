@@ -1,4 +1,5 @@
 import React from "react";
+import "./transRecord.css";
 import { useSelector } from "react-redux";
 import { selectAllExpenseTransactions } from "./transRecordSlice";
 import TransactionList from "../../components/body/TransactionList";
