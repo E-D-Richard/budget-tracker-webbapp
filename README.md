@@ -8,7 +8,6 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
-- begin using js math library to prevent known js math bugs (use same library used in BizzBuzzCalc project)
 - make replits to preserve all the form related helper functions that handles zero's in forms
 - add a feature in settings where a user can change to their preferred currency symbol and set default to USD
 - add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
@@ -39,6 +38,8 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ## Details and Specs
 
+- This app uses the [Big.js library](https://www.npmjs.com/package/big.js?activeTab=readme) library to avoid JavaScript's math errors and bugs
+
 ### Concepts Applied
 
 - Wireframing
@@ -57,6 +58,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 - JavaScript
 - React
 - Redux & React-Redux
+- Big.js
 - Git and GitHub
 - Command line and file navigation
 - Chrome DevTools, React DevTools, Redux DevTools
