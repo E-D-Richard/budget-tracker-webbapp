@@ -8,6 +8,7 @@ import {
   handleInputChangeForCustomNumberInputField,
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
+import Big from "big.js";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
@@ -16,7 +17,7 @@ const Budget = ({ budget }) => {
   const transactions = useSelector(selectTransactions);
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
-  const remainingFunds = (budget.amount - transactions[budget.category].total).toFixed(2);
+  const remainingFunds = Number(Big(budget.amount).minus(transactions[budget.category].total)).toFixed(2);
   const resetForm = () => {
     setAmount("");
     setPreventSubmit(true);

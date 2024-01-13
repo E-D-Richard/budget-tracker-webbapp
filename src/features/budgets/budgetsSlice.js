@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { defaultCategories } from "../../utilities/helpers/helperArrays";
 import { sortArrayOfObjectsInAlphabeticalOrderOfKeys } from "../../utilities/helpers/helperFunctions/otherHelpers";
+import Big from "big.js";
 
 
 const initialState = {};
@@ -20,14 +21,14 @@ const budgetsSlice = createSlice({
   reducers: {
     addBudgetBalanceEntry: (state, action) => {
       const categoryName = action.payload.category;
-      state[categoryName].amount += Number(action.payload.amount);
+      state[categoryName].amount = Number(Big(state[categoryName].amount).plus(action.payload.amount));
       state[categoryName].history.push(action.payload);
     },
 
     deleteBudgetBalanceEntry: (state, action) => {
       const categoryName = action.payload.category;
-      state[categoryName].amount -= Number(action.payload.amount);
-      state[categoryName].history.filter(
+      state[categoryName].amount = Number(Big(state[categoryName].amount).minus(action.payload.amount));
+      state[categoryName].history = state[categoryName].history.filter(
         (entry) => entry.id !== action.payload.id
       );
     },
