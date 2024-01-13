@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { deleteBudgetCategory } from "../budgets/budgetsSlice";
-import { deleteTransactionCategory, selectCategories } from "../transRecord/transRecordSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteBudgetCategory, selectCurrentCategories } from "../budgets/budgetsSlice";
+import { deleteTransactionCategory } from "../transRecord/transRecordSlice";
 const DeleteCategory = () => {
   const dispatch = useDispatch();
-  const categories = useSelector(selectCategories);
+  const categories = useSelector(selectCurrentCategories);
   const [category, setCategory] = useState("");
 
 

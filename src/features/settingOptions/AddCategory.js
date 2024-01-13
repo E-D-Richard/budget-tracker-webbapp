@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addBudgetCategory } from "../budgets/budgetsSlice";
-import { addTransactionCategory, selectCategories } from "../transRecord/transRecordSlice";
+import { useDispatch, useSelector  } from "react-redux";
+import { addBudgetCategory, selectCurrentCategories } from "../budgets/budgetsSlice";
+import { addTransactionCategory } from "../transRecord/transRecordSlice";
 import { handleAddCategoryInputPopUpMessage } from "../../utilities/helpers/helperFunctions/formHelpers";
 
 const AddCategory = () => {
   const dispatch = useDispatch();
   const [newCategory, setNewCategory] = useState("");
   const [isDuplicate, setIsDuplicate] = useState(false);
-  const categories = useSelector(selectCategories);
+  const categories = useSelector(selectCurrentCategories);
 
   const handleValueChange = (e) => {
     const newValue = e.currentTarget.value;
@@ -34,7 +34,7 @@ const AddCategory = () => {
     dispatch(
       addTransactionCategory({
         category: newCategory.toLowerCase(),
-        transactionArr: [],
+        transactionObject: {total: 0, transactionList: []},
       })
     );
     setNewCategory("");

@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { CATEGORIES } from "../../utilities/helpers/helperArrays";
+import { defaultCategories } from "../../utilities/helpers/helperArrays";
 import { sortArrayOfObjectsInAlphabeticalOrderOfKeys } from "../../utilities/helpers/helperFunctions/otherHelpers";
 
 
 const initialState = {};
-CATEGORIES.forEach((category) => {
+defaultCategories.forEach((category) => {
   initialState[category] = {
     category: category,
     amount: 0,
@@ -45,6 +45,7 @@ const budgetsSlice = createSlice({
 
 
 export const selectBudgets = (state) => sortArrayOfObjectsInAlphabeticalOrderOfKeys(Object.values(state.budgets));
+export const selectCurrentCategories = (state) => Object.keys(state.budgets);
 export const {
   addBudgetBalanceEntry,
   deleteBudgetBalanceEntry,

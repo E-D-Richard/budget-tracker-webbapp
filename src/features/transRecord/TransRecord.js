@@ -1,11 +1,11 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectFlattenedTransactions } from "./transRecordSlice";
+import { selectAllExpenseTransactions } from "./transRecordSlice";
 import TransactionList from "../../components/body/TransactionList";
 import { selectBudgets } from "../budgets/budgetsSlice";
 
 const TransRecord = () => {
-  const expenseTransactions = useSelector(selectFlattenedTransactions);
+  const expenseTransactions = useSelector(selectAllExpenseTransactions);
   const budgets = useSelector(selectBudgets);
   const budgetTransactions = [];
   for (const budget of budgets) {

@@ -55,9 +55,10 @@ const Budget = ({ budget }) => {
     resetForm();
   };
 
+  console.log(transactions)
   // figure out how to cleanup
   const calculateTotalExpenses = () => {
-    return transactions[budget.category]
+    return transactions[budget.category].transactionList
       .map((transaction) => transaction.amount)
       .reduce((acc, currentValue) => acc + currentValue, 0);
   };

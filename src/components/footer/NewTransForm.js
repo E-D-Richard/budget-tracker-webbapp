@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
-  addTransaction,
-  selectCategories,
+  addTransaction
 } from "../../features/transRecord/transRecordSlice";
 import { v4 as uuidv4 } from "uuid";
-import { useSelector } from "react-redux";
 import {
   createPopUpOnZeroValueSubmit,
   handleInputChangeForCustomNumberInputField,
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
+import { selectCurrentCategories } from "../../features/budgets/budgetsSlice";
 
 const NewTransForm = ({ isExpanded }) => {
   const dispatch = useDispatch();
-  const categories = useSelector(selectCategories);
+  const categories = useSelector(selectCurrentCategories);
   const [category, setCategory] = useState(categories[0]);
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState("");
@@ -58,7 +57,7 @@ const NewTransForm = ({ isExpanded }) => {
         type: "expense",
         category: category,
         description: description,
-        amount: parseFloat(amount),
+        amount: Number(amount),
         id: uuidv4(),
       })
     );

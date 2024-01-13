@@ -11,3 +11,9 @@ export const closeOnExternalClick = (event, elementRef, setIsOpenState) => {
 export const sortArrayOfObjectsInAlphabeticalOrderOfKeys = (ArrayOfObjects) => {
   return ArrayOfObjects.sort((a, b) => a.category.localeCompare(b.category));
 }
+
+// export const flattenArrayOfArraysIntoOneArray = (arrayOfArrays) => {
+//   return arrayOfArrays.reduce((accArr, b) => [...accArr, ...b], []);
+// }
+
+

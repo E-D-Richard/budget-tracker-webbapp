@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
+- swap all parseFloat() with Number()
 - make replits to preserve all the form related helper functions that handles zero's in forms
 - add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
 - add a feature in settings where a user can change to their preferred currency symbol and set default to USD
