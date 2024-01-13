@@ -62,7 +62,7 @@ const Budget = ({ budget }) => {
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
         <h4
-          className={`remaining-funds ${(Number(amount) > 0) ? "positive" : (Number(amount) < 0) ? "negative" : "null"}`}
+          className={`remaining-funds ${(Number(remainingFunds) > 0) ? "positive" : (Number(remainingFunds) < 0) ? "negative" : "null"}`}
         >
           Funds Remaining: {remainingFunds}
         </h4>
