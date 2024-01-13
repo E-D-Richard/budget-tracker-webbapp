@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import "./settingsMenu.css";
 import { AiFillSetting } from "react-icons/ai";
-import Settings from "./settings/Settings";
+import Settings from "../../../features/settings/Settings";
 import { closeOnExternalClick } from "../../../utilities/helpers/helperFunctions/otherHelpers";
 
 const SettingsMenu = () => {

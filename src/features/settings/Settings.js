@@ -1,6 +1,6 @@
 import "./settings.css";
-import DeleteCategory from "../../../../features/settingOptions/DeleteCategory";
-import AddCategory from '../../../../features/settingOptions/AddCategory';
+import DeleteCategory from "./settingOptions/DeleteCategory";
+import AddCategory from './settingOptions/AddCategory';
 import Setting from "./Setting";
 
 

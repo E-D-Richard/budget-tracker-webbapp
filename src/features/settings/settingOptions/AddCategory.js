@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector  } from "react-redux";
-import { addBudgetCategory, selectCurrentCategories } from "../budgets/budgetsSlice";
-import { addTransactionCategory } from "../transRecord/transRecordSlice";
-import { handleAddCategoryInputPopUpMessage } from "../../utilities/helpers/helperFunctions/formHelpers";
+import { addBudgetCategory, selectCurrentCategories } from "../../budgets/budgetsSlice";
+import { addTransactionCategory } from "../../transRecord/transRecordSlice";
+import { handleAddCategoryInputPopUpMessage } from "../../../utilities/helpers/helperFunctions/formHelpers";
 
 const AddCategory = () => {
   const dispatch = useDispatch();
