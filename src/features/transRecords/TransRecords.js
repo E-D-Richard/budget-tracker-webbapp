@@ -1,11 +1,11 @@
 import React from "react";
 import "./transRecord.css";
 import { useSelector } from "react-redux";
-import { selectAllExpenseTransactions } from "./transRecordSlice";
+import { selectAllExpenseTransactions } from "./transRecordsSlice";
 import TransactionList from "../../components/body/TransactionList";
 import { selectBudgets } from "../budgets/budgetsSlice";
 
-const TransRecord = () => {
+const TransRecords = () => {
   const expenseTransactions = useSelector(selectAllExpenseTransactions);
   const budgets = useSelector(selectBudgets);
   const budgetTransactions = [];
@@ -23,4 +23,4 @@ const TransRecord = () => {
   );
 };
 
-export default TransRecord;
+export default TransRecords;

@@ -1,5 +1,5 @@
 import Budgets from "../../features/budgets/Budgets";
-import TransRecord from "../../features/transRecord/TransRecord";
+import TransRecords from "../../features/transRecords/TransRecords";
 import { useSelector } from "react-redux";
 import { selectNewTransactionOffsetHeight } from './../../features/newTransaction/newTransactionSlice';
 
@@ -8,7 +8,7 @@ const Body = () => {
   return (
     <main style={{"marginBottom": `calc(${newTransactionOffsetHeight}px + 2rem)`}}>
       <Budgets />
-      <TransRecord />
+      <TransRecords />
     </main>
   );
 };

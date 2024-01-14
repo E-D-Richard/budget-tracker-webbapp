@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
-import { selectTransactions } from "../../features/transRecord/transRecordSlice";
+import { selectTransactions } from "../../features/transRecords/transRecordsSlice";
 import { v4 as uuidv4 } from "uuid";
 import {
   createPopUpOnZeroValueSubmit,

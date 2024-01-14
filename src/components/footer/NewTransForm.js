@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   addTransaction
-} from "../../features/transRecord/transRecordSlice";
+} from "../../features/transRecords/transRecordsSlice";
 import { v4 as uuidv4 } from "uuid";
 import {
   createPopUpOnZeroValueSubmit,

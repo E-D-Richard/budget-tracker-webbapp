@@ -9,7 +9,7 @@ const initialState = Object.fromEntries(
     { total: 0, transactionList: [] },
   ])
 );
-const transRecordSlice = createSlice({
+const transRecordsSlice = createSlice({
   name: "transactions",
   initialState: initialState,
   reducers: {
@@ -52,5 +52,5 @@ export const {
   deleteTransaction,
   addTransactionCategory,
   deleteTransactionCategory,
-} = transRecordSlice.actions;
-export default transRecordSlice.reducer;
+} = transRecordsSlice.actions;
+export default transRecordsSlice.reducer;

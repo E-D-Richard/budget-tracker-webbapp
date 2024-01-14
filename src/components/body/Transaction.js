@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteTransaction } from "../../features/transRecord/transRecordSlice";
+import { deleteTransaction } from "../../features/transRecords/transRecordsSlice";
 import { deleteBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
 import { selectSelectedCurrencySymbol } from "../../features/settings/settingsSlice";
 
