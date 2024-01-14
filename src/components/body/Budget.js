@@ -20,6 +20,7 @@ const Budget = ({ budget }) => {
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
   const remainingFunds = Number(Big(budget.amount).minus(transactions[budget.category].total)).toFixed(2);
+  const budgetDescription = `${(amount > 0) ? "added" : "removed"} balance to ${budget.category} budget`; 
   const resetForm = () => {
     setAmount("");
     setPreventSubmit(true);
@@ -34,7 +35,8 @@ const Budget = ({ budget }) => {
 
 
   const handleChange = (e) => {
-    handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit);
+    const allowNegativeInputValues = true;
+    handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit, allowNegativeInputValues);
   };
 
   const handleSubmit = (e) => {
@@ -50,7 +52,7 @@ const Budget = ({ budget }) => {
       addBudgetBalanceEntry({
         category: budget.category,
         type: "budget",
-        description: `added balance to ${budget.category} budget`,
+        description: budgetDescription,
         amount: Number(amount),
         id: uuidv4(),
       })

@@ -22,16 +22,15 @@ const Transaction = ({ transaction }) => {
     <li className="transaction-record">
       <div className="data">
       <p>
-          <span>{transaction.type === "expense" ? "-" : "+"}</span>
-          <span>
-            {` ${selectedCurrencySymbol}${transaction.amount.toFixed(2)}`}
-          </span>
+          {/* <span>{transaction.type === "expense" ? "-" : "+"}</span> */}
+          
         </p>
         <p>
           {" "}
           <span className="description">
             <span className="description-category">{` ${transaction.category}: `}</span>
             {`${transaction.description}`}
+            <span>{` ${selectedCurrencySymbol}${transaction.amount.toFixed(2)}`}</span>
           </span>
         </p>
       </div>

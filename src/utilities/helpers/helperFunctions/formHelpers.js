@@ -3,12 +3,20 @@
 export const handleInputChangeForCustomNumberInputField = (
   e,
   setAmountState,
-  setPreventSubmitState
+  setPreventSubmitState,
+  allowNegativeValues
 ) => {
   const newAmountStr = e.currentTarget.value;
 
-  if (!isNumerical(newAmountStr)) {
-    return;
+
+  if(allowNegativeValues){
+    if(!isNumerical(newAmountStr)) {
+      return;
+    }
+  } else if(!allowNegativeValues){
+    if(!isPositiveNumericalValue(newAmountStr)) {
+      return;
+    }
   }
 
   //assuming value is numerical, remove any prior popups that may have been triggered
@@ -61,8 +69,13 @@ export const valueIsZeroOrBlank = (inputValue) => {
 };
 
 export const isNumerical = (inputValue) => {
-  const isNumericalValueRegex = /^(-?\d*\.?\d*)?$/;
+  const isNumericalValueRegex = /^(-?\d*\.?\d*)?$/
   return isNumericalValueRegex.test(inputValue);
+};
+
+export const isPositiveNumericalValue = (inputValue) => {
+  const isPositiveNumericalValueRegex = /^(\d*\.?\d*)?$/;
+  return isPositiveNumericalValueRegex.test(inputValue);
 };
 
 //------------------------------------------------------------------------- unused helpers -----------

@@ -40,7 +40,8 @@ const NewTransForm = ({ isExpanded }) => {
   });
 
   const handleAmountValueChange = (e) => {
-    handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit);
+    const allowNegativeInputValues = false;
+    handleInputChangeForCustomNumberInputField(e, setAmount, setPreventSubmit, allowNegativeInputValues);
   };
 
   const handleSubmit = (e) => {
