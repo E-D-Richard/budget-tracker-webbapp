@@ -1,64 +1,93 @@
 /* -------------------------------------------- transaction records ---------------------*/
 
 .transaction-list-section {
-    padding: 12px 10.5px 11px 16px;
-    border-radius: 6px;
-    border: solid 1px #141c3a;
-    background-color: #ffffff;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .transaction-list-section h3 {
-    font-size: clamp(16px, 3.5vw, 2.4rem);
-  }
-  
-  .transaction-list {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .transaction-record {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
-  }
+  padding: 12px 10.5px 11px 16px;
+  border-radius: 6px;
+  border: solid 1px #141c3a;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+}
 
-  .transaction-record .data {
-    display: flex;
-  }
-  
-  .transaction-record .description {
-    margin: 0 16px;
-    font-style: italic;
-    font-size: 16px;
-    font-weight: normal;
-  }
+.transaction-list-section p,
+.transaction-list-section h6 {
+  margin: 0;
+}
 
-  .transaction-record .description .description-category {
-    font-style: normal;
-  }
+.transaction-list-section h3 {
+  font-size: clamp(16px, 3.5vw, 2.4rem);
+}
 
-  
-  .transaction-record button {
-    /* margin-left: auto; */
-    background: white;
-    border: solid 1px #141c3a;
-    border-radius: 5%;
-    height: 20px;
-    width: 20px;
-    padding: 10px 8px 8px 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  .transaction-record button:hover,
-  .transaction-record button:focus {
-    color: white;
-    background-color: red;
-  }
-  
+.transaction-list {
+  list-style: none;
+  padding: 0;
+}
+
+.transaction-record {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px;
+  margin: 0 1.6rem;
+  border-bottom: 1px solid black;
+}
+
+.transaction-record:hover {
+  border: 2px solid #000;
+  border-radius: 10px;
+}
+
+.transaction-record .data-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-record .description-data,
+.transaction-record .note-data {
+  display: flex;
+  align-items: center;
+}
+
+.transaction-record .note-data {
+  margin-top: 0.1rem;
+  margin-bottom: 1rem;
+}
+
+.transaction-record .data-wrapper h6 {
+  font-style: normal;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.transaction-record .data-wrapper p.description-text,
+.transaction-record .data-wrapper p.note-text {
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: normal;
+}
+
+.transaction-record button {
+  /* margin-left: auto; */
+  background: white;
+  border: solid 1px #141c3a;
+  border-radius: 5%;
+  height: 20px;
+  width: 20px;
+  padding: 10px 8px 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 120ms;
+}
+
+.transaction-record button:hover {
+  transform: scale(1.3);
+}
+
+.transaction-record button:hover,
+.transaction-record button:focus {
+  color: white;
+  background-color: red;
+}

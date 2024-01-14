@@ -15,13 +15,13 @@ const NewTransForm = ({ isExpanded }) => {
   const dispatch = useDispatch();
   const categories = useSelector(selectCurrentCategories);
   const [category, setCategory] = useState(categories[0]);
-  const [description, setDescription] = useState("");
+  const [note, setNote] = useState("");
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
 
   const resetForm = () => {
     setCategory(categories[0]);
-    setDescription("");
+    setNote("");
     setAmount("");
     setPreventSubmit(true);
   };
@@ -57,7 +57,7 @@ const NewTransForm = ({ isExpanded }) => {
       addTransaction({
         type: "expense",
         category: category,
-        description: description ? description : "expense",
+        note: note ? note : "",
         amount: Number(amount),
         id: uuidv4(),
       })
@@ -86,11 +86,11 @@ const NewTransForm = ({ isExpanded }) => {
       </div>
 
       <div className="new-trans-desc">
-        <label htmlFor="description">Description</label>
+        <label htmlFor="note">Description Note</label>
         <input
           id="description"
-          value={description}
-          onChange={(e) => setDescription(e.currentTarget.value)}
+          value={note}
+          onChange={(e) => setNote(e.currentTarget.value)}
           type="text"
         />
       </div>
