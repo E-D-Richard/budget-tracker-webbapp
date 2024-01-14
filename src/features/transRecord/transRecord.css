@@ -20,17 +20,29 @@
   
   .transaction-record {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 5px 0;
   }
+
+  .transaction-record .data {
+    display: flex;
+  }
   
-  .description {
+  .transaction-record .description {
+    margin: 0 16px;
     font-style: italic;
     font-size: 16px;
     font-weight: normal;
   }
+
+  .transaction-record .description .description-category {
+    font-style: normal;
+  }
+
   
   .transaction-record button {
-    margin-left: auto;
+    /* margin-left: auto; */
     background: white;
     border: solid 1px #141c3a;
     border-radius: 5%;

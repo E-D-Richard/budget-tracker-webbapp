@@ -8,18 +8,16 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
+- add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
 - hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element (ADD TO FEATURES LIST)
 - make replits to preserve all the form related helper functions that handles zero's in forms
-- add a feature in settings where a user can change to their preferred currency symbol and set default to USD
-- add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
-- add a clear all button to TransList
-- fix settingsMenu button overlay-appearance issue
-- update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans
-- test settings menu and newTransForm for mobile compatibility
-- organize files to comply with feature vs component correct official definitions
-- beautify and stylize transactionList/records section
-- add additionalDataDropdown for each transaction in transactionList
 - Rename new transaction footer form to: NewExpense
+- add a clearAll button to TransList
+- Stylize transList and potentionally add an additionalDataDropdown section for each transaction in transactionList that can contain these details: budgetTotalDuringTimeOfTransaction, "more ideas??..."
+- fix settingsMenu button overlay-appearance issue
+- test settings menu and newTransForm for mobile compatibility
+- update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans
+- organize files to comply with feature vs component correct official definitions
 - refresh memory on redux code (explore thunks in reddit project)
 
 ### Features

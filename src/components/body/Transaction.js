@@ -20,13 +20,19 @@ const Transaction = ({ transaction }) => {
 
   return (
     <li className="transaction-record">
-      <div>
-        <p>
+      <div className="data">
+      <p>
           <span>{transaction.type === "expense" ? "-" : "+"}</span>
           <span>
             {` ${selectedCurrencySymbol}${transaction.amount.toFixed(2)}`}
           </span>
-          <span className="trans-list-description">{` ${transaction.category}: ${transaction.description}`}</span>
+        </p>
+        <p>
+          {" "}
+          <span className="description">
+            <span className="description-category">{` ${transaction.category}: `}</span>
+            {`${transaction.description}`}
+          </span>
         </p>
       </div>
       <button onClick={handleDelete} aria-label="Remove">
