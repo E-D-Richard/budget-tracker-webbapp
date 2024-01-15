@@ -27,6 +27,8 @@
 .transaction-list {
   list-style: none;
   padding: 0;
+  font-weight: normal;
+  /* font-style: italic; */
 }
 
 
@@ -42,13 +44,19 @@
   padding: 2px;
 }
 
-/* Note: grid-row for grid-child's are set inside the corresponding functionComponent  */
-.grid-child {
+/* Note: grid-row for grid-children are set inside the corresponding functionComponent  */
+.grid-child:hover {
   /* justify-self: start;
   align-self: center; */
   margin-top: 12px;
   margin-bottom: 2px;
 }
+
+/* .transaction-list .grid-child:hover {
+  background-color: var(--light-blue);
+  border: 1px solid #000;
+  border-radius: 3px;
+} */
 
 .header-data.desc,
 .description.grid-child {
@@ -93,18 +101,18 @@ button.delete.grid-child {
   padding: 0;
 }
 
-.transaction-list {
+/* .transaction-record {
   border-bottom: 1px solid black;
   outline: none;
-}
+} */
 
-.transaction-list:hover {
+/* .transaction-record:hover {
   background-color: var(--light-blue);
   outline: 2px solid #000;
   border: none;
   transform: scale(1.0009);
   border-radius: 10px;
-}
+} */
 
 
 

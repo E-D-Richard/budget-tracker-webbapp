@@ -8,6 +8,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
+- figure out how to unite all transaction text-data into a single transaction-record element without removing from or breaking grid. This should then allow to highlight whole row on hover on hover
 - change app color scheme to green palette
 - in transList button icon replace "X" with a trash can icon
 - make sure tab (via tab index values) works in all forms
