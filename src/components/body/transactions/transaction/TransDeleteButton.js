@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteBudgetBalanceEntry } from "../../../../features/budgets/budgetsSlice";
 import { deleteTransaction } from "../../../../features/transRecords/transRecordsSlice";
 
-const TransDeleteButton = ({ transaction, gridRow, rowClassName}) => {
+const TransDeleteButton = ({ transaction, gridRow, rowClassName }) => {
   const dispatch = useDispatch();
   const handleDelete = (e) => {
     if (transaction.type === "expense") {
@@ -17,14 +17,15 @@ const TransDeleteButton = ({ transaction, gridRow, rowClassName}) => {
   const gridRowStyle = { "grid-row": `${gridRow} / span 1` };
 
   return (
-    <button
-      style={gridRowStyle}
-      onClick={handleDelete}
-      aria-label="Delete"
-      className={"delete grid-child " + rowClassName}
-    >
-      X
-    </button>
+    <div style={gridRowStyle} className={"delete-wrapper grid-child " + rowClassName}>
+      <button
+        className="delete-button"
+        onClick={handleDelete}
+        aria-label="Delete"
+      >
+        X
+      </button>
+    </div>
   );
 };
 
