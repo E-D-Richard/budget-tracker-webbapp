@@ -13,7 +13,6 @@ const SelectCurrency = () => {
   const [currencyIndex, setCurrencyIndex] = useState(selectedCurrencyCode);
   const handleChange = (e) => {
     const newCurrencyIndex = e.currentTarget.value;
-    console.log(newCurrencyIndex);
     setCurrencyIndex(newCurrencyIndex);
     dispatch(updateSelectedCurrency({ index: newCurrencyIndex }));
   };

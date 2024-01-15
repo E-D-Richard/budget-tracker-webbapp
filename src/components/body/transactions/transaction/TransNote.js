@@ -1,7 +1,7 @@
 import React from "react";
 
 const TransNote = ({ transaction, gridRow, rowClassName }) => {
-  const gridRowStyle = { "grid-row": `${gridRow} / span 1` };
+  const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
 
   return (
     <div className={"note grid-child " + rowClassName} style={gridRowStyle}>

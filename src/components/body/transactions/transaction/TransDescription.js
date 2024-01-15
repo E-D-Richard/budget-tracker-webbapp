@@ -43,7 +43,7 @@ const TransDescription = ({ transaction, gridRow, rowClassName}) => {
   }
 
 
-  const gridRowStyle = {"grid-row": `${gridRow} / span 1`}
+  const gridRowStyle = {"gridRow": `${gridRow} / span 1`}
   return (
     <div className={"description grid-child " + rowClassName} style={gridRowStyle}>
       {descriptionJsx}

@@ -14,7 +14,7 @@ const TransDeleteButton = ({ transaction, gridRow, rowClassName }) => {
       dispatch(deleteBudgetBalanceEntry(transaction));
     }
   };
-  const gridRowStyle = { "grid-row": `${gridRow} / span 1` };
+  const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
 
   return (
     <div style={gridRowStyle} className={"delete-wrapper grid-child " + rowClassName}>

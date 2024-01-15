@@ -2,10 +2,10 @@ import React from "react";
 import { selectSelectedCurrencySymbol } from "../../../../features/settings/settingsSlice";
 import { useSelector } from "react-redux";
 
-const TransRemainingFund = ({ transaction, gridRow, rowClassName }) => {
+const TransPrevRemainingFunds = ({ transaction, gridRow, rowClassName }) => {
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
 
-  const gridRowStyle = { "grid-row": `${gridRow} / span 1` };
+  const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
 
   return (
     <div className={"remaining-funds grid-child " + rowClassName} style={gridRowStyle}>
@@ -14,4 +14,4 @@ const TransRemainingFund = ({ transaction, gridRow, rowClassName }) => {
   );
 };
 
-export default TransRemainingFund;
+export default TransPrevRemainingFunds;
