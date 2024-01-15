@@ -8,8 +8,8 @@ const TransTotalTransactions = ({ transaction, gridRow, rowClassName }) => {
   const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
 
   return (
-    <div className={"remaining-funds grid-child " + rowClassName} style={gridRowStyle}>
-      <p className="remaining-funds-text">{selectedCurrencySymbol}0.00</p>
+    <div className={"transactions-total grid-child " + rowClassName} style={gridRowStyle}>
+      <p className="transactions-total-text">{selectedCurrencySymbol}0.00</p>
     </div>
   );
 };

@@ -36,7 +36,7 @@
 
 .transaction-list.grid-container {
   display: grid;
-  grid-template-columns: [transaction] 1fr  [amount] 1fr [funds-remaining] 1fr [note] 1fr [button] auto [end];
+  grid-template-columns: [description] 3fr [amount] 1fr [prev-remaining] 1fr [funds-remaining] 1fr [transactions-total] 1fr [note] 1fr [button] auto [end];
   grid-auto-rows: auto;
   justify-items: stretch;
   align-items: stretch;
@@ -65,7 +65,7 @@
 
 .header-data.desc,
 .description.grid-child {
-  grid-column: transaction / span 1;
+  grid-column: description / span 1;
 }
 
 .header-data.amount,
