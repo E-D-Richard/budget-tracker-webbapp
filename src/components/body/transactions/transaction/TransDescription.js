@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { selectSelectedCurrencySymbol } from "../../../features/settings/settingsSlice";
-import { removeMinusSymbol } from "../../../utilities/helpers/helperFunctions/otherHelpers";
+import { selectSelectedCurrencySymbol } from "../../../../features/settings/settingsSlice";
+import { removeMinusSymbol } from "../../../../utilities/helpers/helperFunctions/otherHelpers";
 
-const TransDescription = ({ transaction, gridRow }) => {
+const TransDescription = ({ transaction, gridRow, rowClassName}) => {
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
   const formattedAmount = `${selectedCurrencySymbol}${removeMinusSymbol(
     transaction.amount.toFixed(2)
@@ -45,7 +45,7 @@ const TransDescription = ({ transaction, gridRow }) => {
 
   const gridRowStyle = {"grid-row": `${gridRow} / span 1`}
   return (
-    <div className="description grid-child" style={gridRowStyle}>
+    <div className={"description grid-child " + rowClassName} style={gridRowStyle}>
       {descriptionJsx}
     </div>
   );

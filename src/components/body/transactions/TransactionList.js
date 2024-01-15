@@ -1,9 +1,9 @@
 import React from "react";
-import TransDescription from "./TransDescription.js";
-import TransAmount from "./TransAmount.js";
-import TransRemainingFund from "./TransRemainingFund.js";
-import TransNote from "./TransNote.js";
-import TransDeleteButton from "./TransDeleteButton.js";
+import TransDescription from "./transaction/TransDescription.js";
+import TransAmount from "./transaction/TransAmount.js";
+import TransRemainingFund from "./transaction/TransRemainingFund.js";
+import TransNote from "./transaction/TransNote.js";
+import TransDeleteButton from "./transaction/TransDeleteButton.js";
 
 const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
   // const transactionHeaders = (

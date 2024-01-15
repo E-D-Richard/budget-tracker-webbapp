@@ -1,9 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteBudgetBalanceEntry } from "../../../features/budgets/budgetsSlice";
-import { deleteTransaction } from "../../../features/transRecords/transRecordsSlice";
+import { deleteBudgetBalanceEntry } from "../../../../features/budgets/budgetsSlice";
+import { deleteTransaction } from "../../../../features/transRecords/transRecordsSlice";
 
-const TransDeleteButton = ({ transaction, gridRow }) => {
+const TransDeleteButton = ({ transaction, gridRow, rowClassName}) => {
   const dispatch = useDispatch();
   const handleDelete = (e) => {
     if (transaction.type === "expense") {
@@ -21,7 +21,7 @@ const TransDeleteButton = ({ transaction, gridRow }) => {
       style={gridRowStyle}
       onClick={handleDelete}
       aria-label="Delete"
-      className="delete grid-child"
+      className={"delete grid-child " + rowClassName}
     >
       X
     </button>
