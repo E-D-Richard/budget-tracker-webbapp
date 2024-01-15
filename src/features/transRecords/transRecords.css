@@ -1,3 +1,9 @@
+:root {
+  --main-text-color: #141c3a;
+  --light-blue: #e3e6ff;
+  --light-brown-hsl-codes: 40 21% 53%;
+}
+
 /* -------------------------------------------- transaction records ---------------------*/
 
 .transaction-list-section {
@@ -23,56 +29,105 @@
   padding: 0;
 }
 
-.transaction-record {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 8px;
-  margin: 0 1.6rem;
+
+/* --------------------------------------------------------------- grid settings for transaction rows/records */
+
+.transaction-list.grid-container {
+  display: grid;
+  grid-template-columns: [transaction] 1fr  [amount] minmax(5%, auto) [funds-remaining] minmax(5%, auto) [note] minmax(5%, auto) [button] minmax(5%, auto) [end];
+  grid-auto-rows: minmax(32px, auto);
+  gap: 15px;
+  justify-items: start;
+  align-items: start;
+  padding: 2px;
+}
+
+/* Note: grid-row for grid-child's are set inside the corresponding functionComponent  */
+.grid-child {
+  /* justify-self: start;
+  align-self: center; */
+  margin-top: 12px;
+  margin-bottom: 2px;
+}
+
+.header-data.desc,
+.description.grid-child {
+  grid-column: transaction / span 1;
+}
+
+.header-data.amount,
+.amount.grid-child {
+  grid-column: amount / span 1;
+}
+
+.header-data.funds-remaining,
+.funds-remaining.grid-child {
+  grid-column: funds-remaining / span 1;
+}
+
+.header-data.note,
+.note.grid-child {
+  grid-column: note / span 1;
+}
+
+button.delete.grid-child {
+  grid-column: button / span 1;
+  justify-self: end;
+  align-self: center;
+  margin: 0;
+  margin-right: 1rem;
+}
+
+
+
+.transaction-record.headers:hover {
+  background-color: #fff;
+  outline: none;
   border-bottom: 1px solid black;
+  transform: none;
+  border-radius: 0;
+}
+
+.transaction-record.headers h6 {
+  margin: 0;
+  padding: 0;
+}
+
+.transaction-record {
+  border-bottom: 1px solid black;
+  outline: none;
 }
 
 .transaction-record:hover {
-  border: 2px solid #000;
+  background-color: var(--light-blue);
+  outline: 2px solid #000;
+  border: none;
+  transform: scale(1.0009);
   border-radius: 10px;
 }
 
-.transaction-record .data-wrapper {
-  display: flex;
-  flex-direction: column;
-}
 
-.transaction-record .description-data,
-.transaction-record .note-data {
-  display: flex;
-  align-items: center;
-}
 
-.transaction-record .note-data {
-  margin-top: 0.1rem;
-  margin-bottom: 1rem;
-}
-
-.transaction-record .data-wrapper h6 {
+.transaction-record .amount-positive {
+  color: green;
+  font-weight: 600;
   font-style: normal;
-  font-size: 1.4rem;
-  font-weight: bold;
 }
 
-.transaction-record .data-wrapper p.description-text,
-.transaction-record .data-wrapper p.note-text {
-  font-style: italic;
-  font-size: 1.2rem;
-  font-weight: normal;
+.transaction-record .amount-negative,
+.transaction-record .amount-expense {
+  color: red;
+  font-weight: 600;
+  font-style: normal;
 }
 
 .transaction-record button {
   /* margin-left: auto; */
-  background: white;
+  /* background-color: lightblue; */
   border: solid 1px #141c3a;
-  border-radius: 5%;
-  height: 20px;
-  width: 20px;
+  border-radius: 5px;
+  height: 2rem;
+  width: 2rem;
   padding: 10px 8px 8px 8px;
   display: flex;
   align-items: center;

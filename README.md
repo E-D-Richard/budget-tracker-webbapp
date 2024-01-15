@@ -8,13 +8,15 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
-- add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
-- hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element (ADD TO FEATURES LIST)
+- change app color scheme to green palette
+- in transList button icon replace "X" with a trash can icon
 - make sure tab (via tab index values) works in all forms
 - make replits to preserve all the form related helper functions that handles zero's in forms
+- add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
+- hyperlink (byID) and auto scroll to individual budget (input-area) based on current category selected in New Transaction select element (ADD TO FEATURES LIST)
 - Rename new transaction footer form to: NewExpense
 - add a clearAll button to TransList
-- Stylize transList and potentionally add an additionalDataDropdown section for each transaction in transactionList that can contain these details: budgetTotalDuringTimeOfTransaction, "more ideas??..."
+- Stylize transList and potentially add an additionalDataDropdown section for each transaction in transactionList that can contain these details: budgetTotalDuringTimeOfTransaction, "more ideas??..."
 - fix settingsMenu button overlay-appearance issue
 - test settings menu and newTransForm for mobile compatibility
 - update NewTrans to be hidden by default (similar to settingsMenu). Then, build a new sidebar component and add settingsMenu and NewTrans

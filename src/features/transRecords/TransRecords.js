@@ -2,7 +2,7 @@ import React from "react";
 import "./transRecords.css";
 import { useSelector } from "react-redux";
 import { selectAllExpenseTransactions } from "./transRecordsSlice";
-import TransactionList from "../../components/body/TransactionList";
+import TransactionList from "../../components/body/transactions/TransactionList";
 import { selectBudgets } from "../budgets/budgetsSlice";
 
 const TransRecords = () => {
