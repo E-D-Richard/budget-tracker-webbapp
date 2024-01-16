@@ -4,6 +4,7 @@ import { removeMinusSymbol } from "../../../../utilities/helpers/helperFunctions
 import { useSelector } from "react-redux";
 
 const TransAmount = ({ transaction, gridRow, rowClassName }) => {
+  console.log(transaction)
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
   const formattedAmount = `${selectedCurrencySymbol}${removeMinusSymbol(
     transaction.amount.toFixed(2)

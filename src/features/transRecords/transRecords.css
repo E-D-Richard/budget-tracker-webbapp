@@ -36,7 +36,7 @@
 
 .transaction-list.grid-container {
   display: grid;
-  grid-template-columns: [description] 3fr [amount] 1fr [prev-remaining] 1fr [funds-remaining] 1fr [transactions-total] 1fr [note] 1fr [button] auto [end];
+  grid-template-columns: [description] 3fr [amount] 1fr [prev-budget-total] 1fr [current-budget-total] 1fr [expenses-total] 1fr [note] 1fr [button] auto [end];
   grid-auto-rows: auto;
   justify-items: stretch;
   align-items: stretch;
@@ -57,31 +57,31 @@
   border-radius: 3px;
 }
 
-.transaction-list .delete-wrapper:hover {
-  background-color: #fff;
-  outline: none;
-  border-radius: 0px;
-}
 
-.header-data.desc,
 .description.grid-child {
   grid-column: description / span 1;
 }
 
-.header-data.amount,
 .amount.grid-child {
   grid-column: amount / span 1;
 }
 
-.header-data.funds-remaining,
-.funds-remaining.grid-child {
-  grid-column: funds-remaining / span 1;
+.prev-budget-total.grid-child {
+  grid-column: prev-budget-total / span 1;
 }
 
-.header-data.note,
+.current-budget-total.grid-child {
+  grid-column: current-budget-total / span 1;
+}
+
+.expenses-total.grid-child {
+  grid-column: expenses-total;
+}
+
 .note.grid-child {
   grid-column: note / span 1;
 }
+
 
 .delete-wrapper.grid-child {
   grid-column: button / span 1;
@@ -93,19 +93,13 @@
 }
 
 
-
-.transaction-list.headers:hover {
+.transaction-list .delete-wrapper:hover {
   background-color: #fff;
   outline: none;
-  border-bottom: 1px solid black;
-  transform: none;
-  border-radius: 0;
+  border-radius: 0px;
 }
 
-.transaction-list.headers h6 {
-  margin: 0;
-  padding: 0;
-}
+
 
 /* .transaction-record {
   border-bottom: 1px solid black;
