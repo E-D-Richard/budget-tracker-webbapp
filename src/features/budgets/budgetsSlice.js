@@ -21,7 +21,6 @@ const budgetsSlice = createSlice({
   reducers: {
     addBudgetBalanceEntry: (state, action) => {
       const categoryName = action.payload.category;
-      console.log(state[categoryName].currentTotal);
       state[categoryName].prevTotal = state[categoryName].currentTotal;
       state[categoryName].currentTotal = Number(
         Big(state[categoryName].currentTotal).plus(action.payload.amount)
