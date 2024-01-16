@@ -16,8 +16,8 @@ export const removeMinusSymbol = (numericalStringValue) => {
   return numericalStringValue.replace(/^(-)/, '')
 }
 
-// export const flattenArrayOfArraysIntoOneArray = (arrayOfArrays) => {
-//   return arrayOfArrays.reduce((accArr, b) => [...accArr, ...b], []);
-// }
+export const flattenArrayOfArraysIntoOneArray = (arrayOfArrays) => {
+  return arrayOfArrays.reduce((accArr, b) => [...accArr, ...b], []);
+}
 
 

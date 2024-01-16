@@ -8,8 +8,8 @@ import TransPrevRemainingFunds from "./transaction/TransPrevRemainingFunds.js";
 import TransTotalTransactions from "./transaction/TransTotalTransactions.js";
 
 const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
-  console.log(expenseTransactions);
-  //console.log(budgetTransactions);
+  
+
   // const transactionHeaders = (
 
   //     <div className="header-data desc grid-child">
@@ -33,13 +33,13 @@ const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
         <h3>Budget Transactions</h3>
         <ul className="budget transaction-list grid-container">
           {/* {transactionHeaders} */}
-          {budgetTransactions.map((t, index) => (<TransDescription transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {budgetTransactions.map((t, index) => (<TransAmount transaction={t} key={t.id} gridRow={index + 2}
+          {budgetTransactions.map((transaction, index) => (<TransDescription transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {budgetTransactions.map((transaction, index) => (<TransAmount transaction={transaction} key={transaction.id} gridRow={index + 2}
           rowClassName={"row-"+(index+2)} />))}
-          {budgetTransactions.map((t, index) => (<TransPrevRemainingFunds transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {budgetTransactions.map((t, index) => (<TransRemainingFunds transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {budgetTransactions.map((t, index) => (<TransNote transaction={t} key={t.id} gridRow={index + 2} rowClassName={"budget-transaction-row-"+(index+2)} />))}
-          {budgetTransactions.map((t, index) => (<TransDeleteButton transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {budgetTransactions.map((transaction, index) => (<TransPrevRemainingFunds transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {budgetTransactions.map((transaction, index) => (<TransRemainingFunds transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {budgetTransactions.map((transaction, index) => (<TransNote transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"budget-transaction-row-"+(index+2)} />))}
+          {budgetTransactions.map((transaction, index) => (<TransDeleteButton transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
         </ul>
       </div>
       
@@ -48,13 +48,13 @@ const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
         <h3>Expense Transactions</h3>
         <ul className="expense transaction-list grid-container">
           {/* {transactionHeaders} */}
-          {expenseTransactions.map((t, index) => (<TransDescription transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {expenseTransactions.map((t, index) => (<TransAmount transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {expenseTransactions.map((t, index) => (<TransPrevRemainingFunds transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {expenseTransactions.map((t, index) => (<TransRemainingFunds transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {expenseTransactions.map((t, index) => (<TransTotalTransactions transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {expenseTransactions.map((t, index) => (<TransNote transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
-          {expenseTransactions.map((t, index) => (<TransDeleteButton transaction={t} key={t.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransDescription transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransAmount transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransPrevRemainingFunds transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransRemainingFunds transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransTotalTransactions transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransNote transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
+          {expenseTransactions.map((transaction, index) => (<TransDeleteButton transaction={transaction} key={transaction.id} gridRow={index + 2} rowClassName={"row-"+(index+2)} />))}
 
         </ul>
       </div>

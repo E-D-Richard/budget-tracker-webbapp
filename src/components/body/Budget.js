@@ -1,14 +1,12 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addBudgetBalanceEntry } from "../../features/budgets/budgetsSlice";
-import { selectTransactions } from "../../features/transRecords/transRecordsSlice";
 import { v4 as uuidv4 } from "uuid";
 import {
   createPopUpOnZeroValueSubmit,
   handleInputChangeForCustomNumberInputField,
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
-import Big from "big.js";
 import { selectSelectedCurrencySymbol } from "../../features/settings/settingsSlice";
 
 const Budget = ({ budget }) => {
@@ -16,10 +14,9 @@ const Budget = ({ budget }) => {
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
-  const transactions = useSelector(selectTransactions);
   const budgetRef = useRef();
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
-  const remainingFunds = Number(Big(budget.amount).minus(transactions[budget.category].total)).toFixed(2); 
+  const budgetTotal = Number(budget.currentTotal).toFixed(2); 
   const resetForm = () => {
     setAmount("");
     setPreventSubmit(true);
@@ -53,6 +50,7 @@ const Budget = ({ budget }) => {
         type: "budget",
         note: "",
         amount: Number(amount),
+        prevBudgetTotal: Number(budget.currentTotal),
         id: uuidv4(),
       })
     );
@@ -66,9 +64,9 @@ const Budget = ({ budget }) => {
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
         <h4
-          className={`remaining-funds ${(Number(remainingFunds) > 0) ? "positive" : (Number(remainingFunds) < 0) ? "negative" : "null"}`}
+          className={`remaining-funds ${(Number(budgetTotal) > 0) ? "positive" : (Number(budgetTotal) < 0) ? "negative" : "null"}`}
         >
-          Funds Remaining: {selectedCurrencySymbol + remainingFunds}
+          Funds Remaining: {selectedCurrencySymbol + budgetTotal}
         </h4>
       </div>
 

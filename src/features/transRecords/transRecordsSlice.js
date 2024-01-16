@@ -3,6 +3,7 @@ import { combineAllExpenseTransactionsIntoOneArray } from "../../utilities/helpe
 import { defaultCategories } from "../../utilities/helpers/helperArrays/helperArrays";
 import Big from "big.js";
 
+
 const initialState = Object.fromEntries(
   defaultCategories.map((category) => [
     category,
@@ -13,14 +14,15 @@ const transRecordsSlice = createSlice({
   name: "transactions",
   initialState: initialState,
   reducers: {
-    addTransaction: (state, action) => {
+    addExpenseTransaction: (state, action) => {
+      
       const categoryName = action.payload.category;
       state[categoryName].transactionList.push(action.payload);
       state[categoryName].total = Number(
         Big(state[categoryName].total).plus(action.payload.amount)
       );
     },
-    deleteTransaction: (state, action) => {
+    deleteExpenseTransaction: (state, action) => {
       const categoryName = action.payload.category;
       const transactionIndex = state[categoryName].transactionList.findIndex(
         (trans) => trans.id === action.payload.id
@@ -44,12 +46,12 @@ const transRecordsSlice = createSlice({
 
 // export const selectCategories = (state) => Object.keys(state.transactions).sort();
 export const selectTransactions = (state) => state.transactions;
-export const selectAllExpenseTransactions = (state) =>
+export const selectAllExpenseTransactions = (state) => 
   combineAllExpenseTransactionsIntoOneArray(Object.values(state.transactions));
 
 export const {
-  addTransaction,
-  deleteTransaction,
+  addExpenseTransaction,
+  deleteExpenseTransaction,
   addTransactionCategory,
   deleteTransactionCategory,
 } = transRecordsSlice.actions;

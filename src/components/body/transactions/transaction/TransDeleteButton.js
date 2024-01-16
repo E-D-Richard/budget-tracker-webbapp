@@ -1,17 +1,17 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { deleteBudgetBalanceEntry } from "../../../../features/budgets/budgetsSlice";
-import { deleteTransaction } from "../../../../features/transRecords/transRecordsSlice";
+import { deleteBudgetTransaction } from "../../../../features/budgets/budgetsSlice";
+import { deleteExpenseTransaction } from "../../../../features/transRecords/transRecordsSlice";
 
 const TransDeleteButton = ({ transaction, gridRow, rowClassName }) => {
   const dispatch = useDispatch();
   const handleDelete = (e) => {
     if (transaction.type === "expense") {
-      dispatch(deleteTransaction(transaction));
+      dispatch(deleteExpenseTransaction(transaction));
     }
 
     if (transaction.type === "budget") {
-      dispatch(deleteBudgetBalanceEntry(transaction));
+      dispatch(deleteBudgetTransaction(transaction));
     }
   };
   const gridRowStyle = { "gridRow": `${gridRow} / span 1` };

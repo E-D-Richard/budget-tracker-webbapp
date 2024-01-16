@@ -2,18 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 import { defaultCategories } from "../../utilities/helpers/helperArrays/helperArrays";
 import { sortArrayOfObjectsInAlphabeticalOrderOfKeys } from "../../utilities/helpers/helperFunctions/otherHelpers";
 import Big from "big.js";
-
+import { combineAllBudgetTransactionsIntoOneArray } from "../../utilities/helpers/helperFunctions/reduxHelpers";
 
 const initialState = {};
 defaultCategories.forEach((category) => {
   initialState[category] = {
     category: category,
-    amount: 0,
+    currentTotal: 0,
+    prevTotal: null,
     history: [],
     isDefaultCategory: true,
   };
 });
-
 
 const budgetsSlice = createSlice({
   name: "budgets",
@@ -21,13 +21,23 @@ const budgetsSlice = createSlice({
   reducers: {
     addBudgetBalanceEntry: (state, action) => {
       const categoryName = action.payload.category;
-      state[categoryName].amount = Number(Big(state[categoryName].amount).plus(action.payload.amount));
-      state[categoryName].history.push(action.payload);
+      console.log(state[categoryName].currentTotal);
+      state[categoryName].prevTotal = state[categoryName].currentTotal;
+      state[categoryName].currentTotal = Number(
+        Big(state[categoryName].currentTotal).plus(action.payload.amount)
+      );
+      state[categoryName].history.push({
+        ...action.payload,
+        currentBudgetTotal: state[categoryName].currentTotal, 
+      });
     },
 
-    deleteBudgetBalanceEntry: (state, action) => {
+    deleteBudgetTransaction: (state, action) => {
       const categoryName = action.payload.category;
-      state[categoryName].amount = Number(Big(state[categoryName].amount).minus(action.payload.amount));
+      state[categoryName].prevTotal = state[categoryName].currentTotal;
+      state[categoryName].currentTotal = Number(
+        Big(state[categoryName].currentTotal).minus(action.payload.amount)
+      );
       state[categoryName].history = state[categoryName].history.filter(
         (entry) => entry.id !== action.payload.id
       );
@@ -43,13 +53,15 @@ const budgetsSlice = createSlice({
   },
 });
 
-
-
-export const selectBudgets = (state) => sortArrayOfObjectsInAlphabeticalOrderOfKeys(Object.values(state.budgets));
+export const selectBudgetsInArrayFormat = (state) =>
+  sortArrayOfObjectsInAlphabeticalOrderOfKeys(Object.values(state.budgets));
+export const selectAllBudgetTransactions = (state) => combineAllBudgetTransactionsIntoOneArray((Object.values(state.budgets)));
+export const selectBudgets = (state) => state.budgets;
 export const selectCurrentCategories = (state) => Object.keys(state.budgets);
+
 export const {
   addBudgetBalanceEntry,
-  deleteBudgetBalanceEntry,
+  deleteBudgetTransaction,
   addBudgetCategory,
   deleteBudgetCategory,
 } = budgetsSlice.actions;

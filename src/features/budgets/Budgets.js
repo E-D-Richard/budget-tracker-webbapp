@@ -1,12 +1,12 @@
 import React from "react";
 import "./budgets.css";
 import { useSelector } from "react-redux";
-import { selectBudgets } from "./budgetsSlice";
+import { selectBudgetsInArrayFormat } from "./budgetsSlice";
 import Budget from "../../components/body/Budget";
 
 
 const Budgets = () => {
-  const budgets = useSelector(selectBudgets);
+  const budgets = useSelector(selectBudgetsInArrayFormat);
   return (
     <section className="all-budgets-container">
       <ul>

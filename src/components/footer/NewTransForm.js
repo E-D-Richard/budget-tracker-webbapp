@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  addTransaction
+  addExpenseTransaction
 } from "../../features/transRecords/transRecordsSlice";
 import { v4 as uuidv4 } from "uuid";
 import {
@@ -9,7 +9,7 @@ import {
   handleInputChangeForCustomNumberInputField,
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
-import { selectCurrentCategories } from "../../features/budgets/budgetsSlice";
+import { selectBudgets, selectCurrentCategories } from "../../features/budgets/budgetsSlice";
 
 const NewTransForm = ({ isExpanded }) => {
   const dispatch = useDispatch();
@@ -18,6 +18,8 @@ const NewTransForm = ({ isExpanded }) => {
   const [note, setNote] = useState("");
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
+  const selectedBudgetCategoryState = useSelector(selectBudgets)[category];
+
 
   const resetForm = () => {
     setCategory(categories[0]);
@@ -54,11 +56,13 @@ const NewTransForm = ({ isExpanded }) => {
     }
 
     dispatch(
-      addTransaction({
+      addExpenseTransaction({
         type: "expense",
         category: category,
         note: note ? note : "",
         amount: Number(amount),
+        prevBudgetTotal: selectedBudgetCategoryState.prevTotal,
+        currentBudgetTotal: selectedBudgetCategoryState.currentTotal,
         id: uuidv4(),
       })
     );
