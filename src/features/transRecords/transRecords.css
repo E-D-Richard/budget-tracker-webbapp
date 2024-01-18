@@ -59,6 +59,13 @@ table.transaction-list tr {
   justify-content: space-between;
 }
 
+@media screen and (max-width: 600px) {
+  table.transaction-list tr  {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+  }
+}
+
 table.transaction-list tbody tr:hover {
   background-color: var(--light-blue);
 }
