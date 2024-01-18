@@ -10,6 +10,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 - figure out how to target each transactionRow in order to highlight individual rows on hover
 - remove notes section from budgetTransactionsList
+- build a mobile friendly version of TransactionList
 - change app color scheme to green palette
 - in transList button icon replace "X" with a trash can icon
 - in transList create a filter by category option that allows user to only view the transactions from a preferred/chosen/selected category
