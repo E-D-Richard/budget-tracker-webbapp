@@ -3,7 +3,6 @@ import TransHeader from "./transaction/TransHeaders";
 import Transaction from "./transaction/Transaction";
 
 const TransactionList = ({ transactions, listType }) => {
-  
   return (
       <div
         className={`${listType} transaction-list-container ${

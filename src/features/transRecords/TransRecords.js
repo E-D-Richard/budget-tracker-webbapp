@@ -8,7 +8,6 @@ import { selectAllBudgetTransactions } from "../budgets/budgetsSlice";
 const TransRecords = () => {
   const expenseTransactions = useSelector(selectAllExpenseTransactions);
   const budgetTransactions = useSelector(selectAllBudgetTransactions);
-  console.log("".length)
   return (
     <section className={`transaction-list-section`}>
       <h2>Transactions</h2>
