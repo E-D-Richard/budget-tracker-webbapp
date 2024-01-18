@@ -18,8 +18,7 @@ const TransAmount = ({ transaction }) => {
   const amountJSX = (
     <span className={amountJSXClassName}>{formattedAmount}</span>
   );
-  // const gridRowStyle = {"gridRow": `${gridRow} / span 1`}
-  // return <div className={"amount grid-child " + rowClassName} style={gridRowStyle}>{amountJSX}</div>;
+  
   return <td className="amount ">{amountJSX}</td>
 };
 

@@ -45,15 +45,6 @@ const TransDescription = ({ transaction }) => {
   return (
     <td className="description">{descriptionJsx}</td>
   )
-  // const gridRowStyle = { gridRow: `${gridRow} / span 1` };
-  // return (
-  //   <div
-  //     className={"description grid-child " + rowClassName}
-  //     style={gridRowStyle}
-  //   >
-  //     {descriptionJsx}
-  //   </div>
-  //);
 };
 
 export default TransDescription;

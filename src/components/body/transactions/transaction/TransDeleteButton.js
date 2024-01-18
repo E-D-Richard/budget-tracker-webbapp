@@ -14,19 +14,7 @@ const TransDeleteButton = ({ transaction }) => {
       dispatch(deleteBudgetTransaction(transaction));
     }
   };
-  // const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
 
-  // return (
-  //   <div style={gridRowStyle} className={"delete-wrapper grid-child " + rowClassName}>
-  //     <button
-  //       className="delete-button"
-  //       onClick={handleDelete}
-  //       aria-label="Delete"
-  //     >
-  //       X
-  //     </button>
-  //   </div>
-  //);
   return (
     <td className="delete-button-wrapper">
       <button className="delete" onClick={handleDelete} aria-label="Delete">

@@ -1,9 +1,6 @@
 import Transaction from "./transaction/Transaction";
 
 const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
-  const includeMarginBottom = (transactions) => {
-    return transactions.length > 0;
-  } 
   return (
     <section className={`transaction-list-section`}>
       <h2>Transactions</h2>
