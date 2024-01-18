@@ -15,7 +15,6 @@ const transRecordsSlice = createSlice({
   initialState: initialState,
   reducers: {
     addExpenseTransaction: (state, action) => {
-      
       const categoryName = action.payload.category;
       state[categoryName].transactionList.push(action.payload);
       state[categoryName].total = Number(

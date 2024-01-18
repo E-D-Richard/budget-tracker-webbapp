@@ -8,15 +8,18 @@ import {
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
 import { selectSelectedCurrencySymbol } from "../../features/settings/settingsSlice";
+import Big from "big.js";
+import { selectTransactions } from "../../features/transRecords/transRecordsSlice";
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
+  const transactions = useSelector(selectTransactions);
   const budgetRef = useRef();
-  const budgetCategoryCreatedByUser = !budget.isDefaultCategory;
-  const budgetTotal = Number(budget.currentTotal).toFixed(2); 
+  const budgetCategoryCreatedByUser = !budget.isDefaultCategory; 
+  const remainingFunds = Number(Big(budget.currentTotal).minus(transactions[budget.category].total)).toFixed(2);
   const resetForm = () => {
     setAmount("");
     setPreventSubmit(true);
@@ -64,9 +67,9 @@ const Budget = ({ budget }) => {
         <div className="category-label">Category</div>
         <h3 className="category-value">{budget.category}</h3>
         <h4
-          className={`remaining-funds ${(Number(budgetTotal) > 0) ? "positive" : (Number(budgetTotal) < 0) ? "negative" : "null"}`}
+          className={`remaining-funds ${(Number(remainingFunds) > 0) ? "positive" : (Number(remainingFunds) < 0) ? "negative" : "null"}`}
         >
-          Funds Remaining: {selectedCurrencySymbol + budgetTotal}
+          Funds Remaining: {selectedCurrencySymbol + remainingFunds}
         </h4>
       </div>
 
