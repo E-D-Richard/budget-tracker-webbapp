@@ -6,27 +6,20 @@ import Transaction from "./transaction/Transaction";
 
 const TransactionList = ({ transactions, listType }) => {
   const [isMobile, setIsMobile] = useState(true);
-  console.log(isMobile)
   const handleResize = (e) => {
     setIsMobile(window.innerWidth < 750);
-    
   }
-
-  //set mobileTypeOn Mount
-  useEffect(()=>{
-    setIsMobile(window.innerWidth < 750);
-  },[])
 
   //onWindowAdjust/Resize - reset device type
   useEffect(() => {
-    // Add event listener for the 'resize' event
+    //set mobileType onMount
+    setIsMobile(window.innerWidth < 750);
+    //then add eventListeners to handle all future screen width resizing adjustments
     window.addEventListener('resize', handleResize);
-
-    // Clean up the event listener when the component is unmounted
     return () => {
       window.removeEventListener('resize', handleResize);
     };
-  });
+  },[]);
 
   return (
       <div
