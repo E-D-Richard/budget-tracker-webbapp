@@ -19,7 +19,7 @@ const TransHeaders = ({isMobile}) => {
       <td className="t-header amount">Amount</td>
       <td className="t-header prev-budget-total">Prev <br /> Budget <br/> Total</td>
       <td className="t-header current-budget-total">Current <br /> Budget <br /> Total</td>
-      <td className="t-header expenses-total">Expense <br />Total</td>
+      <td className="t-header expenses-total">Expenses <br />Total</td>
       <td className="t-header note">Note</td>
       <td className="t-header delete"></td>
     </tr>

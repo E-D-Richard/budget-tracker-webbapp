@@ -8,7 +8,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
-- figure out how to target each transactionRow in order to highlight individual rows on hover
+- add a second line to each transaction called detailedDesc this should use info that would appear in prevBudgetTotal, CurrentBudgetTotal and, ExpensesTotal. Once this is buit, remove the above three columns, this will make layout very mobile friendly
 - remove notes section from budgetTransactionsList
 - build a mobile friendly version of TransactionList (make header names only abbreviate below screenWidth of breakingPoint)
 - change app color scheme to green palette
