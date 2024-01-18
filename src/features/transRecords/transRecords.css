@@ -16,10 +16,6 @@
 }
 
 .transaction-list-container {
-  margin: 0 2%;
-}
-
-.transaction-list-container.margin-bottom {
   margin: 2% 2%;
 }
 
@@ -27,9 +23,13 @@
   padding-bottom: 2rem;
 }
 
+/* .transaction-list-container.empty .transaction-list {
+  display: none;
+  border: none;
+} */
+
 .transaction-list-container h3 {
   font-size: clamp(16px, 3.5vw, 2.4rem);
-  padding: 0.4rem;
 }
 
 .transaction-list {
@@ -52,6 +52,7 @@ table.transaction-list thead tr {
   justify-content: space-between;
 }
 
+table.transaction-list thead tr,
 table.transaction-list tr.transaction {
   border-bottom: 1px solid black;
   /* box-shadow: 0px 1px 0px 0px rgb(0, 0, 0); */
@@ -84,7 +85,7 @@ td.delete {
 }
 
 
-/* --------------------------------------------------------------- grid settings for transaction rows/records */
+/* --------------------------------------------------------------- general styles for TransList table elements */
 
 
 

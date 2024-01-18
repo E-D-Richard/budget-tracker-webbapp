@@ -1,4 +1,4 @@
-const TransHeader = () => {
+const TransHeaders = () => {
   return (
     <tr>
       <td className="t-header description">description</td>
@@ -12,4 +12,4 @@ const TransHeader = () => {
   );
 };
 
-export default TransHeader;
+export default TransHeaders;
