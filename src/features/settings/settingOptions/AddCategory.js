@@ -28,6 +28,8 @@ const AddCategory = () => {
         category: newCategory.toLowerCase(),
         amount: 0,
         history: [],
+        currentTotal: 0,
+        prevTotal: null,
         isDefaultCategory: false,
       })
     );
