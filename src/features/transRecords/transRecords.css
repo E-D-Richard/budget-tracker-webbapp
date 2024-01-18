@@ -24,10 +24,10 @@
   padding-bottom: 2rem;
 }
 
-/* .transaction-list-container.empty .transaction-list {
+.transaction-list-container.empty .transaction-list {
   display: none;
   border: none;
-} */
+}
 
 .transaction-list-container h3 {
   font-size: clamp(16px, 3.5vw, 2.4rem);
