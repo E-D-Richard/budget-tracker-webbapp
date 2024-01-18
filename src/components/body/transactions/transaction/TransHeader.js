@@ -1,17 +1,15 @@
-const TransHeader = ({ name, headerColumnClassName ,transactions }) => {
-  const gridRowStyle = { gridRow: `${1} / span 1` };
-  const rowClassName = "row-1";
-
-  if(transactions.length > 0){
-    return (
-      <div className={`header-data ${headerColumnClassName} grid-child ${rowClassName}`} style={gridRowStyle}>
-        <h6 className="header-text">{name}</h6>
-      </div>
-    );
-  } else {
-    return;
-  }
-
+const TransHeader = () => {
+  return (
+    <tr>
+      <td className="t-header description">description</td>
+      <td className="t-header amount">amount</td>
+      <td className="t-header prev-budget-total">prevBudgetTotal</td>
+      <td className="t-header current-budget-total">currentBudgetTotal</td>
+      <td className="t-header expenses-total">expensesTotal</td>
+      <td className="t-header note">notes</td>
+      <td className="t-header delete"></td>
+    </tr>
+  );
 };
 
 export default TransHeader;

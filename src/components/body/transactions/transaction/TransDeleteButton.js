@@ -16,8 +16,8 @@ const TransDeleteButton = ({ transaction }) => {
   };
 
   return (
-    <td className="delete-button-wrapper">
-      <button className="delete" onClick={handleDelete} aria-label="Delete">
+    <td className="delete">
+      <button onClick={handleDelete} aria-label="Delete">
         X
       </button>
     </td>
