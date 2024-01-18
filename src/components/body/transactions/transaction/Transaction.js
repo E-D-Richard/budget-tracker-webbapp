@@ -1,6 +1,3 @@
-import { useSelector } from "react-redux";
-import { selectSelectedCurrencySymbol } from "../../../../features/settings/settingsSlice";
-import { removeMinusSymbol } from "../../../../utilities/helpers/helperFunctions/otherHelpers";
 import TransAmount from "./TransAmount";
 import TransDescription from "./TransDescription";
 import TransPrevBudgetTotal from "./TransPrevBudgetTotal";
@@ -11,7 +8,7 @@ import TransDeleteButton from "./TransDeleteButton";
 
 const Transaction = ({ transaction }) => {
   return (
-    <tr>
+    <tr className={"transaction"}>
       <TransDescription transaction={transaction} />
       <TransAmount transaction={transaction} />
       <TransPrevBudgetTotal transaction={transaction} />

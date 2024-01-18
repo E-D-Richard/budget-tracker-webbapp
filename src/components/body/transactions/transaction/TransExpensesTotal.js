@@ -13,7 +13,7 @@ const TransExpensesTotal = ({ transaction, gridRow, rowClassName }) => {
   //   </div>
   // );
 
-  return <td className="current-budget-total">{selectedCurrencySymbol}0.00</td>
+  return <td className="expenses-total">{selectedCurrencySymbol}0.00</td>
 };
 
 export default TransExpensesTotal;

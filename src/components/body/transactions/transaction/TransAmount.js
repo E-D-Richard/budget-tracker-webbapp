@@ -20,7 +20,7 @@ const TransAmount = ({ transaction }) => {
   );
   // const gridRowStyle = {"gridRow": `${gridRow} / span 1`}
   // return <div className={"amount grid-child " + rowClassName} style={gridRowStyle}>{amountJSX}</div>;
-  return <td className="amount">{amountJSX}</td>
+  return <td className="amount ">{amountJSX}</td>
 };
 
 export default TransAmount;

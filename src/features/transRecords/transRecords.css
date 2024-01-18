@@ -33,9 +33,42 @@
 
 /* --------------------------------------------------------------- transaction list table settings ---*/
 
-table.transaction-list td {
-  border: 2px solid black;
+table.transaction-list {
+  width: 100%;
+  font-size: 1.3rem;
 }
+
+table.transaction-list tr.transaction {
+  border-bottom: 1px solid black;
+  /* box-shadow: 0px 1px 0px 0px rgb(0, 0, 0); */
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+table.transaction-list td {
+  padding: 0.3rem;
+  padding-bottom: 0;  
+  margin-bottom: 0.15rem;
+  margin-top: 1rem;
+}
+
+td.description {
+  width: 30%;
+}
+
+td.amount,
+td.prev-budget-total,
+td.current-budget-total,
+td.expenses-total,
+td.note {
+  width: 10%;
+}
+
+td.button {
+  width: 5%;
+}
+
 
 /* --------------------------------------------------------------- grid settings for transaction rows/records */
 
@@ -56,7 +89,7 @@ table.transaction-list td {
 
 .transaction-list .delete-button-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   border: none;
 }
