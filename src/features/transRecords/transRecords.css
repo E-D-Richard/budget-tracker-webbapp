@@ -17,17 +17,20 @@
 }
 
 .transaction-list-container {
-  margin: 2% 2%;
+  padding: 2%;
+  padding-bottom: max(2rem, 2%);
+  outline: 1px solid black;
+  border-radius: 5px;
 }
 
-.expense.transaction-list-container {
-  padding-bottom: 2rem;
+.budget.transaction-list-container {
+  margin-bottom: 2rem;
 }
 
-.transaction-list-container.empty .transaction-list {
+/* .transaction-list-container.empty thead.headers {
   display: none;
   border: none;
-}
+} */
 
 .transaction-list-container h3 {
   font-size: clamp(16px, 3.5vw, 2.4rem);
@@ -47,9 +50,9 @@ table.transaction-list {
   font-size: 1.3rem;
 }
 
-table.transaction-list thead tr {
-  /* overflow: hidden; */
-}
+/* table.transaction-list thead tr {
+  
+} */
 
 table.transaction-list thead tr,
 table.transaction-list tr.transaction {
