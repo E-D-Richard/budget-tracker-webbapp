@@ -13,6 +13,7 @@
   background-color: #ffffff;
   font-size: 16px;
   font-weight: bold;
+  overflow: hidden;
 }
 
 .transaction-list-container {
@@ -47,9 +48,7 @@ table.transaction-list {
 }
 
 table.transaction-list thead tr {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  /* overflow: hidden; */
 }
 
 table.transaction-list thead tr,
