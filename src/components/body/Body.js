@@ -1,7 +1,7 @@
 import Budgets from "../../features/budgets/Budgets";
 import TransRecords from "../../features/transRecords/TransRecords";
 import { useSelector } from "react-redux";
-import { selectNewTransactionOffsetHeight } from './../../features/newTransaction/newTransactionSlice';
+import { selectNewTransactionOffsetHeight } from "../../assets/stylesSlice";
 
 const Body = () => {
   const newTransactionOffsetHeight = useSelector(selectNewTransactionOffsetHeight);

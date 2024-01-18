@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { deleteBudgetTransaction } from "../../../../features/budgets/budgetsSlice";
 import { deleteExpenseTransaction } from "../../../../features/transRecords/transRecordsSlice";
 
-const TransDeleteButton = ({ transaction, gridRow, rowClassName }) => {
+const TransDeleteButton = ({ transaction }) => {
   const dispatch = useDispatch();
   const handleDelete = (e) => {
     if (transaction.type === "expense") {
@@ -14,18 +14,25 @@ const TransDeleteButton = ({ transaction, gridRow, rowClassName }) => {
       dispatch(deleteBudgetTransaction(transaction));
     }
   };
-  const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
+  // const gridRowStyle = { "gridRow": `${gridRow} / span 1` };
 
+  // return (
+  //   <div style={gridRowStyle} className={"delete-wrapper grid-child " + rowClassName}>
+  //     <button
+  //       className="delete-button"
+  //       onClick={handleDelete}
+  //       aria-label="Delete"
+  //     >
+  //       X
+  //     </button>
+  //   </div>
+  //);
   return (
-    <div style={gridRowStyle} className={"delete-wrapper grid-child " + rowClassName}>
-      <button
-        className="delete-button"
-        onClick={handleDelete}
-        aria-label="Delete"
-      >
+    <td className="delete-button-wrapper">
+      <button className="delete" onClick={handleDelete} aria-label="Delete">
         X
       </button>
-    </div>
+    </td>
   );
 };
 

@@ -1,9 +1,10 @@
-const TransHeader = ({ name, headerClassName ,transactions }) => {
+const TransHeader = ({ name, headerColumnClassName ,transactions }) => {
   const gridRowStyle = { gridRow: `${1} / span 1` };
+  const rowClassName = "row-1";
 
   if(transactions.length > 0){
     return (
-      <div className={`header-data ${headerClassName} grid-child row-1`} style={gridRowStyle}>
+      <div className={`header-data ${headerColumnClassName} grid-child ${rowClassName}`} style={gridRowStyle}>
         <h6 className="header-text">{name}</h6>
       </div>
     );

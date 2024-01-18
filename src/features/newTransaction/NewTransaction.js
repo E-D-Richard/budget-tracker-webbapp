@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./newTransaction.css";
 import { FaAngleUp } from "react-icons/fa";
 import NewTransForm from "../../components/footer/NewTransForm";
-import { updateNewTransactionOffsetHeight } from "./newTransactionSlice";
+import { updateNewTransactionOffsetHeight } from "../../assets/stylesSlice";
 import { useDispatch } from "react-redux";
 
 const NewTransaction = () => {
