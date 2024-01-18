@@ -1,25 +1,33 @@
-import React, { useRef } from "react";
-import TransDescription from "./transaction/TransDescription.js";
-import TransAmount from "./transaction/TransAmount.js";
-import TransNote from "./transaction/TransNote.js";
-import TransDeleteButton from "./transaction/TransDeleteButton.js";
-import TransHeader from "./transaction/TransHeader.js";
-import TransPrevBudgetTotal from "./transaction/TransPrevBudgetTotal.js";
-import TransCurrentBudgetTotal from "./transaction/TransCurrentBudgetTotal.js";
-import TransExpensesTotal from "./transaction/TransExpensesTotal.js";
-import Transaction from "./transaction/Transaction.js";
+import Transaction from "./transaction/Transaction";
 
 const TransactionList = ({ expenseTransactions, budgetTransactions }) => {
+  const includeMarginBottom = (transactions) => {
+    return transactions.length > 0;
+  } 
   return (
     <section className={`transaction-list-section`}>
       <h2>Transactions</h2>
-      <table className="budget transaction-list">
-        <tbody>
-          {budgetTransactions.map((transaction) => (<Transaction transaction={transaction} key={transaction.id} />)
-          
-          )}
-        </tbody>
-      </table>
+
+      <div className={`budget transaction-list-container ${budgetTransactions.length > 0 ? "margin-bottom" : ""}`}>
+        <h3 className="budget">Budget Transactions</h3>
+        <table className="budget transaction-list">
+          <tbody>
+            {budgetTransactions.map((transaction) => (
+              <Transaction transaction={transaction} key={transaction.id} />
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className={`expense transaction-list-container ${budgetTransactions.length > 0 ? "margin-bottom" : ""}`}>
+        <h3 className="expense">Expense Transactions</h3>
+        <table className="expense transaction-list">
+          <tbody>
+            {expenseTransactions.map((transaction) => (
+              <Transaction transaction={transaction} key={transaction.id} />
+            ))}
+          </tbody>
+        </table>
+      </div>
     </section>
 
     // <section className={`transaction-list-section`} >

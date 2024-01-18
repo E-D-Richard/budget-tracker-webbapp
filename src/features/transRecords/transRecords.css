@@ -15,13 +15,21 @@
   font-weight: bold;
 }
 
-.transaction-list-section p,
-.transaction-list-section h6 {
-  margin: 0;
+.transaction-list-container {
+  margin: 0 2%;
 }
 
-.transaction-list-section h3 {
+.transaction-list-container.margin-bottom {
+  margin: 2% 2%;
+}
+
+.expense.transaction-list-container {
+  padding-bottom: 2rem;
+}
+
+.transaction-list-container h3 {
   font-size: clamp(16px, 3.5vw, 2.4rem);
+  padding: 0.4rem;
 }
 
 .transaction-list {
