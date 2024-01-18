@@ -12,6 +12,7 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 - remove notes section from budgetTransactionsList
 - change app color scheme to green palette
 - in transList button icon replace "X" with a trash can icon
+- in transList create a filter by category option that allows user to only view the transactions from a preferred/chosen/selected category
 - make sure tab (via tab index values) works in all forms
 - make replits to preserve all the form related helper functions that handles zero's in forms
 - add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form
