@@ -90,7 +90,7 @@ const NewTransForm = ({ isExpanded }) => {
       </div>
 
       <div className="new-trans-desc">
-        <label htmlFor="note">Description Note</label>
+        <label htmlFor="note">Note</label>
         <input
           id="description"
           value={note}
