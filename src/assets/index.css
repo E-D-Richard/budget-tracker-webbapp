@@ -100,12 +100,6 @@ nav {
   box-shadow: var(--shadow);
 }
 
-@media screen and (max-width: 600px) {
-  header h1 {
-    margin-top: 6rem;
-  }
-}
-
 /* -------------------------------------------- main-body section ------------------------------------- */
 main {
   padding: 0 20px;
