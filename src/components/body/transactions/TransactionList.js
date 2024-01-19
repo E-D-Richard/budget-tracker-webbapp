@@ -30,11 +30,11 @@ const TransactionList = ({ transactions, listType }) => {
         <h3 className={`${listType}`}>{capitalizeFirstLetterOfString(listType)} Transactions</h3>
         <table className={`${listType} transaction-list`}>
           <thead className="headers">
-            <TransHeaders isMobile={isMobile}/>
+            <TransHeaders isMobile={isMobile} listType={listType}/>
           </thead>
           <tbody>
             {transactions.map((transaction) => (
-              <Transaction transaction={transaction} key={transaction.id} />
+              <Transaction transaction={transaction} key={transaction.id} listType={listType}/>
             ))}
           </tbody>
         </table>

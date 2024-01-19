@@ -6,7 +6,7 @@ import TransDescription from "./TransDescription";
 import TransNote from "./TransNote";
 import TransDeleteButton from "./TransDeleteButton";
 
-const Transaction = ({ transaction }) => {
+const Transaction = ({ transaction, listType }) => {
   return (
     <tr className={"transaction"}>
       <TransDescription transaction={transaction} />
@@ -14,7 +14,7 @@ const Transaction = ({ transaction }) => {
       {/* <TransPrevBudgetTotal transaction={transaction} />
       <TransCurrentBudgetTotal transaction={transaction} />
       <TransExpensesTotal transaction={transaction} /> */}
-      <TransNote transaction={transaction} />
+      {listType === "expense" ? <TransNote transaction={transaction} /> : ""}
       <TransDeleteButton transaction={transaction} />
     </tr>
   );
