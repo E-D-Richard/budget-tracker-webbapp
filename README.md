@@ -9,11 +9,11 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 ### ToDo
 
 - add a second line to each transaction called detailedDesc this should use info that would appear in prevBudgetTotal, CurrentBudgetTotal and, ExpensesTotal. Once this is built, remove the above three columns, this will make layout very mobile friendly
-- remove notes section from budgetTransactionsList
 - build a mobile friendly version of TransactionList (make header names only abbreviate below screenWidth of breakingPoint)
-- change app color scheme to green palette
 - in transList button icon replace "X" with a trash can icon
 - in transList create a filter by category option that allows user to only view the transactions from a preferred/chosen/selected category
+- build navMenu functionComponent and reconfigure settings menu to livin within it (currently settingMenu is absolutely positioned above it)
+- change app color scheme to green palette
 - make sure tab (via tab index values) works in all forms
 - make replits to preserve all the form related helper functions that handles zero's in forms
 - add a feature in settings where a user can change to what decimal point they want round off to in budget forms and in newTrans form

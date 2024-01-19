@@ -1,10 +1,12 @@
-import SettingsMenu from './settingsMenu/SettingsMenu';
-
+import SettingsMenu from "./settingsMenu/SettingsMenu";
 
 const Header = () => {
   return (
-    <header className="App-header">
-      <SettingsMenu />
+    <header>
+      <nav>
+        <SettingsMenu />
+      </nav>
+
       <h1>Budget Tracker</h1>
     </header>
   );

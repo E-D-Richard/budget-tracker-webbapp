@@ -5,7 +5,7 @@
   --blue: #3069f0;
   --red: #fd4d3f;
   --gray: rgba(20, 28, 58, 0.5);
-  --shadow: 0 0 21px 0 rgba(20, 28, 58, 0.7);
+  --shadow: 0px 0px 15px -5px rgba(20, 28, 58, 0.7);
   --white: #ffffff;
   /* potential color palette:
       #141C3A
@@ -29,7 +29,7 @@ html {
 body {
   font-family: "Oxygen", sans-serif;
   color: var(--main-text-color);
-  padding: 24px 20px 0px 20px;
+  /* padding: 24px 20px 0px 20px; */
   margin: 0;
 }
 
@@ -84,16 +84,33 @@ input::-webkit-inner-spin-button {
 
 /* -------------------------------------------- header section ------------------------------------- */
 
-header {
-  margin-bottom: 4rem;
+header h1 {
+  padding: 1rem;
+  padding-top: 7rem;
+}
+
+nav {
+  position: fixed;
+  background-color: #ffffff;
+  z-index: 3;
+  width: 100%;
+  min-height: 5rem;
+  border-bottom: 3px solid var(--main-text-color);
+  display: flex;
+  box-shadow: var(--shadow);
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    margin-top: 6rem;
+  }
 }
 
 /* -------------------------------------------- main-body section ------------------------------------- */
-
-/* main {
-
-  margin-bottom is being set dynamically (based on NewTransaction offsetHeight) inside the function component 
-} *
+main {
+  padding: 0 20px;
+  /* margin-bottom is being set dynamically (based on NewTransaction offsetHeight) inside the function component  */
+}
 /* ------------------------------------------------------ general media queries */
 
 @media screen and (max-width: 850px) {
