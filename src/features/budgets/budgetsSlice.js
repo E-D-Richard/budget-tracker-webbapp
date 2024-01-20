@@ -56,7 +56,7 @@ export const selectBudgetsInArrayFormat = (state) =>
   sortArrayOfObjectsInAlphabeticalOrderOfKeys(Object.values(state.budgets));
 export const selectAllBudgetTransactions = (state) => combineAllBudgetTransactionsIntoOneArray((Object.values(state.budgets)));
 export const selectBudgets = (state) => state.budgets;
-export const selectCurrentCategories = (state) => Object.keys(state.budgets);
+export const selectCurrentCategories = (state) => Object.keys(state.budgets).sort();
 
 export const {
   addBudgetBalanceEntry,
