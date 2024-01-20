@@ -43,7 +43,7 @@ const SettingsMenu = () => {
       >
         <AiFillSetting />
       </button>
-      <div id="settings-menu" className={menuIsOpen ? "open" : ""}>
+      <div id="settings-menu" className={menuIsOpen ? "open" : ""} >
         <Settings />
       </div>
     </div>

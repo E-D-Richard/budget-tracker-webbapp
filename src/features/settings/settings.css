@@ -78,7 +78,7 @@
   /* height for open/closed state is set inside the corresponding setting function component */
   margin: 0;
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(0px);
   transition: all 400ms;
   pointer-events: none;
   z-index: 0;

@@ -32,9 +32,13 @@
   position: absolute;
   right: 0;
   top: 0;
-  border: none;
   z-index: 1;
-  background-color: transparent;
+  border: none;
+  border-left: 2px solid var(--main-text-color);
+  border-bottom: 2px solid var(--main-text-color);
+  border-radius: 0 0 0 10px;
+  background-color: var(--light-blue);
+  transition: all 120ms;
 }
 
 
@@ -81,7 +85,7 @@
 #settings-menu-container .button-frame {
   opacity: 0;
   transform: scale(0);
-  transform: translate(100%, -100%);
+  transform: translate(80%, -95%);
   transition: all var(--open-menu-transition-time);
 }
 
