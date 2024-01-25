@@ -9,7 +9,7 @@ defaultCategories.forEach((category) => {
   initialState[category] = {
     category: category,
     currentTotal: 0,
-    prevTotal: null,
+    prevTotal: 0,
     history: [],
     isDefaultCategory: true,
   };
@@ -41,6 +41,14 @@ const budgetsSlice = createSlice({
         (entry) => entry.id !== action.payload.id
       );
     },
+    updateBudgetTotalsBasedOnNewExpense: (state, action) => {
+      const categoryName = action.payload.category;
+      state[categoryName].prevTotal = state[categoryName].currentTotal;
+      state[categoryName].currentTotal = Number(Big(state[categoryName].currentTotal).minus(action.payload.amount));
+    },
+    updateBudgetTotalsBasedOnNewlyDeletedExpense: (state, action) => {
+      //const categoryName = action.payload.category;
+    },
     addBudgetCategory: (state, action) => {
       const categoryName = action.payload.category;
       state[categoryName] = action.payload;
@@ -61,6 +69,8 @@ export const selectCurrentCategories = (state) => Object.keys(state.budgets).sor
 export const {
   addBudgetBalanceEntry,
   deleteBudgetTransaction,
+  updateBudgetTotalsBasedOnNewExpense,
+  deleteExpenseTransaction,
   addBudgetCategory,
   deleteBudgetCategory,
 } = budgetsSlice.actions;

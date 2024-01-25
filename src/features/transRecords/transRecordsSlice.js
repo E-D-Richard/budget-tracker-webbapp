@@ -16,7 +16,12 @@ const transRecordsSlice = createSlice({
   reducers: {
     addExpenseTransaction: (state, action) => {
       const categoryName = action.payload.category;
-      state[categoryName].transactionList.push(action.payload);
+      console.log(action.payload);
+      state[categoryName].transactionList.push({
+        ...action.payload,
+        prevBudgetTotal: action.payload.currentBudgetTotal,
+        currentBudgetTotal: Number(Big(action.payload.currentBudgetTotal).minus(action.payload.amount)),
+      });
       state[categoryName].total = Number(
         Big(state[categoryName].total).plus(action.payload.amount)
       );

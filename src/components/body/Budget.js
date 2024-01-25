@@ -13,13 +13,14 @@ import { selectTransactions } from "../../features/transRecords/transRecordsSlic
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
+  const budgetRef = useRef();
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
-  const transactions = useSelector(selectTransactions);
-  const budgetRef = useRef();
+  //const transactions = useSelector(selectTransactions);
   const budgetCategoryCreatedByUser = !budget.isDefaultCategory; 
-  const remainingFunds = Number(Big(budget.currentTotal).minus(transactions[budget.category].total)).toFixed(2);
+  //const remainingFunds = Number(Big(budget.currentTotal).minus(transactions[budget.category].total)).toFixed(2);
+  const remainingFunds = budget.currentTotal.toFixed(2);
   const resetForm = () => {
     setAmount("");
     setPreventSubmit(true);
