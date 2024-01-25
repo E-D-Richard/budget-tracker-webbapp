@@ -21,6 +21,7 @@
   padding-bottom: max(2rem, 2%);
   outline: 1px solid black;
   border-radius: 5px;
+  overflow-x: scroll;
 }
 
 .budget.transaction-list-container {
@@ -51,12 +52,14 @@ table.transaction-list {
 }
 
 
+
 table.transaction-list tr {
   border-bottom: 1px solid black;
   /* box-shadow: 0px 1px 0px 0px rgb(0, 0, 0); */
   display: flex;
   align-items: center;
   justify-content: space-between;
+  column-gap: 5rem;
 }
 
 @media screen and (max-width: 600px) {
@@ -75,6 +78,11 @@ table.transaction-list td {
   padding-bottom: 0;  
   margin-bottom: 0.15rem;
   margin-top: 1rem;
+}
+
+.t-header.description {
+  /* without the padding-right setting below, as device screens would get smaller, all transList table headings would get misaligned from the child columns */
+  padding-right: 5rem;
 }
 
 td.description {
