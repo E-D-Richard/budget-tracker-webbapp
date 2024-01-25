@@ -26,11 +26,13 @@ const AddCategory = () => {
     dispatch(
       addBudgetCategory({
         category: newCategory.toLowerCase(),
-        amount: 0,
-        history: [],
         currentTotal: 0,
-        prevTotal: null,
+        budgetHistoryTotal: 0,
+        history: [],
         isDefaultCategory: false,
+
+
+
       })
     );
     dispatch(

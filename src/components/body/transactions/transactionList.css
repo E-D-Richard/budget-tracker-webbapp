@@ -52,6 +52,9 @@ table.transaction-list {
 }
 
 
+table.transaction-list thead tr {
+  padding-bottom: 0.2rem;
+}
 
 table.transaction-list tr {
   border-bottom: 1px solid black;
@@ -74,10 +77,24 @@ table.transaction-list tbody tr:hover {
 }
 
 table.transaction-list td {
+  display: flex;
+  justify-content: center;
   padding: 0.3rem;
   padding-bottom: 0;  
   margin-bottom: 0.15rem;
   margin-top: 1rem;
+}
+
+td.amount,
+td.budget-balance,
+td.expense-history,
+td.budget-history {
+  justify-content: center;
+}
+
+table.transaction-list td.description,
+table.transaction-list td.note {
+  justify-content: flex-start;
 }
 
 .t-header.description {
@@ -90,9 +107,9 @@ td.description {
 }
 
 td.amount,
-td.prev-budget-total,
-td.current-budget-total,
-td.expenses-total,
+td.budget-balance,
+td.expense-history,
+td.budget-history,
 td.note {
   width: 10%;
 }
@@ -101,6 +118,7 @@ td.delete {
   align-self: baseline;
   width: 5%;
 }
+
 
 
 /* --------------------------------------------------------------- general styles for TransList table elements */

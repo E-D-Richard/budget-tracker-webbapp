@@ -8,8 +8,8 @@ A budgeting and expense tracking WebApp where a user can set/allocate funds to a
 
 ### ToDo
 
+- create a new column in transactionLists called Category that lists category name in bold for each transaction
 - add a second line to each transaction called detailedDesc this should use info that would appear in prevBudgetTotal, CurrentBudgetTotal and, ExpensesTotal. Once this is built, remove the above three columns, this will make layout very mobile friendly
-- build a mobile friendly version of TransactionList (make header names only abbreviate below screenWidth of breakingPoint)
 - in transList button icon replace "X" with a trash can icon
 - in transList create a filter by category option that allows user to only view the transactions from a preferred/chosen/selected category
 - build navMenu functionComponent and reconfigure settings menu to living within it (currently settingMenu is absolutely positioned above it)

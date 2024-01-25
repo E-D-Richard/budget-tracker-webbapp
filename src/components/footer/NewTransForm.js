@@ -9,7 +9,7 @@ import {
   handleInputChangeForCustomNumberInputField,
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
-import { selectBudgets, selectCurrentCategories, updateBudgetTotalsBasedOnNewExpense } from "../../features/budgets/budgetsSlice";
+import { selectCurrentCategories, updateBudgetTotalsBasedOnNewExpense } from "../../features/budgets/budgetsSlice";
 
 const NewTransForm = ({ isExpanded }) => {
   const dispatch = useDispatch();
@@ -18,7 +18,6 @@ const NewTransForm = ({ isExpanded }) => {
   const [note, setNote] = useState("");
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
-  const selectedBudgetCategoryState = useSelector(selectBudgets)[category];
 
   const resetForm = () => {
     setCategory(categories[0]);
@@ -60,8 +59,6 @@ const NewTransForm = ({ isExpanded }) => {
         category: category,
         note: note ? note : "",
         amount: Number(amount),
-        prevBudgetTotal: selectedBudgetCategoryState.prevTotal,
-        currentBudgetTotal: selectedBudgetCategoryState.currentTotal,
         id: uuidv4(),
       })
     );

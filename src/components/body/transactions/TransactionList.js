@@ -1,3 +1,4 @@
+import "./transactionList.css";
 import { useEffect, useState } from "react";
 import { capitalizeFirstLetterOfString } from "../../../utilities/helpers/helperFunctions/otherHelpers";
 import TransHeaders from "./transaction/TransHeaders";

@@ -5,6 +5,8 @@ export const removeMinusSymbol = (numericalStringValue) => {
   return numericalStringValue.replace(/^(-)/, '')
 }
 
+
+
 export const capitalizeFirstLetterOfString = (string) => {
   if(string.length === 0){
     return;
