@@ -97,13 +97,11 @@ table.transaction-list td.note {
   justify-content: flex-start;
 }
 
-.t-header.description {
-  /* without the padding-right setting below, as device screens would get smaller, all transList table headings would get misaligned from the child columns */
-  padding-right: 5rem;
-}
 
-td.description {
-  width: 30%;
+
+
+table.transaction-list td.description {
+  min-width: 22rem;
 }
 
 td.amount,
@@ -111,7 +109,8 @@ td.budget-balance,
 td.expense-history,
 td.budget-history,
 td.note {
-  width: 10%;
+  /* without min-width setting, cells with large/lengthy data cause columns to mis-align */
+  min-width: 15rem;
 }
 
 td.delete {
