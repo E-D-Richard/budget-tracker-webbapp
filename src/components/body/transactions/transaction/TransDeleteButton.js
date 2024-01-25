@@ -5,7 +5,6 @@ import { deleteExpenseTransaction } from "../../../../features/transRecords/tran
 
 const TransDeleteButton = ({ transaction }) => {
   const dispatch = useDispatch();
-
   const handleDelete = (e) => {
     if (transaction.type === "expense") {
       dispatch(deleteExpenseTransaction(transaction));

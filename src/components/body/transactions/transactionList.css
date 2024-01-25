@@ -21,7 +21,7 @@
   padding-bottom: max(2rem, 2%);
   outline: 1px solid black;
   border-radius: 5px;
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 .budget.transaction-list-container {
