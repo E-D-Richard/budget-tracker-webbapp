@@ -25,19 +25,19 @@ const TransDescription = ({ transaction }) => {
   if (transaction.type === "expense") {
     descriptionJsx = (
       <span>
-        expense of &nbsp;{amountJSX}&nbsp; added to {transaction.category}
+        added expense of &nbsp;{amountJSX}&nbsp; to {transaction.category}
       </span>
     );
   } else if (transaction.type === "budget" && transaction.amount > 0) {
     descriptionJsx = (
       <span>
-        balance of &nbsp;{amountJSX}&nbsp; added to {transaction.category}
+        added balance of &nbsp;{amountJSX}&nbsp; to {transaction.category}
       </span>
     );
   } else if (transaction.type === "budget" && transaction.amount < 0) {
     descriptionJsx = (
       <span>
-        balance of &nbsp;{amountJSX}&nbsp; removed from {transaction.category}
+        removed balance of &nbsp;{amountJSX}&nbsp; from {transaction.category}
       </span>
     );
   }

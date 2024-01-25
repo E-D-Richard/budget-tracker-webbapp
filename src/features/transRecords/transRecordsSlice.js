@@ -20,6 +20,7 @@ const transRecordsSlice = createSlice({
         ...action.payload,
         prevBudgetTotal: action.payload.currentBudgetTotal,
         currentBudgetTotal: Number(Big(action.payload.currentBudgetTotal).minus(action.payload.amount)),
+        totalExpenses: Number(Big(state[categoryName].total).plus(action.payload.amount)),
       });
       state[categoryName].total = Number(
         Big(state[categoryName].total).plus(action.payload.amount)

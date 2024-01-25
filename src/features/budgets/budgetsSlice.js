@@ -27,7 +27,8 @@ const budgetsSlice = createSlice({
       );
       state[categoryName].history.push({
         ...action.payload,
-        currentBudgetTotal: state[categoryName].currentTotal, 
+        currentBudgetTotal: state[categoryName].currentTotal,
+        
       });
     },
 
@@ -47,7 +48,9 @@ const budgetsSlice = createSlice({
       state[categoryName].currentTotal = Number(Big(state[categoryName].currentTotal).minus(action.payload.amount));
     },
     updateBudgetTotalsBasedOnNewlyDeletedExpense: (state, action) => {
-      //const categoryName = action.payload.category;
+      const categoryName = action.payload.category;
+      state[categoryName].prevTotal = state[categoryName].currentTotal;
+      state[categoryName].currentTotal = Number(Big(state[categoryName].currentTotal).plus(action.payload.amount));
     },
     addBudgetCategory: (state, action) => {
       const categoryName = action.payload.category;
@@ -70,7 +73,7 @@ export const {
   addBudgetBalanceEntry,
   deleteBudgetTransaction,
   updateBudgetTotalsBasedOnNewExpense,
-  deleteExpenseTransaction,
+  updateBudgetTotalsBasedOnNewlyDeletedExpense,
   addBudgetCategory,
   deleteBudgetCategory,
 } = budgetsSlice.actions;

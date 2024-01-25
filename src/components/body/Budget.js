@@ -8,12 +8,14 @@ import {
 } from "../../utilities/helpers/helperFunctions/formHelpers";
 import { developmentModeSettings } from "../../utilities/helpers/helperObjects";
 import { selectSelectedCurrencySymbol } from "../../features/settings/settingsSlice";
+import { selectTransactions } from "../../features/transRecords/transRecordsSlice";
 
 
 const Budget = ({ budget }) => {
   const dispatch = useDispatch();
   const budgetRef = useRef();
   const selectedCurrencySymbol = useSelector(selectSelectedCurrencySymbol);
+  const selectedBudgetTotalExpenses = useSelector(selectTransactions)[budget.category].total;
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
   //const transactions = useSelector(selectTransactions);
@@ -55,6 +57,7 @@ const Budget = ({ budget }) => {
         amount: Number(amount),
         prevBudgetTotal: Number(budget.currentTotal),
         id: uuidv4(),
+        totalExpenses: selectedBudgetTotalExpenses,
       })
     );
     resetForm();

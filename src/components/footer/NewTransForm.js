@@ -19,8 +19,6 @@ const NewTransForm = ({ isExpanded }) => {
   const [amount, setAmount] = useState("");
   const [preventSubmit, setPreventSubmit] = useState(true);
   const selectedBudgetCategoryState = useSelector(selectBudgets)[category];
-  console.log("selectedBudgetCategoryState", selectedBudgetCategoryState);
-
 
   const resetForm = () => {
     setCategory(categories[0]);
