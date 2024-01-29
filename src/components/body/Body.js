@@ -6,7 +6,7 @@ import { selectNewTransactionOffsetHeight } from "../../assets/stylesSlice";
 const Body = () => {
   const newTransactionOffsetHeight = useSelector(selectNewTransactionOffsetHeight);
   return (
-    <main style={{"marginBottom": `calc(${newTransactionOffsetHeight}px + 2rem)`}}>
+    <main style={{"marginBottom": `calc(${newTransactionOffsetHeight}px + 5%)`}}>
       <Budgets />
       <TransRecords />
     </main>
