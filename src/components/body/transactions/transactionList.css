@@ -6,13 +6,18 @@
 /* -------------------------------------------- transaction records ---------------------*/
 
 .transaction-list-section {
-  padding: 12px 10.5px 11px 16px;
-  border-radius: 6px;
+  margin-top: 3%;
+  padding: 3%;
+  border-radius: 10px;
   border: solid 1px #141c3a;
   background-color: #ffffff;
   font-size: 16px;
   font-weight: bold;
   overflow: hidden;
+}
+
+.transaction-list-section h2 {
+  margin-bottom: 2%;
 }
 
 .transaction-list-container {
@@ -24,8 +29,8 @@
   background-color: var(--primary-light-green);
 }
 
-.budget.transaction-list-container {
-  margin-bottom: 2rem;
+.transaction-list-container.budget {
+  margin-bottom: 3%;
 }
 
 /* .transaction-list-container.empty thead.headers {
