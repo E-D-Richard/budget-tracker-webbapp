@@ -56,7 +56,8 @@
   border: solid 1px #141c3a;
   font-size: 18px;
   font-weight: bold;
-  background: var(--white);
+  color: #fff;
+  background-color: var(--primary-dark-green);
   cursor: pointer;
 }
 
@@ -67,7 +68,7 @@
 }
 
 .budget-form .submit-button.prevent {
-    opacity: 0.5;
+    /* opacity: 0.5; */
     filter: blur(0.5px);
 }
 

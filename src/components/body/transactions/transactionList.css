@@ -1,6 +1,5 @@
 :root {
   --main-text-color: #141c3a;
-  --light-blue: #e3e6ff;
   --light-brown-hsl-codes: 40 21% 53%;
 }
 
@@ -22,6 +21,7 @@
   outline: 1px solid black;
   border-radius: 5px;
   overflow-x: auto;
+  background-color: var(--primary-light-green);
 }
 
 .budget.transaction-list-container {
@@ -54,16 +54,31 @@ table.transaction-list {
 
 table.transaction-list thead tr {
   padding-bottom: 0.2rem;
+  background: none;
+  border: none;
+  border-radius: 0px;
+  border-bottom: 3px solid var(--secondary-dark-green);
+  margin-top: 1.5rem;
+}
+
+table.transaction-list thead td {  
+  display: flex;
+  justify-content: center;
 }
 
 table.transaction-list tr {
   border-bottom: 1px solid black;
   /* box-shadow: 0px 1px 0px 0px rgb(0, 0, 0); */
   display: flex;
-  align-items: center;
   justify-content: space-between;
   column-gap: 5rem;
+  border: 3px solid var(--secondary-dark-green);
+  border-radius: 7px;
+  background-color: var(--cream);
+  margin-bottom: 1rem;
 }
+
+
 
 @media screen and (max-width: 600px) {
   table.transaction-list tr  {
@@ -73,16 +88,17 @@ table.transaction-list tr {
 }
 
 table.transaction-list tbody tr:hover {
-  background-color: var(--light-blue);
+  background-color: var(--green-highlight);
 }
 
-table.transaction-list td {
+table.transaction-list tbody td {
   display: flex;
   justify-content: center;
-  padding: 0.3rem;
-  padding-bottom: 0;  
-  margin-bottom: 0.15rem;
+  padding-left: 0.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0rem;  
   margin-top: 1rem;
+
 }
 
 td.amount,
@@ -138,10 +154,14 @@ td.delete {
 }
 
 .transaction-list .delete {
+  margin-top: 0;
+  align-self: center;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   border: none;
+  padding: 0.5rem;
+  
 }
 
 

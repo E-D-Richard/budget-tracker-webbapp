@@ -1,19 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@400;700&display=swap");
 
 :root {
-  --main-text-color: #141c3a;
+  /* --main-text-color: #141c3a; */
+  --main-text-color: #40493B;
   --blue: #3069f0;
   --red: #fd4d3f;
   --gray: rgba(20, 28, 58, 0.5);
   --shadow: 0px 0px 15px -5px rgba(20, 28, 58, 0.7);
   --light-blue: #e3e6ff;
-  /* potential color palette:
-      #141C3A
-      #8184AA
-      #161E3C
-      #CFD2FB
-      #C4C7F0
-  */
+  /* new color palette: */
+  --primary-dark-green: #33402A;
+  --secondary-dark-green: #49593E;
+  --medium-green: #7F8C72;
+  --secondary-light-green: #B4BFA3;
+  --primary-light-green: #D8D9C5;
+  --cream: #F2EAE4;
+  --green-highlight: rgb(199, 207, 206);
 }
 
 html {
@@ -28,6 +30,7 @@ html {
 
 body {
   font-family: "Oxygen", sans-serif;
+  background-color: var(--cream);
   color: var(--main-text-color);
   /* padding: 24px 20px 0px 20px; */
   margin: 0;
@@ -92,7 +95,6 @@ header h1 {
 nav {
   /* position: fixed; */
   position: static;
-  background-color: #fff;
   z-index: 5;
   width: 100%;
   min-height: 5rem;

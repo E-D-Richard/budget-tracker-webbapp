@@ -1,6 +1,4 @@
 :root {
-  --main-text-color: #141c3a;
-  --light-blue: #e3e6ff;
   --open-menu-transition-time: 300ms;
 }
 
@@ -20,9 +18,9 @@
 
 
 #settings-menu-container .button-frame {
-  background-color: #e3e6ff;
+  background-color: var(--primary-light-green);
   width: 100%;
-  border-left: 2px solid rgba(20, 28, 58, 1);
+  border-left: 2px solid var(--primary-dark-green);
   z-index: 3;
 }
 
@@ -37,14 +35,14 @@
   border-left: 2px solid var(--main-text-color);
   border-bottom: 2px solid var(--main-text-color);
   border-radius: 0 0 0 10px;
-  background-color: var(--light-blue);
+  background-color: var(--primary-light-green);
   transition: all 120ms;
 }
 
 
 
 #settings-menu-container.open button#settings-menu-button {
-  border: 0px solid rgba(20, 28, 58, 1);
+  border: 0px solid #000;
   padding: 1px 6px;
   background-color: inherit;
 }
@@ -54,7 +52,7 @@
 }
 
 #settings-menu-container button#settings-menu-button svg {
-  color: rgba(20, 28, 58, 0.9);
+  color: var(--primary-dark-green);
   font-size: 4rem;
   transition: transform var(--open-menu-transition-time);
 }
@@ -71,9 +69,9 @@
   padding-bottom: 2rem;
   padding-left: 0.3rem;
   z-index: 4;
-  background-color: var(--light-blue);
+  background-color: var(--primary-light-green);
   border-radius: 0 0 0 10%;
-  border: 2px solid rgba(20, 28, 58, 1);
+  border: 2px solid var(--primary-dark-green);
   border-right: none;
   border-top: none;
 }
