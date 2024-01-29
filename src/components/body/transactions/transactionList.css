@@ -79,7 +79,7 @@ table.transaction-list tr {
   column-gap: 5rem;
   border: 3px solid var(--secondary-dark-green);
   border-radius: 7px;
-  background-color: var(--cream);
+  background-color: var(--light-cream);
   margin-bottom: 1rem;
 }
 
