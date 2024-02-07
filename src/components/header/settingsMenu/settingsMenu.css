@@ -13,17 +13,14 @@
 
 #settings-menu-container.open {
   pointer-events: auto;
-  /* background-color: #e3e6ff; */
- }
-
+}
 
 #settings-menu-container .button-frame {
   background-color: var(--primary-light-green);
-  width: 100%;
   border-left: 2px solid var(--primary-dark-green);
+  width: 100%;
   z-index: 3;
 }
-
 
 #settings-menu-container button#settings-menu-button {
   pointer-events: auto;
@@ -38,8 +35,6 @@
   background-color: var(--primary-light-green);
   transition: all 120ms;
 }
-
-
 
 #settings-menu-container.open button#settings-menu-button {
   border: 0px solid #000;
@@ -64,18 +59,14 @@
 /* -------------------------------------------------------------- settings */
 
 #settings-menu {
-  /* display: flex;
-  flex-direction: column; */
-  padding-bottom: 2rem;
+  background-color: var(--primary-light-green);
   padding-left: 0.3rem;
   z-index: 4;
-  background-color: var(--primary-light-green);
-  border-radius: 0 0 0 10%;
   border: 2px solid var(--primary-dark-green);
   border-right: none;
   border-top: none;
+  border-radius: 0 0 0 10%;
 }
-
 
 /* ------------------------------------------------------ transitions for settings menu open/close  */
 
@@ -88,6 +79,7 @@
 }
 
 
+
 #settings-menu.open,
 #settings-menu-container.open .button-frame {
   /* right: 0%;
@@ -95,16 +87,17 @@
   opacity: 1;
   transform: scale(1);
   transform: translate(0%, 0%);
+
 }
 
 /* ---------------------------------------------------------- custom scroll bar styles */
 
-
 #settings-menu {
-  height: 32vh;
+  height: 38vh;
   overflow-y: scroll;
   overflow-x: hidden;
   direction: rtl;
+  padding-left: 1rem;
 }
 
 #settings-menu > * {
@@ -112,36 +105,33 @@
 }
 
 #settings-menu::-webkit-scrollbar {
-  width: 15px;
+  width: 20px;
 }
 
 #settings-menu::-webkit-scrollbar-track {
   background: hsl(100 100% 100% / 0);
   border-radius: 100vw;
-  margin-block-start: 0.3em;
-  margin-block-end: 1.5em;
+  margin-block-start: 2em;
+  margin-block-end: 3em;
+  scroll-margin-block-end: 5em;
 }
 
 #settings-menu::-webkit-scrollbar-thumb {
-  background: hsl(227 49% 15% / 0.75);
-  border: 3.5px solid var(--primary-light-green);
+  background: var(--primary-dark-green);
   border-left: 5px solid var(--primary-light-green);
+  border-right: 5px solid var(--primary-light-green);
   border-radius: 100vw;
-  
 }
 
 #settings-menu::-webkit-scrollbar-thumb:hover {
-  background: var(--main-text-color);
+  background: hsl(95 21% 21% / 0.75);
 }
 
 /* support for firefox */
-@supports (scrollbar-color: red blue) {
+@-moz-document url-prefix() {
+
   #settings-menu {
-    scrollbar-color: hsl(100 100% 100% / 0) hsl(227 49% 15% / 0.75);
-    /* scrollbar-width: thin; */
+    scrollbar-color: var(--primary-dark-green) var(--primary-light-green);
+    scrollbar-width: thin;
   }
-  
 }
-
-
-
